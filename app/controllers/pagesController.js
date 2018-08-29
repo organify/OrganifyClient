@@ -1,28 +1,31 @@
-var bigChainDb = require('../services/bigchainDbService.js')
+
+var txService = require('../services/txDataAsyncService.js')
 var locomotive = require('locomotive')
   , Controller = locomotive.Controller;
 
 var pagesController = new Controller();
 
-const getTxData = async function(txList){
-  let resultList = [];
-  let asyncList = [];
-  for (var i = 0; i < txList.length; i++) {
-    asyncList.push(bigChainDb.loadTxbyId(tcList[i].transaction_id));
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
   }
-  let allResponses = await Promise.all(asyncList);
-  allResponses.forEach(function(response) {
-    if (response.operation == 'CREATE'){
-        resultList.push(response.asset.data);
-    }
-  }, this);
-  return result;
 }
-pagesController.main = function(publicKey) {
-  this.title = 'Organify';
+pagesController.main = function() {
   //let txIds = await bigChainDb.getTxIds(publicKey);
   //this.txDataList = await getTxData(txIds);
   this.render();
 }
+pagesController.product = function() {
+  var publicKey = this.param("publicKey");
+  this.title = 'Organify';
 
+  var txIds = txService.getTxIds(publicKey)
+  .then((response) =>{
+    this.txDataList = txService.getTxData(response);
+  });
+  setTimeout(() => 
+  this.render(), 30000);
+}
 module.exports = pagesController;

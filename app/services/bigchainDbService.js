@@ -5,7 +5,6 @@ const API_PATH = 'https://test.bigchaindb.com/api/v1/'
 
 // Create a new keypair.
 const organifyKeypair = new driver.Ed25519Keypair()
-
 //connection
 
 const conn = new driver.Connection(API_PATH, { 
@@ -32,6 +31,7 @@ const listTransactions = function(assetId){
 * @param {*} transactionId 
 */
 const loadTxbyId = function(txId){
+    debugger;
     return conn.getTransaction(txId).then((response) => {
         console.log('loadTx response is', response);
         return response;
