@@ -17,7 +17,7 @@ var userSession = {};
 var publicKeys = [];
 //{ethereumpublickey: {signin: true, publicKeyA: {name: apple, privaeKey: privateKeyA}}}
 var contract = web3.eth.contract(abi);
-var instance = contract.at("0xc631d426fdee9ca5f9531ad87f69ee8396158e5a");
+var instance = contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
 
 
 function wait(ms) {
@@ -30,7 +30,13 @@ function wait(ms) {
 pagesController.main = function () {
   //let txIds = await bigChainDb.getTxIds(publicKey);
   //this.txDataList = await getTxData(txIds);
-  this.session = 1;
+  this.title = "Organify";
+  this.render();
+}
+pagesController.subscription = function () {
+  //let txIds = await bigChainDb.getTxIds(publicKey);
+  //this.txDataList = await getTxData(txIds);
+  this.title = "Organify-Subscription";
   this.render();
 }
 pagesController.form = function () {

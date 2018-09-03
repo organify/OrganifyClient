@@ -17,7 +17,7 @@ function startApp(web3) {
 }
 function initContract(contract) {
     const Contract = contract(abi.abi);
-    const thisContract = Contract.at("0xc631d426fdee9ca5f9531ad87f69ee8396158e5a");
+    const thisContract = Contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
 	window.smartContract = thisContract;
 }
 
