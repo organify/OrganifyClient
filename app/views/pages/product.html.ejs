@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
-	  <link rel="stylesheet" href="/css/style.css"> <!-- Resource style -->
-	  <link rel="stylesheet" href="/css/demo.css"> <!-- Demo style -->
-  </head>
-  <body>
-    <header>
+
+<head>
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<!-- CSS reset -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- Resource style -->
+	<link rel="stylesheet" href="/css/demo.css">
+	<!-- Demo style -->
+</head>
+
+<body>
+	<header>
 		<div class="cd-nugget-info">
 			<a href="/">
 				<span>
@@ -20,91 +27,147 @@
 				</span>
 				Go back to Home page
 			</a>
-		</div> <!-- cd-nugget-info -->
+		</div>
+		<!-- cd-nugget-info -->
 		<h1>Farmer name , img and info</h1>
 	</header>
-
+	<div class="container" id='success-message-container' , style="padding-top:30px"></div>
 	<section class="cd-timeline js-cd-timeline">
 		<div class="cd-timeline__container">
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
-					<img src="/img/cd-icon-picture.svg" alt="Picture">
-				</div> <!-- cd-timeline__img -->
+			<% txDataList.forEach(function(item){ if(item.event && item.event.title){%>
+				<div class="cd-timeline__block js-cd-block">
+					<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
+						<img src="/img/cd-icon-picture.svg" alt="Picture">
+					</div>
+					<!-- cd-timeline__img -->
 
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 1</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 14</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
+					<div class="cd-timeline__content js-cd-content">
+						<h2>
+							<%= item.event.title %>
+						</h2>
+						<p><b>Location: </b>
+							<%= item.event.location %>
+						</p>
+						<p><b>Description: </b>
+							<%= item.event.description %>
+						</p>
+						<% if(item.event.transfer){ %>
+							<p><b>Owner requests a confirmation of product arrival and transfer of ownership</b></p>
+							<a href="#0" class="cd-timeline__read-more info" id="confirm">Confirm</a>
+							<a href="#0" class="cd-timeline__read-more" id="decline">Decline</a>
+							<%}%>
 
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--movie js-cd-img">
-					<img src="/img/cd-icon-movie.svg" alt="Movie">
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 18</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
-
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
-					<img src="/img/cd-icon-picture.svg" alt="Picture">
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 3</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Jan 24</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
-
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--location js-cd-img">
-					<img src="/img/cd-icon-location.svg" alt="Location">
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 4</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Feb 14</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
-
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--location js-cd-img">
-					<img src="/img/cd-icon-location.svg" alt="Location">
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Title of section 5</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-					<a href="#0" class="cd-timeline__read-more">Read more</a>
-					<span class="cd-timeline__date">Feb 18</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
-
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--movie js-cd-img">
-					<img src="/img/cd-icon-movie.svg" alt="Movie">
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content js-cd-content">
-					<h2>Final Section</h2>
-					<p>This is the content of the last section</p>
-					<span class="cd-timeline__date">Feb 26</span>
-				</div> <!-- cd-timeline__content -->
-			</div> <!-- cd-timeline__block -->
+								<span class="cd-timeline__date"><%= item.event.date %></span>
+					</div>
+					<!-- cd-timeline__content -->
+				</div>
+				<!-- cd-timeline__block -->
+				<% }}) %>
 		</div>
-	</section> <!-- cd-timeline -->
+	</section>
+	<!-- cd-timeline -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/custom-bundle.js"></script>
+	<!-- Resource JavaScript -->
+	<script>
+		$(function () {
+			var url = window.location.pathname;
+			var urlItems = url.split('/');
+			var ownerPublicKey = urlItems[urlItems.length - 2];
+			var id = urlItems[urlItems.length - 1];
+			function getDate() {
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth() + 1; //January is 0!
 
-    <script src="/js/main.js"></script> <!-- Resource JavaScript -->
-  </body>
+				var yyyy = today.getFullYear();
+				if (dd < 10) {
+					dd = '0' + dd;
+				}
+				if (mm < 10) {
+					mm = '0' + mm;
+				}
+				return mm + '/' + dd + '/' + yyyy;
+			}
+			function addSuccessMessage(txHash) {
+				var div = document.createElement('div');
+				div.setAttribute('class', 'class alert alert-warning alert-dismissable');
+				div.setAttribute('role', 'alert');
+				div.setAttribute('id', txHash);
+				div.innerHTML = `<button aria-hidden="true" class="close" data-dismiss="alert" type="button">&times;</button>
+            <h5>
+                <i class="fa fa-check icon"></i>
+                <p>Tranfer of onwership request is submitted</p>
+            </h5>`;
+				document.getElementById('success-message-container').appendChild(div);
+			}
+			function updateSuccessMessage(txHash) {
+				var successMessage = $('#' + txHash);
+				var successMessageText = successMessage.find("h5");
+				successMessage.removeClass('alert-warning');
+
+				if (status == 1) {
+					successMessage.addClass('alert-success');
+					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has been" +
+						" successfully processed. Please reload to see updated data", "check"));
+				} else if (status == 0) {
+					successMessage.addClass('alert-danger');
+					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has failed", "times"));
+				}
+			}
+			function waitForReceipt(hash, cb) {
+				web3.eth.getTransactionReceipt(hash, function (err, receipt) {
+					if (err) {
+						return;
+					}
+
+					if (receipt && receipt.status) {
+						// Transaction went through
+						if (cb) {
+							cb(receipt);
+						}
+					} else {
+						// Try again in 1 second
+						window.setTimeout(function () {
+							waitForReceipt(hash, cb);
+						}, 1000);
+					}
+				});
+			}
+			function getSuccessMessage(txHash, message, icon) {
+				return `
+              <i class="fa fa-` + icon + ` icon"></i>
+              <p>` + message + `</p>`;
+			}
+			$("#confirm").click(function (e) {
+				event.preventDefault();
+				var data = {
+					title: "Arrival confirmed",
+					date: getDate(),
+					location: "7Gate academy",
+					description: "Product arrival has been confirmed"
+				}
+				var request = { publicKey: id, data: data };
+				smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, { from: web3.eth.accounts[0] })
+					.then(function (txHash) {
+						console.log('Transaction sent')
+						console.dir(txHash)
+						addSuccessMessage(txHash);
+						waitForReceipt(txHash, function(receipt){
+							$.post("/form/submitConfirm", request)
+								.done(function (data) {
+									if (!data)
+										return;
+									updateSuccessMessage(txHash, receipt.status);
+								});
+						});
+					})
+
+
+			})
+		})
+	</script>
+</body>
+
 </html>

@@ -29,8 +29,8 @@ img {
 }
 
 h1, h2 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: bold !important;
 }
 
 /* -------------------------------- 
@@ -51,7 +51,7 @@ Vertical Timeline - by CodyHouse.co
 -------------------------------- */
 header {
   height: 200px;
-  line-height: 200px;
+  line-height: 200px !important;
   text-align: center;
   background: #303e49;
 }
@@ -272,8 +272,16 @@ header h1 {
   background: #acb7c0;
   color: white;
   border-radius: 0.25em;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-
+.info {
+  background: skyblue!important;
+ 
+}
+.info:hover{
+  background: lightskyblue!important;
+}
 .cd-timeline__read-more:hover {
   background-color: #bac4cb;
 }
