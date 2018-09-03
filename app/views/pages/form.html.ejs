@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="/css/form.css">
+  <!-- form style -->
+  <link rel="stylesheet" href="/css/demo.css">
+  <!-- Demo style -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Resource style -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <!-- Resource style -->
+</head>
+
+<body>
+  <header>
+    <div class="cd-nugget-info">
+      <a href="/">
+				<span>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+						<style type="text/css">
+							.cd-nugget-info-arrow{fill:#383838;}
+						</style>
+						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+					</svg>
+				</span>
+				Go back to Home page
+			</a>
+      <a href="/">
+				<span>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+						<style type="text/css">
+							.cd-nugget-info-arrow{fill:#383838;}
+						</style>
+						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+					</svg>
+				</span>
+				Sign out
+			</a>
+    </div>
+    <!-- cd-nugget-info -->
+    <h1>Farmer name , img and info</h1>
+  </header>
+
+  <div class="container" style="padding-top:50px;padding-bottom:50px;">
+    <div class="stepwizard" style="padding-bottom:50px;">
+      <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+          <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+          <p>Step 1</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <p>Step 2</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <p>Step 3</p>
+        </div>
+        <div class="stepwizard-step">
+          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <p>Step 4</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <form role="form">
+        <div class="row setup-content" id="step-1">
+          <div class="col-md-4 col-sm-6 mb-4 well">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="/img/apples.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item One</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="form-group">
+              <label class="control-label">Title</label>
+              <input maxlength="100" id="title" type="text" required="required" class="form-control" placeholder="Enter event title" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Date</label>
+              <input maxlength="100" type="text" required="required" id="date" class="form-control date" placeholder="mm/dd/yyyy" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Location</label>
+              <input maxlength="100" id="location" type="text" required="required" class="form-control" placeholder="location" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Description</label>
+              <textarea rows="6" id="description" required="required" class="form-control" placeholder="Please describe what goes into the product and list out the parties involved in this event"></textarea>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="transfer">Transfer of ownership</label>
+              </div>
+            </div>
+            <div class="form-group" id="transferArea">
+              <label class="control-label" for="receipient">Transfer to</label>
+              <input maxlength="100" id="receipient" name="receipient" type="text" required="required" class="form-control" placeholder="Receipient public key"
+              />
+            </div>
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" id="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/custom-bundle.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#transferArea").hide();
+      $('#date').datepicker();
+      $("#transfer").change(function () {
+        if (this.checked)
+          $("#transferArea").fadeIn(600);
+        else
+          $("#transferArea").fadeOut(600);
+      });
+      $("#submit").click(function (e) {
+        event.preventDefault();
+        var url = window.location.pathname;
+        var id = url.substring(url.lastIndexOf('/') + 1);
+        var data = {
+          title: $("#title").val(), date: $("#date").val(),
+          location: $("#location").val(), description: $("#description").val(), receipient: $("#receipient").val()
+        }
+        var request = { publicKey: id, data: data };
+        if (data.receipient) {
+          smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, { from: web3.eth.accounts[0] })
+            .then(function (txHash) {
+              console.log('Transaction sent')
+              console.dir(txHash)
+            })
+        }
+        $.post("submitItem", request)
+          .done(function (data) {
+          });
+      })
+    });
+  </script>
+</body>
+
+</html>

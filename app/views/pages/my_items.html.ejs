@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Business Frontpage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="/css/demo.css">
+  <!-- Demo style -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Resource style -->
+  <link rel="stylesheet" href="/css/reset.css">
+
+</head>
+
+<body>
+
+  <header>
+    <div class="cd-nugget-info">
+      <a href="/">
+				<span>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+						<style type="text/css">
+							.cd-nugget-info-arrow{fill:#383838;}
+						</style>
+						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+					</svg>
+				</span>
+				Go back to Home page
+			</a>
+    </div>
+    <!-- cd-nugget-info -->
+    <h1>Farmer name , img and info</h1>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-8" style="padding-top: 50px; padding-bottom:50px">
+        <h2 class="mt-4">What We Do</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi?
+          Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi,
+          natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
+        
+      </div>
+      <div class="col-sm-4" style="padding-top: 50px; padding-bottom:50px">
+        <h2 class="mt-4">Contact Us</h2>
+        <address>
+          <strong>Start Bootstrap</strong>
+          <br>3481 Melrose Place
+          <br>Beverly Hills, CA 90210
+          <br>
+        </address>
+        <address>
+          <abbr title="Phone">P:</abbr> (123) 456-7890
+          <br>
+          <abbr title="Email">E:</abbr>
+          <a href="mailto:#">name@example.com</a>
+        </address>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <% items.forEach(function(item){ %>
+      <% if(item.name && item.publicKey){ %> 
+      <div class="col-sm-4 my-4">
+          <div class="card h-100">
+            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+            <div class="card-body">
+              <h3 class="card-title">
+                <%= item.name %>
+              </h3>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+            </div>
+            <div class="card-footer">
+              <a href="/form/<%= item.publicKey %>" class="btn btn-primary">Find Out More!</a>
+            </div>
+          </div>
+        </div>
+        
+        <% }}) %>
+
+
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
