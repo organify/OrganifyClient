@@ -30,7 +30,7 @@
 			<a href="#" style="padding-left: 30px;" id="signout">
 				Sign out
 			</a>
-			<a href="/myItems" style="padding-left: 30px;">
+			<a href="/myItems" style="padding-left: 30px;" id="myItemsPage">
 				My items
 			</a>
 		</div>
@@ -75,7 +75,7 @@
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="/js/main.js"></script>
 	<script src="/js/custom-bundle.js"></script>
-	<script src="js/session.js"></script>
+	<script src="/js/session.js"></script>
 	<!-- Resource JavaScript -->
 	<script>
 		$(function () {
@@ -102,25 +102,24 @@
 				div.setAttribute('class', 'class alert alert-warning alert-dismissable');
 				div.setAttribute('role', 'alert');
 				div.setAttribute('id', txHash);
-				div.innerHTML = `<button aria-hidden="true" class="close" data-dismiss="alert" type="button">&times;</button>
-            <h5>
-                <i class="fa fa-check icon"></i>
-                <p>Tranfer of onwership request is submitted</p>
-            </h5>`;
+				div.innerHTML = `<div class="infoMsg" id="infoMsg">
+  					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been submitted. Please wait for confirmation.
+					</div>`;
 				document.getElementById('success-message-container').appendChild(div);
 			}
-			function updateSuccessMessage(txHash) {
-				var successMessage = $('#' + txHash);
-				var successMessageText = successMessage.find("h5");
-				successMessage.removeClass('alert-warning');
+			function updateSuccessMessage(txHash, status) {
+				var successMessageText = $("#infoMsg");
+				successMessageText.removeClass('infoMsg');
 
 				if (status == 1) {
-					successMessage.addClass('alert-success');
-					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has been" +
-						" successfully processed. Please reload to see updated data", "check"));
+					successMessageText.addClass('successMsg');
+					successMessageText.html(`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been mined and updated successfully. Please reload to ses changes`);
 				} else if (status == 0) {
-					successMessage.addClass('alert-danger');
-					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has failed", "times"));
+					successMessageText.addClass('dangerMsg');
+					successMessageText.html(`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has failed. Please try again later`);
 				}
 			}
 			function waitForReceipt(hash, cb) {
@@ -142,11 +141,6 @@
 					}
 				});
 			}
-			function getSuccessMessage(txHash, message, icon) {
-				return `
-              <i class="fa fa-` + icon + ` icon"></i>
-              <p>` + message + `</p>`;
-			}
 			$("#confirm").click(function (e) {
 				event.preventDefault();
 				var data = {
@@ -161,16 +155,16 @@
 						console.log('Transaction sent')
 						console.dir(txHash)
 						addSuccessMessage(txHash);
-						waitForReceipt(txHash, function(receipt){
-							$.post("/form/submitConfirm", request)
-								.done(function (data) {
-									if (!data)
-										return;
-									updateSuccessMessage(txHash, receipt.status);
-								});
+						waitForReceipt(txHash, function (receipt) {
+							if (!data)
+								return;
+							updateSuccessMessage(txHash, receipt.status);
 						});
 					})
+				$.post("/form/submitConfirm", request)
+					.done(function (data) {
 
+					});
 
 			})
 		})

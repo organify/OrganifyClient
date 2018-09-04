@@ -57,7 +57,7 @@ function saveData(data, keyObject) {
     const txSigned = driver.Transaction.signTransaction(tx, keyObject.privateKey)
 
     // Send the transaction off to BigchainDB
-
+    debugger;
     conn.postTransactionCommit(txSigned)
         .then(retrievedTx => console.log('Transaction', retrievedTx.id, 'successfully posted.'))
 

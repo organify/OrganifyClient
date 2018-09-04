@@ -71,7 +71,6 @@ pagesController.submitItem = function () {
 }
 pagesController.submitConfirm = function () {
   var requestObj = this.request.body;
-  var current = this;
   var item = {
     product: {
       name: requestObj.name,
@@ -80,24 +79,20 @@ pagesController.submitConfirm = function () {
     event: requestObj.data
   };
   var keyObject = {
+    publicKey: "",
+    privateKey: ""
   };
-  instance.getItem.call(publicKeys[0], function (err, result) {
-
-    var productNames = result[0].substring(1).split(';');
-    var itemPublicKeys = result[1].substring(1).split(';');
-    var itemPrivateKeys = result[2].substring(1).split(';');
-    for (var i = 0; i < productNames.length; i++) {
-      if (itemPublicKeys[i] == requestObj.publicKey) {
-        item.product.name = productNames[i];
-        keyObject.publicKey = itemPublicKeys[i];
-        keyObject.privateKey = itemPrivateKeys[i];
-      }
+  for (var i = 0; i < allProducts.length; i++) {
+    debugger;
+    if (allProducts[i].publicKey == requestObj.publicKey) {
+      item.product.name = allProducts[i].name;
+      keyObject.publicKey = allProducts[i].publicKey;
+      keyObject.privateKey = allProducts[i].privateKey;
     }
-
-    txService.saveData(item, keyObject);
-    current.res.end("true");
-    return true;
-  });
+  }
+  txService.saveData(item, keyObject);
+  this.res.end("true");
+  return true;
 }
 pagesController.signIn = function () {
   var data = this.request.body;
@@ -121,7 +116,10 @@ pagesController.myItems = function () {
     var itemPrivateKeys = result[2].substring(1).split(';');
     for (var i = 0; i < productNames.length; i++) {
       userSession[publicKeys[0]][itemPublicKeys[i]] = { privateKey: itemPrivateKeys[i], name: productNames[i] };
-      var currentProduct = { name: productNames[i], publicKey: itemPublicKeys[i], owner: publicKeys[0] };
+      var currentProduct = {
+        name: productNames[i], publicKey: itemPublicKeys[i], owner: publicKeys[0],
+        privateKey: itemPrivateKeys[i]
+      };
       addProduct(currentProduct);
       current.items.push(currentProduct);
     }
