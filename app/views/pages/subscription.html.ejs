@@ -19,9 +19,6 @@
 			<a href="/">
 				<span>
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<style type="text/css">
-							.cd-nugget-info-arrow{fill:#383838;}
-						</style>
 						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
 					</svg>
 				</span>
@@ -29,11 +26,11 @@
 			</a>
 		</div>
 		<!-- cd-nugget-info -->
-		<h1>Farmer name , img and info</h1>
+		<h1 class="title">Farmer name , img and info</h1>
 	</header>
 	<div class="login100-form validate-form">
 		<span class="login100-form-title p-b-34">
-                           New Month Price
+                           Payment plan price
                        </span>
 
 		<select id="selectBox" >
@@ -53,12 +50,6 @@
 		</div>
 
 		<div id="paymentbutton" class="container-login100-form-btn">
-		</div>
-
-		<div class="w-full text-center p-t-27 p-b-239">
-			<span class="txt1">
-                               Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in wei.
-                           </span>
 		</div>
 
 		<div class="w-full text-center">
@@ -118,3 +109,89 @@
 </body>
 
 </html>
+<style type="text/css">
+	.cd-nugget-info a{
+		color: black;
+	}
+	.cd-nugget-info a span{
+		color: black;
+	}
+	.cd-nugget-info-arrow{
+		fill:#383838;
+	}
+	.title{
+		color: steelblue;
+		font-size: 8rem;
+		letter-spacing: 5px;
+	}
+	header{
+		background-image: url(/img/background-payment.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}
+	.login100-form {
+		width: 40%;
+		margin: auto;
+		display: grid;
+		text-align: center;
+		grid-template-rows: 50px 50px 50px 50px 50px 50px;
+		align-items: center;
+	}
+	.login100-form-title {
+		font-family: Poppins-Regular;
+		font-size: 2.5rem;
+		color: darkslategrey;
+		line-height: 1.2;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+	#selectBox {
+		justify-self: center;
+		height: 45px;
+		width: 50%;
+	}
+	#DealPrice {
+		font-family: Poppins-Regular;
+		font-size: 2rem;
+		color: darkslategrey;
+		line-height: 1.2;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+	.login100-form-btn {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	width: 100%;
+    height: 45px;
+	border-radius: 3px;
+	background: #00ad5f;
+	font-family: Montserrat-Bold;
+	font-size: 12px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+  
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+  }
+  
+  .login100-form-btn:hover {
+	background: #333333;
+  }
+</style>
