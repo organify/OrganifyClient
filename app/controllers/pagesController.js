@@ -35,6 +35,12 @@ pagesController.main = function () {
   this.allProducts = allProducts;
   this.render();
 }
+pagesController.admin = function () {
+  //let txIds = await bigChainDb.getTxIds(publicKey);
+  //this.txDataList = await getTxData(txIds);
+  this.title = "Organify-Admin";
+  this.render();
+}
 pagesController.subscription = function () {
   //let txIds = await bigChainDb.getTxIds(publicKey);
   //this.txDataList = await getTxData(txIds);

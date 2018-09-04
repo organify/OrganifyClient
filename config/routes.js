@@ -13,6 +13,7 @@ module.exports = function routes() {
   this.match('form/:productId', 'pages#form');
   this.match('subscription', 'pages#subscription');
   this.match('myItems', 'pages#myItems');
+  this.match('admin', 'pages#admin');
   this.post('signin', 'pages#signIn');
   this.post('form/submitItem', 'pages#submitItem');
   this.post('form/submitConfirm', 'pages#submitConfirm');

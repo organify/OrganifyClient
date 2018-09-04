@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<!-- CSS reset -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- Resource style -->
+	<link rel="stylesheet" href="/css/demo.css">
+	<!-- Demo style -->
+</head>
+
+<body>
+	<header>
+		<div class="cd-nugget-info">
+			<a href="/">
+				<span>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+						<style type="text/css">
+							.cd-nugget-info-arrow{fill:#383838;}
+						</style>
+						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+					</svg>
+				</span>
+				Go back to Home page
+			</a>
+		</div>
+		<!-- cd-nugget-info -->
+		<h1>Farmer name , img and info</h1>
+	</header>
+	<div class="login100-form validate-form">
+		<span class="login100-form-title p-b-34">
+                           New Month Price
+                       </span>
+
+		<select id="selectBox" >
+                           <option>select an option</option>
+                           <option value="aug-18">sep-18</option>
+                           <option>3-months-bundle</option>
+                       </select>
+
+		<div class="container-login100-form-btn">
+			<button class="login100-form-btn"  id="getPrice">
+                               Your total is:
+                           </button>
+		</div>
+
+		<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20">
+			<p id="DealPrice"></p>
+		</div>
+
+		<div id="paymentbutton" class="container-login100-form-btn">
+		</div>
+
+		<div class="w-full text-center p-t-27 p-b-239">
+			<span class="txt1">
+                               Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in wei.
+                           </span>
+		</div>
+
+		<div class="w-full text-center">
+			<a href="/" class="txt3">
+                               Main Page
+                           </a>
+		</div>
+	</div>
+	<!-- cd-timeline -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="/js/custom-bundle.js"></script>
+	<!-- Resource JavaScript -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var priceStore;
+
+			$("#selectBox").change(function(){
+				var selectBox = document.getElementById("selectBox");
+				var paramString = selectBox.options[selectBox.selectedIndex].value;
+				smartContract.getPrice(paramString, (function (err, result) {
+					priceStore = parseFloat(web3.fromWei(result[0].toString(), "ether"));
+					return priceStore;
+				}));
+				var price = document.getElementById("DealPrice");
+				price.innerHTML = ""
+				var appendButton = document.getElementById("paymentbutton");
+				appendButton.innerHTML = ""
+			})
+			$("#getPrice").click(function(e){
+				e.preventDefault();
+				if (priceStore > 0) {
+					var price = document.getElementById("DealPrice");
+					price.innerHTML = "This membership will cost you " + priceStore + " wei";
+					var appendButton = document.getElementById("paymentbutton");
+					appendButton.innerHTML =
+						"<button class=" + "login100-form-btn" + ">" +
+						"Register new parameters." +
+						"</button>";
+				} else {
+					var price = document.getElementById("DealPrice");
+					price.innerHTML = "please select a payment plan"
+				}
+			})
+
+			$("#paymentbutton").click(function(e){
+				e.preventDefault();
+				var selectBox = document.getElementById("selectBox");
+				var paramString = selectBox.options[selectBox.selectedIndex].value;
+				smartContract.subscribe(paramString, {
+					from: web3.eth.accounts[0],
+					value: web3.toWei(parseFloat(priceStore))
+				}, (function (err, result) {
+				 }));
+			})
+		})
+	</script>
+</body>
+
+</html>

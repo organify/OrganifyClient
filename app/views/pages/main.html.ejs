@@ -35,6 +35,8 @@
       <nav role="navigation" class="probootstrap-nav hidden-xs">
         <ul class="probootstrap-main-nav">
           <li class="active"><a href="/">Home</a></li>
+          <li><a href="/myItems" id="myItemsPage">My Items</a></li>
+          <li><a href="#" id="signout">Sign out</a></li>
         </ul>
         <div class="extra-text visible-xs">
           <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
@@ -293,6 +295,7 @@
   <script src="js/scripts.min.js"></script>
   <script src="js/main.min.js"></script>
   <script src="js/custom-bundle.js"></script>
+  <script src="js/session.js"></script>
   <script>
     $(function () {
       const monthNames = ["January18", "February18", "March18", "April18", "May18", "June18",
@@ -318,6 +321,7 @@
           };
           smartContract.hasRole(web3.eth.accounts[0], currentSubscription).then((response) => {
             if (response && response[0]) {
+              sessionStorage.setItem("userLogIn", "true");
               $.post("signin", data, function (data) {
                 if (data) {
                   window.location.href = '/myItems';
