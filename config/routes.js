@@ -9,6 +9,7 @@
 module.exports = function routes() {
   this.root('pages#main');
   this.match('products/:owner/:publicKey', 'pages#product');
+  this.match('products/:publicKey', 'pages#product');
   this.match('form/:productId', 'pages#form');
   this.match('subscription', 'pages#subscription');
   this.match('myItems', 'pages#myItems');
