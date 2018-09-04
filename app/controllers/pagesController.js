@@ -53,21 +53,23 @@ pagesController.form = function () {
   this.render();
 }
 pagesController.submitItem = function () {
+  var current = this;
   var item = {
     product: {
       name: this.request.body.name || userSession[publicKeys[0]][this.request.body.publicKey]["name"],
       imgUrl: ""
     },
+    timeStamp: new Date().toLocaleString(),
     event: this.request.body.data
   };
   var keyObject = {
     publicKey: this.request.body.publicKey,
     privateKey: userSession[publicKeys[0]][this.request.body.publicKey]["privateKey"]
   };
-  txService.saveData(item, keyObject);
+  txService.saveData(item, keyObject).finally(() => 
+  current.res.end("true"));
   //var session = this.request.session.publicKey;
-  this.res.end("true");
-  return true;
+  
 }
 pagesController.submitConfirm = function () {
   var requestObj = this.request.body;
@@ -76,6 +78,7 @@ pagesController.submitConfirm = function () {
       name: requestObj.name,
       imgUrl: ""
     },
+    timeStamp: new Date().toLocaleString(),
     event: requestObj.data
   };
   var keyObject = {
@@ -83,16 +86,14 @@ pagesController.submitConfirm = function () {
     privateKey: ""
   };
   for (var i = 0; i < allProducts.length; i++) {
-    debugger;
     if (allProducts[i].publicKey == requestObj.publicKey) {
       item.product.name = allProducts[i].name;
       keyObject.publicKey = allProducts[i].publicKey;
       keyObject.privateKey = allProducts[i].privateKey;
     }
   }
-  txService.saveData(item, keyObject);
-  this.res.end("true");
-  return true;
+  txService.saveData(item, keyObject).finally(() => 
+  current.res.end("true"));
 }
 pagesController.signIn = function () {
   var data = this.request.body;

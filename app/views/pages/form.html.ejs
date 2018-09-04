@@ -42,8 +42,8 @@
     <!-- cd-nugget-info -->
     <h1>Farmer name , img and info</h1>
   </header>
-
-  <div class="container" style="padding-top:50px;padding-bottom:50px;">
+  <div class="container" id='success-message-container' , style="padding-top:30px"></div>
+  <div class="container" style="padding-top:30px;padding-bottom:50px;">
     <div class="stepwizard" style="padding-bottom:50px;">
       <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
@@ -132,6 +132,23 @@
         else
           $("#transferArea").fadeOut(600);
       });
+      function addSuccessMessage() {
+        var div = document.createElement('div');
+        div.innerHTML = `<div class="infoMsg" id="infoMsg">
+  					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been submitted. Please wait for confirmation.
+					</div>`;
+        document.getElementById('success-message-container').appendChild(div);
+      }
+      function resetForm() {
+        $("#title").val("");
+        $("#date").val("");
+        $("#location").val("");
+        $("#description").val("");
+        $("#receipient").val("");
+        $('#transfer').prop('checked', false);
+        $("#transfer").trigger("change");
+      }
       $("#submit").click(function (e) {
         event.preventDefault();
         var url = window.location.pathname;
@@ -141,16 +158,19 @@
           location: $("#location").val(), description: $("#description").val(), receipient: $("#receipient").val()
         }
         var request = { publicKey: id, data: data };
+
         if (data.receipient) {
           smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, { from: web3.eth.accounts[0] })
             .then(function (txHash) {
               console.log('Transaction sent')
-              console.dir(txHash)
+              console.dir(txHash);
+              $.post("submitItem", request).done(function (data) {
+                resetForm();
+                addSuccessMessage();
+              });
             })
         }
-        $.post("submitItem", request)
-          .done(function (data) {
-          });
+
       })
     });
   </script>

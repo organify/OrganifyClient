@@ -147,7 +147,8 @@
 					title: "Arrival confirmed",
 					date: getDate(),
 					location: "7Gate academy",
-					description: "Product arrival has been confirmed"
+					description: "Product arrival has been confirmed",
+					receipient: ""
 				}
 				var request = { publicKey: id, data: data };
 				smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, { from: web3.eth.accounts[0] })
