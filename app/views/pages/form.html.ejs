@@ -170,7 +170,12 @@
               });
             })
         }
-
+        else{
+          $.post("submitItem", request).done(function (data) {
+                resetForm();
+                addSuccessMessage();
+              });
+        }
       })
     });
   </script>

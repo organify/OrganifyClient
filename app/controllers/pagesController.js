@@ -2,23 +2,14 @@
 var txService = require('../services/txDataAsyncService.js')
 var locomotive = require('locomotive')
   , Controller = locomotive.Controller;
-var Web3 = require('web3');
-var util = require('ethereumjs-util');
-var tx = require('ethereumjs-tx');
-var fs = require('fs');
+var ethereumService = require('../services/ethereumService.js')
 
-var rawAbi = fs.readFileSync('./abi.txt', 'utf8');
-var abi = JSON.parse(rawAbi);
-var web3 = new Web3(
-  new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/682195f0b13a4811998ba46dfcb2e1d4')
-);
+
 var pagesController = new Controller();
 var userSession = {};
 var allProducts = [];
 var publicKeys = [];
-//{ethereumpublickey: {signin: true, publicKeyA: {name: apple, privaeKey: privateKeyA}}}
-var contract = web3.eth.contract(abi);
-var instance = contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
+
 
 
 function wait(ms) {
@@ -111,7 +102,7 @@ pagesController.signIn = function () {
 pagesController.myItems = function () {
   var current = this;
   this.items = []
-  instance.getItem.call(publicKeys[0], function (err, result) {
+  ethereumService.instance.getItem.call(publicKeys[0], function (err, result) {
     var productNames = result[0].substring(1).split(';');
     var itemPublicKeys = result[1].substring(1).split(';');
     var itemPrivateKeys = result[2].substring(1).split(';');
