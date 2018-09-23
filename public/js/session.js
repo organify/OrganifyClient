@@ -1,14 +1,17 @@
-$(document).ready(function(){
-    $("#signout").click(function(e){
+$(document).ready(function () {
+    $("#signout").click(function (e) {
         e.preventDefault();
-        sessionStorage.setItem("userLogIn", "false");
-        window.location.href = '/';
+        $.post("signOut", function () {
+            sessionStorage.setItem("userLogIn", "false");
+            window.location.href = '/';
+        });
+
     })
-    if(sessionStorage.getItem("userLogIn") == "true"){
+    if (sessionStorage.getItem("userLogIn") == "true") {
         $("#signin").hide();
-    }
-    else{
+    } else {
         $("#myItemsPage").hide();
         $("#signout").hide();
     }
+
 })
