@@ -525,9 +525,11 @@
         }
         $.post("signin", data, function (data) {
                 if (data == "200") {
+                  sessionStorage.setItem("userLogIn", "true");
                   window.location.href = '/myItems';
                 }
                 else {
+                  sessionStorage.setItem("userLogIn", "false");
                   alert("Fail to signin, please try again later");
                 }
 
