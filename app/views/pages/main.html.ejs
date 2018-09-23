@@ -519,7 +519,19 @@
     $(function () {
       $("#validate").click(function (e) {
         event.preventDefault();
-        $.post("signIn");
+        var data = {
+          userName: "barbra",
+          password: "ourpassword"
+        }
+        $.post("signin", data, function (data) {
+                if (data == "200") {
+                  window.location.href = '/myItems';
+                }
+                else {
+                  alert("Fail to signin, please try again later");
+                }
+
+              });
       })
     });
   </script>

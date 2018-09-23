@@ -7,7 +7,7 @@ var sessionService = require('../services/sessionService.js')
 var pagesController = new Controller();
 var userSession = {};
 var allProducts = [];
-var publicKeys = [];
+var publicKeys = ["0x8929d658b2647f09a318ebd756f49f299f82c7d9"];
 
 
 
@@ -103,11 +103,11 @@ pagesController.signIn = function () {
   else
     this.res.end("404");
 }
-// process.stdout.write(pagesController.signIn);
 
 pagesController.myItems = function () {
   if(!sessionService.auth(this.req))
     res.sendStatus(401);
+
   var current = this;
   this.items = []
   ethereumService.instance.getItem.call(publicKeys[0], function (err, result) {
