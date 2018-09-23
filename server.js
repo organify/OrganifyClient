@@ -1,5 +1,5 @@
-var locomotive = require('locomotive')
-  , bootable = require('bootable');
+var locomotive = require('locomotive'),
+  bootable = require('bootable');
 
 
 
@@ -22,10 +22,24 @@ app.phase(locomotive.boot.httpServer(3000, '0.0.0.0'));
 // Boot the application.  The phases registered above will be executed
 // sequentially, resulting in a fully initialized server that is listening
 // for requests.
-app.boot(function(err) {
+app.boot(function (err) {
   if (err) {
     console.error(err.message);
     console.error(err.stack);
     return process.exit(-1);
   }
 });
+
+
+
+// Use the following code to connect to AWS. AWS offers service to store password and login information.
+
+// // To set globally
+// AWS.config.credentials =
+//     new AWS.SharedIniFileCredentials({ profile: 'my_profile_name' });
+
+//  // To set for a particular service client
+// var creds = new AWS.SharedIniFileCredentials({ profile: 'my_profile_name' });
+// var client = new AWS.EC2({ credentials: creds });
+
+// https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/

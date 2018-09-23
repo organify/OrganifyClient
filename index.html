@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/custom.css">
+  <link rel="stylesheet" href="build/css/style.min.css">
+
+</head>
+
+<body class="front-page">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
+    <div class="container">
+      <a href="index.html" class="navbar-brand ">Organify</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="#top-link" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#page-header" class="nav-link">Our Farmers</a>
+          </li>
+          <li class="nav-item">
+            <a href="#solution-heading" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#aboutus-header" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contactus" class="nav-link">Contact</a>
+          </li>
+          <li class='button-hidde'>
+            <a class='farmer-login'>farmer login</a>
+          </li>
+          <li>
+          <form class="form-wrapper">
+            <div>
+              <input id="username" type="text" name="username" value="username">
+            </div>
+            <div>
+              <input id="password" type="text" name="password" value="password">
+            </div>
+            <p class='probootstrap-animate'><a class='btn btn-ghost btn-ghost-white' id="validate">Login</a></p>
+          </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SHOWCASE SLIDER -->
+  <section id="showcase" class="mt-5">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+    <div class="carousel-inner" id="top-link">
+      <div class="carousel-item carousel-image-1 active">
+        <div class="container">
+          <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+            <h1 class="display-3">Organify</h1>
+              <p class="lead">Our goal is to bring transparency your table by giving you access to all the information about your organic food.</p>
+              <input id="getstarted" type="button" value="Ask Us About Your Food" class="btn btn-danger btn-lg">
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item carousel-image-2">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Consumer Benefits</h1>
+              <p class="lead">You can use our system to get fresh informations about the product you are interested in. 
+              We do not get involved with entering product information on the system. That means that the information in our website is coming directly from the farmers.</p>
+              <a href="#solution-heading" class="btn btn-primary btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-3">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Our Farmers</h1>
+              <p class="lead">We work with selected organic farmers in BC, Canada.</p>
+              <a href="#solution-heading" class="btn btn-success btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+  </section>
+
+  <!-- MARKET NEEDS SECTION -->
+  <!-- PAGE HEADER -->
+  <header id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center text-dark">
+          <a href="http://www.pasturetoplate.ca/"><img src="public/img/farmer logo.png" alt="Pasture to Plate"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+
+          <h1>About Pasture to Plate:</h1>
+          <p>The PASTURE TO PLATE BUTCHER SHOP on 1420 Commercial Drive not only stocks the finest quality certified organic meats and organic meat delicatessen, but also provides the connection to Rafter 25 Ranch where the animals are born, grown and fattened organically and it connects to certified organic Chilcotin Harvest, where the animals are harvested respectfully. You will see that PASTURE TO PLATE stands for transparency and lives up to what we say we are doing. Being totally vertically integrated assures the integrity of the organism, PASTURE TO PLATE, and it assures that you, as the valued customer and quintessential link in the chain of wholesome food production, are paying for what you see and what you want and what you know is good for you.
+          </p>
+
+        </div>
+        <div class="col-md-6">
+          <img src="public/img/farmer picture.jpg" alt="" class="img-fluid rounded-circle d-none d-md-block about-img pt-5">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ICON BOXES -->
+  
+
+  <!-- OUR SOLUTION SECTION -->
+  <section id="solution-heading" class="p-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-utensils"></i>
+              <h3>Organic meat</h3>
+              <p>Find more information on the meats from Pasture to Plate!</p>
+              <a href="/products/6FWm1C8zCGFxmy2RE3GWp7busYVQVLKxBE3bzuM2RVho" class="btn btn-success">more information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Us Header -->
+  <section id="aboutus-header">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="aboutus aboutis-header" class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer33" data-height="562" data-width="562">
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="public/img/lucas.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center "><strong>Lucas Da Cunha</strong>
+              <br />Blockchain Developer / Business Expertise</p>
+            <div class="card-body">
+            </div>
+          </a>
+
+        </div>
+
+        <div class="modal text-secondary" id="farmer33">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Lucas Da Cunha</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>I have a vision of a future where blockchain will guide our supply chain. Big data
+                  will control businesses interactions based on the information. Wanting to be a part
+                  of the future I am currently looking to build a career in programming. Some of the
+                  skills I have developed, so far, are:</p>
+
+                <p>JavaScript(Jquery, ES2015), WordPress(MySQL), PHP, Ruby, HTML5, CSS, SASS, Git and
+                  GitHub Gulp, Webpack, Node.js. See more at "https://github.com/Lcunha25"
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer11" data-height="56" data-width="562">
+            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="public/img/nhat.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center"><strong>Nhat Nguyen</strong><br />
+              Business Developer</p>
+            <div class="card-body">
+            </div>
+          </a>
+
+        </div>
+
+        <div class="modal text-secondary" id="farmer11">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Nhat Nguyen</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Experienced Consultant with a demonstrated history of working in the technology
+                  products in the banking industry. Skilled in Microsoft Excel, Financial Modelling,
+                  Agile Methodology and Stakeholder Management .
+                </p>
+                <p>
+                  Strong support professional with a Chartered Accountant Program focused in Taxation
+                  and Management from Institute of Chartered Accountants in Australia.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer22" data-height="562" data-width="562">
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="public/img/alicia.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center"><strong>Alicia (Hoang Dieu Anh) Nguyen</strong>
+              <br />Blockchain Developer / Back End Developer</p>
+            <div class="card-body">
+            </div>
+          </a>
+
+        </div>
+
+        <div class="modal text-secondary" id="farmer22">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Alicia (Hoang Dieu Anh) Nguyen</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>I have been known for being a quick learner with a can-do attitude and the ability
+                  to push myself out of my comfort zone. I completed my Bachelor degree in Australia
+                  and after 4 years working full time as a full stack developer, I decided to apply
+                  for Canada working holiday visa to look for new challenges. I believe that my
+                  skills and overseas experiences will bring innovative ideas and multifaceted
+                  technical solutions.
+                </p>
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal text-secondary" id="farmer44">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Justin Cervantes</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>As an emerging technology enthuasiast, I am always looking for ways that technology
+                  will revolutionize our lives. Coming from the freight forwarding and civil service,
+                  I offer a broader perspective which allows me to think outside of the box.</p>
+                <p> I am currently a computing student working towards a diploma in programming. I will
+                  finish my program in January of 2020.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 center-block text-center mb-1 mt-1">
+
+      <a href="files/Research.zip" download>
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block">Download Our
+          Research and Documents</button></a>
+    </div>
+
+  </section>
+
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="text-center p-5 bg-dark text-white">
+    <div class="container">
+      <div class="row-5">
+        <div class="col">
+          <h1>Sign up for our progress report on our technical solution!</h1>
+          <p>We will only email you if we have something substantial to report.</p>
+          <form class="form justify-content-center">
+
+            <!-- ><input type="text" id="MAILMSG" name="MAILMSG" class="d-inline col-md-6 form-control mb-2 mr-2" placeholder="Enter Message"> -->
+
+            <input type="text" id="MAILNAME" name="MAILNAME" class="d-inline col-md-6 form-control mb-2 mr-2"
+              placeholder="Enter Name">
+
+            <input type="text" id="MAILEMAIL" name="MAILEMAIL" class="d-inline col-md-6 form-control mb-2 mr-1"
+              placeholder="Enter Email">
+
+            <br />
+            <a data-toggle="modal" data-target="#registrationStatus">
+              <button id="addme" class="btn btn-primary mb-2">Submit</button>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal text-secondary" id="registrationStatus">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mailing Registration Status</h5>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h3 id="regStat"></h3>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contactus" class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copyright &copy;
+            <span id="year"></span> Organify</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- VIDEO MODAL -->
+  <div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'>
+    <div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'>
+    </div><iframe width='400px' height='400px' src=' https://webchat.botframework.com/embed/FarmToFarm2?s=fqJ6eTli0ms.cwA.95U.mJxY_7XnOrIIg6gbUP7KHQXTQPJLq7O-i-JnUO7GWQk  '></iframe>
+  </div>
+  <script>
+    (function () {
+      document.querySelector('#botTitleBar').addEventListener('click', function (e) {
+        var botDiv = document.querySelector('#botDiv');
+        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
+      });
+    }());
+  </script>
+
+  <script>
+    (function () {
+      document.querySelector('#getstarted').addEventListener('click', function (e) {
+        var botDiv = document.querySelector('#botDiv');
+        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
+      });
+    }());
+  </script>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="./public/js/scripts.min.js"></script>
+  <script src="public/js/main.min.js"></script>
+  <script src="public/js/login.js"></script>
+  <script src="public/js/custom-bundle.js"></script>
+  <script src="public/js/session.js"></script>
+  <script src="build/js/concat.min.js"></script>
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+
+    // Configure Slider
+    $('.carousel').carousel({
+      interval: 1000000,
+      pause: 'hover'
+    });
+
+    // Lightbox Init
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+
+    //Confirmation of registration
+    $("#addme").click(function (event) {
+      var User_Name = document.getElementById('MAILNAME').value;
+      var User_Email = document.getElementById('MAILEMAIL').value;
+      var register = {
+        "User_Name": User_Name,
+        "User_Email": User_Email
+      };
+      JSON.stringify(register);
+      console.log(register);
+
+      $.ajax({
+        url: "newsletter.php",
+        dataType: "json",
+        data: register,
+        type: "POST",
+        success: function (data) {
+          if (data["error"] == "yes") {
+            document.getElementById("regStat").innerHTML = "Error: " + data["return"];
+          }
+          if (data["error"] == "no") {
+            document.getElementById("regStat").innerHTML = data["return"];
+            console.log("No problem");
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR.statusText);
+        }
+      });
+    });
+
+
+    // Video Play
+    $(function () {
+      // Auto play modal video
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC +
+          "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $("#validate").click(function (e) {
+        event.preventDefault();
+        /*
+        var userName = 'lucas';
+        var password = 'lucas';
+        var userNameBox = document.getElementById('username').value;
+        var passwordBox = document.getElementById('password').value;
+        if (userNameBox === userName && passwordBox === password) {
+          debugger;
+          var url = window.location.pathname;
+          var id = url.substring(url.lastIndexOf('/') + 1);
+          var data = {
+            title: $("#title").val(),
+            date: $("#date").val(),
+            location: $("#location").val(),
+            description: $("#description").val(),
+            receipient: $("#receipient").val()
+          }
+          var request = {
+            publicKey: id,
+            data: data
+          };
+          if (data.receipient) {
+            smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, {
+                from: web3.eth.accounts[0]
+              })
+              .then(function (txHash) {
+                console.log('Transaction sent')
+                console.dir(txHash)
+              })
+          }
+          */
+        $.post("signIn");
+        /*, request).done(function (data) {});*/
+        /*
+      } else {
+          alert('please fix name and password')
+        }
+              */
+      })
+    });
+  </script>
+</body>
+
+</html>

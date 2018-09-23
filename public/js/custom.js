@@ -15,10 +15,11 @@ function startApp(web3) {
   const contract = new EthContract(eth)
   initContract(contract)
 }
+
 function initContract(contract) {
-    const Contract = contract(abi.abi);
-    const thisContract = Contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
-	window.smartContract = thisContract;
+  const Contract = contract(abi.abi);
+  const thisContract = Contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
+  window.smartContract = thisContract;
 }
 
 startApp(web3);

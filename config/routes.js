@@ -14,7 +14,8 @@ module.exports = function routes() {
   this.match('subscription', 'pages#subscription');
   this.match('myItems', 'pages#myItems');
   this.match('admin', 'pages#admin');
-  this.post('signin', 'pages#signIn');
+  this.match('frontPage', 'pages#frontPage');
+  this.post('signIn', 'pages#signIn');
   this.post('form/submitItem', 'pages#submitItem');
   this.post('form/submitConfirm', 'pages#submitConfirm');
 }
