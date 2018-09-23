@@ -80,7 +80,7 @@ input {
 
 #solution-heading {
     position: relative;
-    min-height: 200px;
+    min-height: 152px;
     background: url('/img/organic\ kettle.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -105,6 +105,14 @@ input {
     text-align: center;
     color: #fff;
 }
+
+#our-farmers {
+    position: relative;
+    min-height: 150px;
+    text-align: center;
+    color: black;
+}
+
 
 #video-play a {
     color: #fff;
@@ -176,4 +184,32 @@ input {
 
 .product-header h1 {
     letter-spacing: 2px;
+}
+
+.col-md-6 .img-fluid {
+    width: 600px;
+    height: 600px;
+}
+
+.col-md-6 h1 {
+    text-align: center;
+}
+
+li {
+    border-right: #444 3px solid;
+}
+
+.farmer-login {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+li .form-wrapper div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container .navbar-brand {
+    text-transform: uppercase;
+    color: #57a757 !important;
 }

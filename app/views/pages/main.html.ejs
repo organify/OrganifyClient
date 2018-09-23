@@ -25,7 +25,7 @@
 <body class="front-page">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
     <div class="container">
-      <a href="index.html" class="navbar-brand ">Organify</a>
+      <a class="navbar-brand ">Organify.</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,7 +35,7 @@
             <a href="#top-link" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#page-header" class="nav-link">Our Farmers</a>
+            <a href="#our-farmers" class="nav-link">Our Farmers</a>
           </li>
           <li class="nav-item">
             <a href="#solution-heading" class="nav-link">Products</a>
@@ -55,7 +55,7 @@
                 <input id="username" type="text" name="username" placeholder="username">
               </div>
               <div>
-                <input id="password" type="text" name="password" placeholder="password">
+                <input id="password" type="password" name="password" placeholder="password">
               </div>
               <p class='probootstrap-animate'><a class='btn btn-ghost btn-ghost-white' id="validate">Login</a></p>
             </form>
@@ -119,36 +119,26 @@
   </section>
 
   <!-- MARKET NEEDS SECTION -->
-  <!-- PAGE HEADER -->
-  <header id="page-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 m-auto text-center text-dark">
-          <a href="http://www.pasturetoplate.ca/"><img src="img/farmer logo.png" alt="Pasture to Plate"></a>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <section id="about" class="py-3">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
 
-          <h1>About Pasture to Plate:</h1>
-          <p>The PASTURE TO PLATE BUTCHER SHOP on 1420 Commercial Drive not only stocks the finest quality certified
-            organic meats and organic meat delicatessen, but also provides the connection to Rafter 25 Ranch where the
-            animals are born, grown and fattened organically and it connects to certified organic Chilcotin Harvest,
-            where the animals are harvested respectfully. You will see that PASTURE TO PLATE stands for transparency
-            and lives up to what we say we are doing. Being totally vertically integrated assures the integrity of the
-            organism, PASTURE TO PLATE, and it assures that you, as the valued customer and quintessential link in the
-            chain of wholesome food production, are paying for what you see and what you want and what you know is good
-            for you.
+          <h1>About Organify:</h1>
+          <br>
+          <p>Organify is working to bring the next level in food transparency to your table .
+            We are working with selected farmers in Canada as a way to allow them to, directly tell their stories to
+            consumers.
+            Our goal is to allow consumers to make decisions based on the information they want to know about their
+            product,
+            not depending on ineficient certifications that have high cost to farmers and low trust level from
+            consumers.
           </p>
 
         </div>
         <div class="col-md-6">
-          <img src="img/farmer picture.jpg" alt="" class="img-fluid rounded-circle d-none d-md-block about-img pt-5">
+          <img src="img/bg-01.jpg" alt="" class="img-fluid rounded-circle d-none d-md-block about-img pt-5">
         </div>
       </div>
     </div>
@@ -160,6 +150,17 @@
 
 
   <!-- OUR SOLUTION SECTION -->
+  <section id="solution-heading">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            <h1>See more informations about your product</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="solution-heading" class="p-5">
     <div class="container">
       <div class="row mb-4">
@@ -167,7 +168,7 @@
           <div class="card bg-danger text-white text-center">
             <div class="card-body">
               <i class="fas fa-utensils"></i>
-              <h3>Organic meat</h3>
+              <h3>Pasture to Plate <br> Organic Meat</h3>
               <p>Find more information on the meats from Pasture to Plate!</p>
               <a href="/products/6FWm1C8zCGFxmy2RE3GWp7busYVQVLKxBE3bzuM2RVho" class="btn btn-success">more information</a>
             </div>
@@ -178,13 +179,39 @@
   </section>
 
 
+  <!-- PAGE HEADER -->
+
+  <!-- About Us Header -->
+
+  <section id="our-farmers">
+    <div class="white-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            <h1>Partner Farms: </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center text-dark">
+          <a href="http://www.pasturetoplate.ca/"><img src="img/farmer logo.png" alt="Pasture to Plate"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Us Header -->
   <section id="aboutus-header">
     <div class="dark-overlay">
       <div class="row">
         <div class="col">
           <div class="container p-5">
-            <h1>OUR TEAM</h1>
+            <h1>Our Team</h1>
           </div>
         </div>
       </div>
@@ -348,22 +375,12 @@
     <div class="container">
       <div class="row-5">
         <div class="col">
-          <h1>Sign up for our progress report on our technical solution!</h1>
-          <p>We will only email you if we have something substantial to report.</p>
-          <form class="form justify-content-center">
-
-            <!-- ><input type="text" id="MAILMSG" name="MAILMSG" class="d-inline col-md-6 form-control mb-2 mr-2" placeholder="Enter Message"> -->
-
-            <input type="text" id="MAILNAME" name="MAILNAME" class="d-inline col-md-6 form-control mb-2 mr-2"
-              placeholder="Enter Name">
-
-            <input type="text" id="MAILEMAIL" name="MAILEMAIL" class="d-inline col-md-6 form-control mb-2 mr-1"
-              placeholder="Enter Email">
-
-            <br />
-            <a data-toggle="modal" data-target="#registrationStatus">
-              <button id="addme" class="btn btn-primary mb-2">Submit</button>
-            </a>
+          <h1>Get in touch</h1>
+          <p>Please send us an e-mail with your thought, or if you would like to sign up to our mailing list.</p>
+          <form method="post" action="mailto:founders@organify.io?subject=Website%20Signup"">
+            <input id="
+            addme" class="btn btn-primary mb-2" type="submit" value="Send Email" />
+          </form>
           </form>
         </div>
       </div>
@@ -415,29 +432,6 @@
   </div>
 
 
-  <div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'>
-    <div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'>
-    </div><iframe width='400px' height='400px' src=' https://webchat.botframework.com/embed/FarmToFarm2?s=fqJ6eTli0ms.cwA.95U.mJxY_7XnOrIIg6gbUP7KHQXTQPJLq7O-i-JnUO7GWQk  '></iframe>
-  </div>
-  <script>
-    (function () {
-      document.querySelector('#botTitleBar').addEventListener('click', function (e) {
-        var botDiv = document.querySelector('#botDiv');
-        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
-      });
-    }());
-  </script>
-
-  <script>
-    (function () {
-      document.querySelector('#getstarted').addEventListener('click', function (e) {
-        var botDiv = document.querySelector('#botDiv');
-        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
-      });
-    }());
-  </script>
-
-
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -452,6 +446,17 @@
   <script src="js/custom-bundle.js"></script>
   <script src="js/session.js"></script>
   <script src="js/concat.min.js"></script>
+  <script src="https://lex-web-ui-codebuilddeploy-10r1q39yw-webappbucket-17j3upuyky1ll.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
+  <script>
+    var loaderOpts = {
+      baseUrl: 'https://lex-web-ui-codebuilddeploy-10r1q39yw-webappbucket-17j3upuyky1ll.s3.amazonaws.com/'
+    };
+    var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+    loader.load()
+      .catch(function (error) {
+        console.error(error);
+      });
+  </script>
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
@@ -519,21 +524,22 @@
     $(function () {
       $("#validate").click(function (e) {
         event.preventDefault();
+        var userNameBox = document.getElementById('username').value;
+        var passwordBox = document.getElementById('password').value;
         var data = {
-          userName: "barbra",
-          password: "ourpassword"
+          userName: userNameBox,
+          password: passwordBox
         }
         $.post("signin", data, function (data) {
-                if (data == "200") {
-                  sessionStorage.setItem("userLogIn", "true");
-                  window.location.href = '/myItems';
-                }
-                else {
-                  sessionStorage.setItem("userLogIn", "false");
-                  alert("Fail to signin, please try again later");
-                }
+          if (data == "200") {
+            sessionStorage.setItem("userLogIn", "true");
+            window.location.href = '/myItems';
+          } else {
+            sessionStorage.setItem("userLogIn", "false");
+            alert("Fail to signin, please try again later");
+          }
 
-              });
+        });
       })
     });
   </script>
