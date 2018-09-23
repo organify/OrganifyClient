@@ -31,6 +31,13 @@
 				</span>
 				Go back to Home page
 			</a>
+			<<<<<<< HEAD=======<a href="#" style="padding-left: 30px;" id="signout">
+				Sign out
+				</a>
+				<a href="/myItems" style="padding-left: 30px;" id="myItemsPage">
+					My items
+				</a>
+				>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 		</div>
 		<!-- cd-nugget-info -->
 		<h1>Pasture to Plate</h1>
@@ -74,7 +81,7 @@
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="/js/main.js"></script>
 	<script src="/js/custom-bundle.js"></script>
-	<script src="js/session.js"></script>
+	<script src="/js/session.js"></script>
 	<!-- Resource JavaScript -->
 	<script>
 		$(function () {
@@ -102,7 +109,8 @@
 				var div = document.createElement('div');
 				div.setAttribute('class', 'class alert alert-warning alert-dismissable');
 				div.setAttribute('role', 'alert');
-				div.setAttribute('id', txHash);
+				div.setAttribute('id', txHash); <<
+				<< << < HEAD
 				div.innerHTML =
 					`<button aria-hidden="true" class="close" data-dismiss="alert" type="button">&times;</button>
             <h5>
@@ -115,15 +123,33 @@
 			function updateSuccessMessage(txHash) {
 				var successMessage = $('#' + txHash);
 				var successMessageText = successMessage.find("h5");
-				successMessage.removeClass('alert-warning');
+				successMessage.removeClass('alert-warning'); ===
+				=== =
+				div.innerHTML =
+					`<div class="infoMsg" id="infoMsg">
+  					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been submitted. Please wait for confirmation.
+					</div>`;
+				document.getElementById('success-message-container').appendChild(div);
+			}
+
+			function updateSuccessMessage(txHash, status) {
+				var successMessageText = $("#infoMsg");
+				successMessageText.removeClass('infoMsg'); >>>
+				>>> > d5f717cb50ac8da10892384a14e880e61bc7ef11
 
 				if (status == 1) {
-					successMessage.addClass('alert-success');
-					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has been" +
-						" successfully processed. Please reload to see updated data", "check"));
+					successMessageText.addClass('successMsg');
+					successMessageText.html(
+						`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been mined and updated successfully. Please reload to ses changes`
+					);
 				} else if (status == 0) {
-					successMessage.addClass('alert-danger');
-					successMessageText.html(getSuccessMessage(txHash, "Tranfer of onwership request has failed", "times"));
+					successMessageText.addClass('dangerMsg');
+					successMessageText.html(
+						`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has failed. Please try again later`
+					);
 				}
 			}
 
@@ -145,20 +171,24 @@
 						}, 1000);
 					}
 				});
-			}
+			} <<
+			<< << < HEAD
 
 			function getSuccessMessage(txHash, message, icon) {
 				return `
               <i class="fa fa-` + icon + ` icon"></i>
               <p>` + message + `</p>`;
-			}
+			} ===
+			=== = >>>
+			>>> > d5f717cb50ac8da10892384a14e880e61bc7ef11
 			$("#confirm").click(function (e) {
 				event.preventDefault();
 				var data = {
 					title: "Arrival confirmed",
 					date: getDate(),
 					location: "7Gate academy",
-					description: "Product arrival has been confirmed"
+					description: "Product arrival has been confirmed",
+					receipient: ""
 				}
 				var request = {
 					publicKey: id,
@@ -172,15 +202,15 @@
 						console.dir(txHash)
 						addSuccessMessage(txHash);
 						waitForReceipt(txHash, function (receipt) {
-							$.post("/form/submitConfirm", request)
-								.done(function (data) {
-									if (!data)
-										return;
-									updateSuccessMessage(txHash, receipt.status);
-								});
+							if (!data)
+								return;
+							updateSuccessMessage(txHash, receipt.status);
 						});
 					})
+				$.post("/form/submitConfirm", request)
+					.done(function (data) {
 
+					});
 
 			})
 		})

@@ -31,6 +31,17 @@ Error: cannot open input file 'C:\OpenSSL-Win64\lib\libeay32.lib' => download [O
 ```
 node server
 ```
-
+### Deploy project (aws)
+Step 1:
+```
+install eb-cli
+eb init
+eb create
+eb deploy
+eb console
+```
+Step 2:
+From the EB App Dashboard, go to Eb Configuration -> Software Configuration.
+Under Container Options -> Node Command add "npm start", or "node <yourmainfile>".
 
 

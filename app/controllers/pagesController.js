@@ -1,13 +1,13 @@
 var txService = require('../services/txDataAsyncService.js')
 var locomotive = require('locomotive'),
   Controller = locomotive.Controller;
-var ethereumService = require('../services/ethereumServices.js')
+var ethereumService = require('../services/ethereumService.js')
+
 
 var pagesController = new Controller();
 var userSession = {};
 var allProducts = [];
 var publicKeys = [];
-//{ethereumpublickey: {signin: true, publicKeyA: {name: apple, privaeKey: privateKeyA}}}
 
 
 
@@ -49,50 +49,47 @@ pagesController.form = function () {
   this.render();
 }
 pagesController.submitItem = function () {
+  var current = this;
   var item = {
     product: {
       name: this.request.body.name || userSession[publicKeys[0]][this.request.body.publicKey]["name"],
       imgUrl: ""
     },
+    timeStamp: new Date().toLocaleString(),
     event: this.request.body.data
   };
   var keyObject = {
     publicKey: this.request.body.publicKey,
     privateKey: userSession[publicKeys[0]][this.request.body.publicKey]["privateKey"]
   };
-  txService.saveData(item, keyObject);
+  txService.saveData(item, keyObject).finally(() =>
+    current.res.end("true"));
   //var session = this.request.session.publicKey;
-  this.res.end("true");
-  return true;
+
 }
 pagesController.submitConfirm = function () {
   var requestObj = this.request.body;
-  var current = this;
   var item = {
     product: {
       name: requestObj.name,
       imgUrl: ""
     },
+    timeStamp: new Date().toLocaleString(),
     event: requestObj.data
   };
-  var keyObject = {};
-  instance.getItem.call(publicKeys[0], function (err, result) {
-
-    var productNames = result[0].substring(1).split(';');
-    var itemPublicKeys = result[1].substring(1).split(';');
-    var itemPrivateKeys = result[2].substring(1).split(';');
-    for (var i = 0; i < productNames.length; i++) {
-      if (itemPublicKeys[i] == requestObj.publicKey) {
-        item.product.name = productNames[i];
-        keyObject.publicKey = itemPublicKeys[i];
-        keyObject.privateKey = itemPrivateKeys[i];
-      }
+  var keyObject = {
+    publicKey: "",
+    privateKey: ""
+  };
+  for (var i = 0; i < allProducts.length; i++) {
+    if (allProducts[i].publicKey == requestObj.publicKey) {
+      item.product.name = allProducts[i].name;
+      keyObject.publicKey = allProducts[i].publicKey;
+      keyObject.privateKey = allProducts[i].privateKey;
     }
-
-    txService.saveData(item, keyObject);
-    current.res.end("true");
-    return true;
-  });
+  }
+  txService.saveData(item, keyObject).finally(() =>
+    current.res.end("true"));
 }
 
 pagesController.signIn = function () {
@@ -127,7 +124,8 @@ pagesController.myItems = function () {
       var currentProduct = {
         name: productNames[i],
         publicKey: itemPublicKeys[i],
-        owner: publicKeys[0]
+        owner: publicKeys[0],
+        privateKey: itemPrivateKeys[i]
       };
       addProduct(currentProduct);
       current.items.push(currentProduct);
