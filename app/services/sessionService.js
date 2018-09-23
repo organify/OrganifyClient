@@ -1,4 +1,6 @@
 var ourOnlyUser = "barbra";
+var ourPassword = "ourpassword";
+
 
 var auth = function(req) {
   if (req.session && req.session.user == ourOnlyUser && req.session.login)
@@ -6,7 +8,10 @@ var auth = function(req) {
   return false;
 };
 
-var login = function(req, userName){
+var login = function(req, userName, password){
+    var correctLoginCredential = userName == ourOnlyUser && password == ourPassword;
+    if(!correctLoginCredential)
+        return false;
     req.session.user = userName || ourOnlyUser;
     req.session.login = true;
     console.log(req.session.user + " has logged in");

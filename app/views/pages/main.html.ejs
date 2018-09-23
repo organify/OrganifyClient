@@ -303,27 +303,12 @@
       ];
       var currentSubscription = "Sep18"; //monthNames[(new Date()).getMonth()];
       $("#signin").click(function (e) {
-        event.preventDefault();
-        if (!web3 || !web3.eth)
-          return;
-        var signer = web3.eth.accounts[0];
-        var original_message = "Verify my account";
-        var message = ethUtil.bufferToHex(new Buffer(original_message, 'utf8'))
-
-        web3.personal.sign(message, signer, function (err, res) {
-          if (err) {
-            alert("Fail to signin, please try again later");
-            return;
-          }
-          var data = {
-            publicKey: web3.eth.accounts[0],
-            sign: res
-          };
-          smartContract.hasRole(web3.eth.accounts[0], currentSubscription).then((response) => {
-            if (response && response[0]) {
-              sessionStorage.setItem("userLogIn", "true");
-              $.post("signin", data, function (data) {
-                if (data) {
+        var data = {
+          userName: "barbra",
+          password: "ourpassword"
+        }
+        $.post("signin", data, function (data) {
+                if (data == "200") {
                   window.location.href = '/myItems';
                 }
                 else {
@@ -331,14 +316,6 @@
                 }
 
               });
-            }
-            else{
-               window.location.href = '/subscription';
-            }
-          });
-          
-        });
-
       })
     })
   </script>
