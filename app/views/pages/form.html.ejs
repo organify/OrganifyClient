@@ -135,17 +135,26 @@
         else
           $("#transferArea").fadeOut(600);
       });
+<<<<<<< HEAD
 
       function addSuccessMessage() {
         var div = document.createElement('div');
         div.innerHTML =
           `<div class="infoMsg" id="infoMsg">
+=======
+      function addSuccessMessage() {
+        var div = document.createElement('div');
+        div.innerHTML = `<div class="infoMsg" id="infoMsg">
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
   					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has been submitted. Please wait for confirmation.
 					</div>`;
         document.getElementById('success-message-container').appendChild(div);
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
       function resetForm() {
         $("#title").val("");
         $("#date").val("");
@@ -166,10 +175,14 @@
           description: $("#description").val(),
           receipient: $("#receipient").val()
         }
+<<<<<<< HEAD
         var request = {
           publicKey: id,
           data: data
         };
+=======
+        var request = { publicKey: id, data: data };
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 
         if (data.receipient) {
           smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, {
@@ -183,11 +196,20 @@
                 addSuccessMessage();
               });
             })
+<<<<<<< HEAD
         } else {
           $.post("submitItem", request).done(function (data) {
             resetForm();
             addSuccessMessage();
           });
+=======
+        }
+        else{
+          $.post("submitItem", request).done(function (data) {
+                resetForm();
+                addSuccessMessage();
+              });
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
         }
       })
     });

@@ -2,8 +2,7 @@ var locomotive = require('locomotive'),
   bootable = require('bootable');
 
 
-
-var port = process != null && process.env != null && process.env.PORT != null? process.env.port: '8081';
+var port = process != null && process.env != null && process.env.PORT != null ? process.env.port : '8081';
 // Create a new application and initialize it with *required* support for
 // controllers and views.  Move (or remove) these lines at your own peril.
 var app = new locomotive.Application();
