@@ -18,11 +18,14 @@
 		<div class="cd-nugget-info">
 			<a href="/">
 				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 						<style type="text/css">
-							.cd-nugget-info-arrow{fill:#383838;}
+							.cd-nugget-info-arrow {
+								fill: #383838;
+							}
 						</style>
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
+						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
 					</svg>
 				</span>
 				Go back to Home page
@@ -45,7 +48,7 @@
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-						<input class="Param-Price input100"  name="pass" placeholder="Price">
+						<input class="Param-Price input100" name="pass" placeholder="Price">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -57,7 +60,7 @@
 
 					<div class="w-full text-center p-t-27 p-b-239">
 						<span class="txt1">
-							Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in ether. 
+							Please enter your month with year(aug-2018) as a parameter for users and the value to be paid in ether.
 						</span>
 					</div>
 
@@ -77,77 +80,88 @@
 
 </html>
 <script>
-	function setGreeting1(){
+	function setGreeting1() {
 		paramString = $("#Param-String").val();
 		paramPrice = web3.toWei($(".Param-Price").val());
 		smartContract.setPrice(paramString, paramPrice, {
-					from: web3.eth.accounts[0],
-				}, (function (err, result) {
-		}));
-		alert('thank you for submitting: ' + paramString + ', for ' + paramPrice + ' wei, please wait a few minuts for confirmation from metamask')
+			from: web3.eth.accounts[0],
+		}, (function (err, result) {}));
+		alert('thank you for submitting: ' + paramString + ', for ' + paramPrice +
+			' wei, please wait a few minuts for confirmation from metamask')
 	};
-	</script>
-	<style>
-		.cd-nugget-info a{
-			color: black;
-		}
-		.cd-nugget-info a span{
-			color: black;
-		}
-		.cd-nugget-info-arrow{
-			fill:#383838;
-		}
-		.title{
-			color: darkblue;
-			font-size: 8rem;
-			letter-spacing: 5px;
-		}
-		header{
-			background-image: url('/img/eth.jpg');
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: 50%;
-		}
-		#Param-String, .Param-Price{
-			height: 45px;
-			width: 50%;
-		}
-		.login100-form {
-			width: 40%;
-			margin: auto;
-			display: grid;
-			text-align: center;
-			grid-template-rows: 50px 50px 50px 50px 50px 50px;
-			align-items: center;
-		}
-		.login100-form-title {
-			font-family: Poppins-Regular;
-			font-size: 2.5rem;
-			color: darkslategrey;
-			line-height: 1.2;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			text-align: center;
-			width: 100%;
-			display: block;
-		}
-		#selectBox {
-			justify-self: center;
-			height: 45px;
-			width: 50%;
-		}
-		#DealPrice {
-			font-family: Poppins-Regular;
-			font-size: 2rem;
-			color: darkslategrey;
-			line-height: 1.2;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			text-align: center;
-			width: 100%;
-			display: block;
-		}
-		.login100-form-btn {
+</script>
+<style>
+	.cd-nugget-info a {
+		color: black;
+	}
+
+	.cd-nugget-info a span {
+		color: black;
+	}
+
+	.cd-nugget-info-arrow {
+		fill: #383838;
+	}
+
+	.title {
+		color: darkblue;
+		font-size: 8rem;
+		letter-spacing: 5px;
+	}
+
+	header {
+		background-image: url('/img/eth.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}
+
+	#Param-String,
+	.Param-Price {
+		height: 45px;
+		width: 50%;
+	}
+
+	.login100-form {
+		width: 40%;
+		margin: auto;
+		display: grid;
+		text-align: center;
+		grid-template-rows: 50px 50px 50px 50px 50px 50px;
+		align-items: center;
+	}
+
+	.login100-form-title {
+		font-family: Poppins-Regular;
+		font-size: 2.5rem;
+		color: darkslategrey;
+		line-height: 1.2;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+
+	#selectBox {
+		justify-self: center;
+		height: 45px;
+		width: 50%;
+	}
+
+	#DealPrice {
+		font-family: Poppins-Regular;
+		font-size: 2rem;
+		color: darkslategrey;
+		line-height: 1.2;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-align: center;
+		width: 100%;
+		display: block;
+	}
+
+	.login100-form-btn {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
@@ -166,14 +180,14 @@
 		line-height: 1.2;
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		
+
 		-webkit-transition: all 0.4s;
 		-o-transition: all 0.4s;
 		-moz-transition: all 0.4s;
 		transition: all 0.4s;
-		}
-		
-		.login100-form-btn:hover {
+	}
+
+	.login100-form-btn:hover {
 		background: #333333;
-		}
-	</style>
+	}
+</style>

@@ -2,345 +2,790 @@
 <html lang="en">
 
 <head>
+  <title>
+    <%= title %>
+  </title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Organify</title>
   <meta name="description" content="Free Bootstrap Theme by uicookies.com">
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
   <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles-merged.css">
-  <link rel="stylesheet" href="/css/style.min.css">
   <link rel="stylesheet" href="/css/custom.css">
 
-  <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
 </head>
 
-<body>
-
-  <!-- START: header -->
-
-  <div class="probootstrap-loader"></div>
-
-  <header role="banner" class="probootstrap-header">
+<body class="front-page">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
     <div class="container">
-      <a href="/" class="probootstrap-logo">Organify<span>.</span></a>
-
-      <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
-      <div class="mobile-menu-overlay"></div>
-
-      <nav role="navigation" class="probootstrap-nav hidden-xs">
-        <ul class="probootstrap-main-nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/myItems" id="myItemsPage">My Items</a></li>
-          <li><a href="#" id="signout">Sign out</a></li>
+      <a href="index.html" class="navbar-brand ">Organify</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="#top-link" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#page-header" class="nav-link">Market Needs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#solution-heading" class="nav-link">Our Solution</a>
+          </li>
+          <li class="nav-item">
+            <a href="#aboutus-header" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contactus" class="nav-link">Contact</a>
+          </li>
         </ul>
-        <div class="extra-text visible-xs">
-          <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-          <h5>Connect</h5>
-          <ul class="social-buttons">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook2"></i></a></li>
-            <li><a href="#"><i class="icon-instagram2"></i></a></li>
-          </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SHOWCASE SLIDER -->
+  <section id="showcase" class="mt-5">
+    <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
+    <!-- <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol> -->
+    <div class="carousel-inner" id="top-link">
+      <div class="carousel-item carousel-image-1 active">
+        <div class="container">
+          <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+            <h1 class="probootstrap-heading probootstrap-animate mb20" data-animate-effect="fadeIn">100%
+              Organic</h1>
+            <div class="probootstrap-animate probootstrap-sub-wrap mb30" data-animate-effect="fadeIn">Everything
+              you
+              need to know about the food you eat everyday</div>
+            <form>
+              <div class="input-wrapper">
+                <div class="input-wrapper-unique">
+                  <input id="username" type="text" name="username" value="username">
+                </div>
+                <div class="input-wrapper-unique">
+                  <input id="password" type="text" name="password" value="password">
+                </div>
+              </div>
+              <p class='probootstrap-animate'><a class='btn btn-ghost btn-ghost-white' id="validate">Validate</a></p>
+            </form>
+            <!-- <h1 class="display-3">Organify</h1>
+              <p class="lead"><b>At Organify, we working on building trust and lowering costs in the
+                  agricultural supply chain using emerging technologies. We help you to get the facts
+                  you want about your food with an easy to use AI chatbot which uses first hand
+                  information from the farmer passed along on an immutable tamperproof blockchain.</b></p>
+              <input id="getstarted" type="button" value="Ask Us About Your Food" class="btn btn-danger btn-lg"> -->
+          </div>
         </div>
-      </nav>
+      </div>
+
+      <!-- <div class="carousel-item carousel-image-2">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Consumer Benefits</h1>
+              <p class="lead"><b>Redundancies in the supply chain occur at every port, lab, and
+                  marketplace due to a lack of cooperation and trust. By creating a solution which
+                  proves to all stakeholders the quality and authenticity of food products, we can
+                  save time and resources to make sure that we can keep feeding real food to real
+                  people at affordable prices. </b></p>
+              <a href="#solution-heading" class="btn btn-primary btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-3">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Producers Benefits</h1>
+              <p class="lead"><b>We are working to disrupt the current supply chain by reducing middlemen
+                  fees, certification fees and an opportunity to speak directly with consumers
+                  globally. Farmers all over the world will be able to take control over their own
+                  labours of love, and be able to pass on their stories.</b></p>
+              <a href="#solution-heading" class="btn btn-success btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+          <span class="carousel-control-next-icon"></span>
+        </a> -->
+    </div>
+  </section>
+
+  <!-- START HEADING SECTION -->
+  <section id="home-heading" class="p-5">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-5">
+            <h1>Are You Ready To Get Started?</h1>
+            <p class="d-none d-md-block">Building a relationship with your farmers, living healthier, and
+              improving global operations is just one click away. If you want to learn more before you
+              check out the chatbot, read on below!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET NEEDS SECTION -->
+  <!-- PAGE HEADER -->
+  <header id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 m-auto text-center text-dark">
+          <h1 class="display-4 font-weight-bold">Organic Market Needs</h1>
+
+        </div>
+      </div>
     </div>
   </header>
-  <!-- END: header -->
-  <section class="probootstrap-slider flexslider">
-    <div class="probootstrap-text-intro">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="probootstrap-slider-text text-center">
-              <h1 class="probootstrap-heading probootstrap-animate mb20" data-animate-effect="fadeIn">100% Organic</h1>
-              <div class="probootstrap-animate probootstrap-sub-wrap mb30" data-animate-effect="fadeIn">Everything you need to know about the food you eat everyday</div>
-              <p class="probootstrap-animate" data-animate-effect="fadeIn"><a href="#" class="btn btn-ghost btn-ghost-white" id="signin">Sign in</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ul class="slides">
-      <li style="background-image: url(/img/slider_1.jpg);"></li>
-      <li style="background-image: url(/img/slider_2.jpg);"></li>
-    </ul>
-  </section>
-  <!-- END: slider  -->
-  <section class="probootstrap-section">
+
+  <section id="about" class="py-3">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
-          <div class="product-item">
-            <figure><img src="/img/img_1.jpg" alt="Free Template by uicookies.com" class="img-responsive"></figure>
-            <div class="text">
-              <h2 class="heading">Organic Dragon Fruit</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-                texts.
-              </p>
-              <p><a href="/products/6FWm1C8zCGFxmy2RE3GWp7busYVQVLKxBE3bzuM2RVho" class="btn btn-primary btn-sm">View Details</a></p>
-            </div>
-          </div>
+        <div class="col-md-6">
+
+          <h1>Consumer Needs</h1>
+          <p>With a growing middle class, more and more people are able to afford healthier food. However,
+            consumers currently have limited information about the producers of their foods, and are
+            skeptical of centralized authority labels. The global Organic Food and Beverages Market is
+            poised to grow at a CAGR of around 16.6% over the next decade to reach approximately $456
+            billion by 2025 from $139 billion in 2017.
+          </p>
+
+          <h1>Food Supply Chain Needs</h1>
+          <p>Our food supply chain, particularly our farmers are having a difficuly time getting their
+            message out directly to consumers. Currently, farmers must pay many fees to central authority
+            bodies to protect their reputation. </p>
+
+          <h1>Government Needs</h1>
+          <p>With the world population forecasted to reach 9.7 bilion by 2050, governments around the wrld
+            are actively looking to switch from conventional farming to organic farming. Governments also
+            spend millions of dollars on protecting consumers and subsidizing farmers. Since 2015, the
+            federal government in Canada has spent over CAD $20 million for organic farming research,
+            market development, innovation, and risk management. They want to support a flexible, viable,
+            and stable organic sector in Canada.</p>
+
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
-          <div class="product-item">
-            <figure><img src="/img/img_2.jpg" alt="Free Template by uicookies.com" class="img-responsive"></figure>
-            <div class="text">
-              <h2 class="heading">Organic Sprout Veggie</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-                texts.
-              </p>
-              <p><a href="#" class="btn btn-primary btn-sm">View Details</a></p>
-            </div>
-          </div>
+        <div class="col-md-6">
+          <img src="img/aboutus.jpg" alt="" class="img-fluid rounded-circle d-none d-md-block about-img pt-5">
         </div>
-        <div class="clearfix visible-sm-block"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
-          <div class="product-item">
-            <figure><img src="/img/img_3.jpg" alt="Free Template by uicookies.com" class="img-responsive"></figure>
-            <div class="text">
-              <h2 class="heading">Organic Watercress</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-                texts.
-              </p>
-              <p><a href="#" class="btn btn-primary btn-sm">View Details</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="clearfix visible-lg-block visible-md-block"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
-          <div class="product-item">
-            <figure><img src="/img/img_4.jpg" alt="Free Template by uicookies.com" class="img-responsive"></figure>
-            <div class="text">
-              <h2 class="heading">Organic Carrots</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-                texts.
-              </p>
-              <p><a href="#" class="btn btn-primary btn-sm">View Details</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="clearfix visible-sm-block"></div>
-         <% allProducts.forEach(function(item){%> <% if(item.name && item.publicKey){ %>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate" data-animate-effect="fadeIn">
-          <div class="product-item">
-            <figure><img src="/img/img_5.jpg" alt="Free Template by uicookies.com" class="img-responsive"></figure>
-            <div class="text">
-              <h2 class="heading"><%= item.name %></h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-                texts.
-              </p>
-              <p><a href="/products/<%= item.owner %>/<%= item.publicKey %>" class="btn btn-primary btn-sm">View Details</a></p>
-            </div>
-          </div>
-        </div>
-         <%}})%>
-        <div class="clearfix visible-lg-block visible-md-block"></div>
       </div>
     </div>
   </section>
 
-  <section class="probootstrap-section probootstrap-bg" style="background-image: url(/img/slider_2.jpg);">
-    <div class="container text-center">
-      <h2 class="heading probootstrap-animate" data-animate-effect="fadeIn">Fresh &amp; Non-GMO Products</h2>
-      <p class="sub-heading probootstrap-animate" data-animate-effect="fadeIn">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+
+
+  <!-- ICON BOXES -->
+  <section id="icon-boxes" class="p-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-building fa-3x"></i>
+              <h3>Failing Certification Bodies</h3>
+              The old system of building trust through central authorities does not work as we fail to
+              see any significant changes in consumer confidence.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-coffee fa-3x"></i>
+              <h3>Lack Of Control For Consumers</h3>
+              A single sticker on a product does not provide enough information for consumers to purchase
+              goods based on their individual preferences.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-comments fa-3x"></i>
+              <h3>Lack of Communication and Trust</h3>
+              Farmers are removed from the consumers and are unable to see the fruits of their labour,
+              thus unable to improve their products or techniques.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card bg-dark text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-box fa-3x"></i>
+              <h3>Guaranteed As Advertised</h3>
+              <!-- Organically farmed foods can be altered along the supply chain. The organics sector needs to guarantee their products. -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-dark text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-credit-card fa-3x"></i>
+              <h3>Reduced Consumer Prices</h3>
+              <!-- Certifications, redundancies and uncertainty lead to higher costs for organic foods, making them inaccessible. -->
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card bg-dark text-white text-center">
+            <div class="card-body">
+              <i class="fas fa-bullhorn fa-3x"></i>
+              <h3>Organic Sector Awareness</h3>
+              <!-- Quality of life continues to drive technology and innovation; we must focus on how to address obstacles. -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
   </section>
 
-  <section class="probootstrap-section">
+  <!-- OUR SOLUTION SECTION -->
+  <!-- PAGE HEADER -->
+  <section id="solution-heading" class="p-5">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-5">
+            <h1>How Our Solution Works</h1>
+            <p class="d-none d-md-block">We start with the farmer, and implement a system of trust so that
+              we can effectively reduce the need for redundant processes. Click through the carousel to
+              find out more. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SOLUTION SHOWCASE SLIDER -->
+  <section id="showcase2">
+    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel2" data-slide-to="1"></li>
+        <li data-target="#myCarousel2" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item carousel-image-4 active">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h2 class="display-5">Farmer Accountability</h2>
+              <p class="lead">Our platform helps farmers to make themselves, their products and supply
+                chains more transparent through the M2M IoT and blockchain consensus network thus
+                removing the need for them to use a central certification body. They can upload data
+                such as geocoordinates of their farm, soil content, and organic status of the food. </p>
+
+              <p class="lead">The farmer puts a batch of produce in a container or bag which is sealed
+                using tags that break if the container or bag is opened; each tag will have the
+                transaction information of the shipment which can be explored to find string values
+                embeded in the transaction. If anything is wrong with the shipment, the everyone will
+                know exactly who should be accountable.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-6">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h2 class="display-5">Engaging Consumers</h2>
+              <p class="lead">Our communication tools will have the functionality to have a real
+                conversation about your food, from where it was grown, the mineral content of the soil,
+                to how long ago it was harvested. Having the ability to see exactly what the farmer is
+                telling you as you eat their produce mirrors the experience of a fine dining waiter or
+                waitress providing excellent table service. </p>
+              <p class="lead">Our review system allows farmers to be rated by their consumers thus
+                putting a face to the produce on the selves without need for marketing spend. This
+                connection will further strengthen the bond of trust</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="carousel-item carousel-image-5">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h2 class="display-5">Transportation</h2>
+              <p class="lead"><b>Redundancies in the supply chain occur at every port, lab, and
+                  marketplace due to a lack of cooperation and trust. Many times during the
+                  transportation process, farmers, importers and distributors have their goods
+                  stopped to be inspected. By putting 100% of the responsibility for honest trade on
+                  only the farmer and the retailer, we are able to reduce the cost of certifications,
+                  transit times from inspections, and mistrust or double checking when moving goods
+                  through the supply chain.</b></p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <a href="#myCarousel2" data-slide="prev" class="carousel-control-prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+
+      <a href="#myCarousel2" data-slide="next" class="carousel-control-next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+
+  <!--HOME ICON SECTION  -->
+  <section id="home-icons" class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-leaf"></i></div>
-            <h2 class="heading">Fresh Veggies &amp; Fruits</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cog fa-3x mb-2"></i>
+          <h3>Reducing Redundancies in the Supply Chain</h3>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cloud fa-3x mb-2"></i>
+          <h3>Centralizing Accountability For Importers</h3>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cart-plus fa-3x mb-2"></i>
+          <h3>Enabling Healthier Food For Consumers</h3>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="media">
+          <div class="media-body lead">
+            <h4 class="media-heading">Join The Movement, Ask Our Bot</h4>
+            <p>We've implemented an easy to use chatbot which will be able to accept an image of the QR
+              code on your food product. Once submitted, our bots will look at the batch that your food
+              product was shipped with, and provide information to you on where the food comes from, who
+              farmed it and whether it was organically soured. Know thy food!</p>
+          </div>
+          <div class="media-right">
+            <img class="laptop" src="img/laptop.png" class="media-object" style="width:175px">
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-hand"></i></div>
-            <h2 class="heading">Locally Grown Vegetables</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          </div>
-        </div>
-        <div class="clearfix visible-sm-block"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-tree"></i></div>
-            <h2 class="heading">Natural As It's In Nature</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          </div>
-        </div>
-        <div class="clearfix visible-lg-block visible-md-block"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-location"></i></div>
-            <h2 class="heading">From Country Side</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          </div>
-        </div>
-        <div class="clearfix visible-sm-block"></div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-water"></i></div>
-            <h2 class="heading">Alkaline Water</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 probootstrap-animate">
-          <div class="service">
-            <div class="icon"><i class="icon-air"></i></div>
-            <h2 class="heading">Fresh Air</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts.
-            </p>
-            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          </div>
-        </div>
-        <div class="clearfix visible-lg-block visible-md-block"></div>
       </div>
     </div>
   </section>
 
-  <footer class="probootstrap-footer probootstrap-bg" style="background-image: url(/img/slider_3.jpg)">
+  <!-- About Us Header -->
+  <section id="aboutus-header">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container p-5">
+            <h1>About Us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="aboutus" class="py-5">
     <div class="container">
-      <div class="row mb60">
+      <div class="row mb-4">
+
+
         <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">About Our Farm</h4>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-              texts. </p>
-            <p><a href="#">Read more...</a></p>
-          </div>
+          <a data-toggle="modal" data-target="#farmer33" data-height="562" data-width="562">
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/lucas.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center "><strong>Lucas Da Cunha</strong>
+              <br />Blockchain Developer / Business Expertise</p>
+            <div class="card-body">
+            </div>
+          </a>
+
         </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">Quick Links</h4>
-            <ul class="stack-link">
-              <li><a href="#">Organic Fruits</a></li>
-              <li><a href="#">Organic Vegeables</a></li>
-              <li><a href="#">Non-GMO Products</a></li>
-              <li><a href="#">Locally Grown Products</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">Products</h4>
-            <ul class="stack-link">
-              <li><a href="#">Organic Fruits</a></li>
-              <li><a href="#">Organic Vegeables</a></li>
-              <li><a href="#">Non-GMO Products</a></li>
-              <li><a href="#">Locally Grown Products</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="probootstrap-footer-widget">
-            <h4 class="heading">Subscribe</h4>
-            <p>Far far away behind the word mountains far from.</p>
-            <form action="#">
-              <div class="form-field">
-                <input type="text" class="form-control" placeholder="Enter your email">
-                <button class="btn btn-subscribe"><i class="icon-arrow-long-right"></i></button>
+
+        <div class="modal text-secondary" id="farmer33">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Lucas Da Cunha</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
               </div>
-            </form>
+              <div class="modal-body">
+                <p>I have a vision of a future where blockchain will guide our supply chain. Big data
+                  will control businesses interactions based on the information. Wanting to be a part
+                  of the future I am currently looking to build a career in programming. Some of the
+                  skills I have developed, so far, are:</p>
+
+                <p>JavaScript(Jquery, ES2015), WordPress(MySQL), PHP, Ruby, HTML5, CSS, SASS, Git and
+                  GitHub Gulp, Webpack, Node.js. See more at "https://github.com/Lcunha25"
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer11" data-height="56" data-width="562">
+            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="img/nhat.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center"><strong>Nhat Nguyen</strong><br />
+              Business Developer</p>
+            <div class="card-body">
+            </div>
+          </a>
+
+        </div>
+
+        <div class="modal text-secondary" id="farmer11">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Nhat Nguyen</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Experienced Consultant with a demonstrated history of working in the technology
+                  products in the banking industry. Skilled in Microsoft Excel, Financial Modelling,
+                  Agile Methodology and Stakeholder Management .
+                </p>
+                <p>
+                  Strong support professional with a Chartered Accountant Program focused in Taxation
+                  and Management from Institute of Chartered Accountants in Australia.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer22" data-height="562" data-width="562">
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/alicia.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center"><strong>Alicia (Hoang Dieu Anh) Nguyen</strong>
+              <br />Blockchain Developer / Back End Developer</p>
+            <div class="card-body">
+            </div>
+          </a>
+
+        </div>
+
+        <div class="modal text-secondary" id="farmer22">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Alicia (Hoang Dieu Anh) Nguyen</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>I have been known for being a quick learner with a can-do attitude and the ability
+                  to push myself out of my comfort zone. I completed my Bachelor degree in Australia
+                  and after 4 years working full time as a full stack developer, I decided to apply
+                  for Canada working holiday visa to look for new challenges. I believe that my
+                  skills and overseas experiences will bring innovative ideas and multifaceted
+                  technical solutions.
+                </p>
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <a data-toggle="modal" data-target="#farmer44" data-height="562" data-width="562">
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" src="img/justin.jpg"
+              alt="Card image cap">
+            <br /><br />
+            <p class="text-center"><strong>Justin Cervantes</strong><br />
+              Front End Developer</p>
+            <div class="card-body">
+            </div>
+          </a>
+        </div>
+
+        <div class="modal text-secondary" id="farmer44">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Justin Cervantes</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>As an emerging technology enthuasiast, I am always looking for ways that technology
+                  will revolutionize our lives. Coming from the freight forwarding and civil service,
+                  I offer a broader perspective which allows me to think outside of the box.</p>
+                <p> I am currently a computing student working towards a diploma in programming. I will
+                  finish my program in January of 2020.</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row copyright">
-        <div class="col-md-6">
-          <div class="probootstrap-footer-widget">
-            <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Green</a>. Designed by <a href="https://uicookies.com/">uicookies.com</a></p>
-          </div>
+    </div>
+
+    <div class="col-md-12 center-block text-center mb-1 mt-1">
+
+      <a href="files/Research.zip" download>
+        <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block">Download Our
+          Research and Documents</button></a>
+    </div>
+
+  </section>
+
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="text-center p-5 bg-dark text-white">
+    <div class="container">
+      <div class="row-5">
+        <div class="col">
+          <h1>Sign up for our progress report on our technical solution!</h1>
+          <p>We will only email you if we have something substantial to report.</p>
+          <form class="form justify-content-center">
+
+            <!-- ><input type="text" id="MAILMSG" name="MAILMSG" class="d-inline col-md-6 form-control mb-2 mr-2" placeholder="Enter Message"> -->
+
+            <input type="text" id="MAILNAME" name="MAILNAME" class="d-inline col-md-6 form-control mb-2 mr-2"
+              placeholder="Enter Name">
+
+            <input type="text" id="MAILEMAIL" name="MAILEMAIL" class="d-inline col-md-6 form-control mb-2 mr-1"
+              placeholder="Enter Email">
+
+            <br />
+            <a data-toggle="modal" data-target="#registrationStatus">
+              <button id="addme" class="btn btn-primary mb-2">Submit</button>
+            </a>
+          </form>
         </div>
-        <div class="col-md-6">
-          <div class="probootstrap-footer-widget right">
-            <ul class="probootstrap-footer-social">
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-facebook"></i></a></li>
-              <li><a href="#"><i class="icon-instagram2"></i></a></li>
-            </ul>
-          </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal text-secondary" id="registrationStatus">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Mailing Registration Status</h5>
+          <button class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h3 id="regStat"></h3>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contactus" class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copyright &copy;
+            <span id="year"></span> Organify</p>
         </div>
       </div>
     </div>
   </footer>
 
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 
+
+  <div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'>
+    <div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'>
+    </div><iframe width='400px' height='400px' src=' https://webchat.botframework.com/embed/FarmToFarm2?s=fqJ6eTli0ms.cwA.95U.mJxY_7XnOrIIg6gbUP7KHQXTQPJLq7O-i-JnUO7GWQk  '></iframe>
+  </div>
+  <script>
+    (function () {
+      document.querySelector('#botTitleBar').addEventListener('click', function (e) {
+        var botDiv = document.querySelector('#botDiv');
+        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
+      });
+    }());
+  </script>
+
+  <script>
+    (function () {
+      document.querySelector('#getstarted').addEventListener('click', function (e) {
+        var botDiv = document.querySelector('#botDiv');
+        botDiv.style.height = botDiv.style.height == '400px' ? '38px' : '400px';
+      });
+    }());
+  </script>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="js/scripts.min.js"></script>
   <script src="js/main.min.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/custom-bundle.js"></script>
   <script src="js/session.js"></script>
   <script>
-    $(function () {
-      const monthNames = ["January18", "February18", "March18", "April18", "May18", "June18",
-        "July18", "August18", "aug-18", "October18", "November18", "December18"
-      ];
-      var currentSubscription = monthNames[(new Date()).getMonth()];
-      $("#signin").click(function (e) {
-        event.preventDefault();
-        if (!web3 || !web3.eth)
-          return;
-        var signer = web3.eth.accounts[0];
-        var original_message = "Verify my account";
-        var message = ethUtil.bufferToHex(new Buffer(original_message, 'utf8'))
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
 
-        web3.personal.sign(message, signer, function (err, res) {
-          if (err) {
-            alert("Fail to signin, please try again later");
-            return;
+    // Configure Slider
+    $('.carousel').carousel({
+      interval: 1000000,
+      pause: 'hover'
+    });
+
+    // Lightbox Init
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+
+    //Confirmation of registration
+    $("#addme").click(function (event) {
+      var User_Name = document.getElementById('MAILNAME').value;
+      var User_Email = document.getElementById('MAILEMAIL').value;
+      var register = {
+        "User_Name": User_Name,
+        "User_Email": User_Email
+      };
+      JSON.stringify(register);
+      console.log(register);
+
+      $.ajax({
+        url: "newsletter.php",
+        dataType: "json",
+        data: register,
+        type: "POST",
+        success: function (data) {
+          if (data["error"] == "yes") {
+            document.getElementById("regStat").innerHTML = "Error: " + data["return"];
           }
-          var data = {
-            publicKey: web3.eth.accounts[0],
-            sign: res
-          };
-          smartContract.hasRole(web3.eth.accounts[0], currentSubscription).then((response) => {
-            if (response && response[0]) {
-              sessionStorage.setItem("userLogIn", "true");
-              $.post("signin", data, function (data) {
-                if (data) {
-                  window.location.href = '/myItems';
-                }
-                else {
-                  alert("Fail to signin, please try again later");
-                }
+          if (data["error"] == "no") {
+            document.getElementById("regStat").innerHTML = data["return"];
+            console.log("No problem");
+          }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR.statusText);
+        }
+      });
+    });
 
-              });
-            }
-            else{
-               window.location.href = '/subscription';
-            }
-          });
-          
+
+    // Video Play
+    $(function () {
+      // Auto play modal video
+      $(".video").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC +
+          "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
         });
-
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $("#validate").click(function (e) {
+        event.preventDefault();
+        /*
+        var userName = 'lucas';
+        var password = 'lucas';
+        var userNameBox = document.getElementById('username').value;
+        var passwordBox = document.getElementById('password').value;
+        if (userNameBox === userName && passwordBox === password) {
+          debugger;
+          var url = window.location.pathname;
+          var id = url.substring(url.lastIndexOf('/') + 1);
+          var data = {
+            title: $("#title").val(),
+            date: $("#date").val(),
+            location: $("#location").val(),
+            description: $("#description").val(),
+            receipient: $("#receipient").val()
+          }
+          var request = {
+            publicKey: id,
+            data: data
+          };
+          if (data.receipient) {
+            smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, {
+                from: web3.eth.accounts[0]
+              })
+              .then(function (txHash) {
+                console.log('Transaction sent')
+                console.dir(txHash)
+              })
+          }
+          */
+        $.post("signIn");
+        /*, request).done(function (data) {});*/
+        /*
+      } else {
+          alert('please fix name and password')
+        }
+              */
       })
-    })
+    });
   </script>
 </body>
 

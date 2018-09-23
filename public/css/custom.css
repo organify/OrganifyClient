@@ -1,1 +1,151 @@
-/* Your custom css code goes here */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrapper-unique {
+    margin: 0 10px 10px;
+}
+
+input {
+    color: black;
+}
+
+/* front page import design */
+.front-page {
+    overflow-x: hidden;
+}
+
+.navbar .nav-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.opacity {
+    opacity: .9;
+}
+
+.navbar .nav-item.active {
+    border-left: #444 3px solid;
+}
+
+.pic {
+    height: 250px;
+    width: 250px;
+}
+
+.carousel-caption {
+    color: ghostwhite;
+}
+
+.carousel-item {
+    height: 450px;
+}
+
+.carousel-image-1 {
+    background: url('../img/meat\ picture.jpg');
+    background-size: cover;
+
+}
+
+.carousel-image-2 {
+    background: url('../img/foods.jpg');
+    background-size: cover;
+}
+
+.carousel-image-3 {
+    background: url('../img/fruits\ picture.jpg');
+    background-size: cover;
+}
+
+#home-heading {
+    position: relative;
+    min-height: 200px;
+    background: url('../img/path.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+.inline {
+    display: inline-block;
+}
+
+#MAILMSG {
+    display: block;
+}
+
+#solution-heading {
+    position: relative;
+    min-height: 200px;
+    background: url('../../../public/img/organic\ kettle.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#aboutus-header {
+    position: relative;
+    min-height: 150px;
+    background: url('../img/path.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+#video-play a {
+    color: #fff;
+}
+
+#laptop {
+    height: 200px;
+    width: 200px;
+}
+
+
+#ship {
+    height: 400px;
+    width: 400px;
+}
+
+#page-header {
+    height: 200px;
+
+    background-position: 0 -360px;
+
+    color: #fff;
+    border-bottom: 1px #eee solid;
+}
+
+
+#faq .card {
+    border: #444;
+}
+
+#faq a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#faq .card-body,
+#faq .card-header {
+    background: #333;
+}
+
+#main-footer {
+    background: #000;
+    color: #fff;
+}

@@ -1,24 +1,14 @@
-
 var txService = require('../services/txDataAsyncService.js')
-var locomotive = require('locomotive')
-  , Controller = locomotive.Controller;
-var Web3 = require('web3');
-var util = require('ethereumjs-util');
-var tx = require('ethereumjs-tx');
-var fs = require('fs');
+var locomotive = require('locomotive'),
+  Controller = locomotive.Controller;
+var ethereumService = require('../services/ethereumServices.js')
 
-var rawAbi = fs.readFileSync('./abi.txt', 'utf8');
-var abi = JSON.parse(rawAbi);
-var web3 = new Web3(
-  new Web3.providers.HttpProvider('https://ropsten.infura.io/v3/682195f0b13a4811998ba46dfcb2e1d4')
-);
 var pagesController = new Controller();
 var userSession = {};
 var allProducts = [];
 var publicKeys = [];
 //{ethereumpublickey: {signin: true, publicKeyA: {name: apple, privaeKey: privateKeyA}}}
-var contract = web3.eth.contract(abi);
-var instance = contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
+
 
 
 function wait(ms) {
@@ -33,6 +23,12 @@ pagesController.main = function () {
   //this.txDataList = await getTxData(txIds);
   this.title = "Organify";
   this.allProducts = allProducts;
+  this.render();
+}
+pagesController.frontPage = function () {
+  //let txIds = await bigChainDb.getTxIds(publicKey);
+  //this.txDataList = await getTxData(txIds);
+  this.title = "Front-Page";
   this.render();
 }
 pagesController.admin = function () {
@@ -79,8 +75,7 @@ pagesController.submitConfirm = function () {
     },
     event: requestObj.data
   };
-  var keyObject = {
-  };
+  var keyObject = {};
   instance.getItem.call(publicKeys[0], function (err, result) {
 
     var productNames = result[0].substring(1).split(';');
@@ -99,11 +94,14 @@ pagesController.submitConfirm = function () {
     return true;
   });
 }
+
 pagesController.signIn = function () {
   var data = this.request.body;
   if (!data.publicKey)
     return false;
-  userSession[data.publicKey] = { signin: true };
+  userSession[data.publicKey] = {
+    signin: true
+  };
   if (publicKeys.length == 0)
     publicKeys.push(data.publicKey);
   else
@@ -112,22 +110,32 @@ pagesController.signIn = function () {
   this.res.end("true");
   return true;
 }
+// process.stdout.write(pagesController.signIn);
+
 pagesController.myItems = function () {
   var current = this;
   this.items = []
-  instance.getItem.call(publicKeys[0], function (err, result) {
+  ethereumService.instance.getItem.call(publicKeys[0], function (err, result) {
     var productNames = result[0].substring(1).split(';');
     var itemPublicKeys = result[1].substring(1).split(';');
     var itemPrivateKeys = result[2].substring(1).split(';');
     for (var i = 0; i < productNames.length; i++) {
-      userSession[publicKeys[0]][itemPublicKeys[i]] = { privateKey: itemPrivateKeys[i], name: productNames[i] };
-      var currentProduct = { name: productNames[i], publicKey: itemPublicKeys[i], owner: publicKeys[0] };
+      userSession[publicKeys[0]][itemPublicKeys[i]] = {
+        privateKey: itemPrivateKeys[i],
+        name: productNames[i]
+      };
+      var currentProduct = {
+        name: productNames[i],
+        publicKey: itemPublicKeys[i],
+        owner: publicKeys[0]
+      };
       addProduct(currentProduct);
       current.items.push(currentProduct);
     }
     current.render();
   });
 }
+
 function addProduct(product) {
   var modified = false;
   for (var i = 0; i < allProducts.length; i++) {
@@ -144,7 +152,10 @@ function addProduct(product) {
 pagesController.product = function () {
   var publicKey = this.param("publicKey");
   this.title = 'Organify';
-  var resultList = { total: 0, list: [] };
+  var resultList = {
+    total: 0,
+    list: []
+  };
   var txIds = txService.getTxIds(publicKey)
     .then((response) => {
       resultList.total = response.length - 1;
