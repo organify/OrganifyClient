@@ -25,8 +25,8 @@ gulp.task('sass', function () {
         )
         .pipe(gulp.dest('./'))
         .pipe(cssnano())
-        .pipe(rename('style.min.css'))
-        .pipe(gulp.dest('./build/css'));
+        .pipe(rename('style2.min.css'))
+        .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('lint', function () {
@@ -44,14 +44,14 @@ gulp.task(
         return gulp
             .src(['./js/main.js', './js/*.js'])
             .pipe(concat('concat.js'))
-            .pipe(gulp.dest('./build/js'))
+            .pipe(gulp.dest('./public/js'))
             .pipe(uglify())
             .pipe(
                 rename({
                     extname: '.min.js'
                 })
             )
-            .pipe(gulp.dest('./build/js'));
+            .pipe(gulp.dest('./public/js'));
     })
 );
 
@@ -59,8 +59,8 @@ gulp.task(
 
 gulp.task('browser-sync', function () {
     const files = [
-        './build/css/*.css',
-        './build/js/*.js',
+        './public/css/*.css',
+        './public/js/*.js',
         './*.html',
         './**/*.html',
         './*.htm',

@@ -81,7 +81,7 @@ input {
 #solution-heading {
     position: relative;
     min-height: 200px;
-    background: url('../../../public/img/organic\ kettle.jpg');
+    background: url('/img/organic\ kettle.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     text-align: center;
