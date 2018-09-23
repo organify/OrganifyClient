@@ -1,7 +1,6 @@
 var express = require('express')
   , poweredBy = require('connect-powered-by');
-
-var session = express.session;
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 module.exports = function() {
   // Use middleware.  Standard [Connect](http://www.senchalabs.org/connect/)
@@ -18,14 +17,14 @@ module.exports = function() {
   this.use(express.methodOverride());
 
   this.use(cookieParser());
-  this.use(express.session({
-    key: 'user_sid',
-    secret: 'somerandonstuffs',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        expires: 600000
-    }
+  this.use(session({
+    //key: 'user_sid',
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true,
+    //cookie: {
+        //expires: 600000
+    //}
 }));
   this.use(this.router);
   this.use(express.errorHandler());

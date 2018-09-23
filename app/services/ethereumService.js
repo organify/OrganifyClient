@@ -10,7 +10,7 @@ var web3 = new Web3(
 );
 
 var contract = web3.eth.contract(abi);
-var instance = contract.at("0x8d1086dc3395c556ba10c2b17d213c308c33fce2");
+var instance = contract.at("0x8bff19d324052f8fa161857942a34423f0cdd349");
 
 module.exports = {
     instance: instance

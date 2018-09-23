@@ -2,7 +2,7 @@ var txService = require('../services/txDataAsyncService.js')
 var locomotive = require('locomotive'),
   Controller = locomotive.Controller;
 var ethereumService = require('../services/ethereumService.js')
-
+var sessionService = require('../services/sessionService.js')
 
 var pagesController = new Controller();
 var userSession = {};
@@ -48,6 +48,7 @@ pagesController.form = function () {
   this.title = "Apple";
   this.render();
 }
+
 pagesController.submitItem = function () {
   var current = this;
   var item = {
@@ -93,23 +94,20 @@ pagesController.submitConfirm = function () {
 }
 
 pagesController.signIn = function () {
-  var data = this.request.body;
-  if (!data.publicKey)
-    return false;
-  userSession[data.publicKey] = {
-    signin: true
-  };
-  if (publicKeys.length == 0)
-    publicKeys.push(data.publicKey);
+  var data = this.req.body;
+  var userName = data.userName;
+  var password = data.password;
+  var loginSuccess = sessionService.login(this.req, userName, password);
+  if(loginSuccess)
+    this.res.end("200");
   else
-    publicKeys[0] = data.publicKey;
-  //this.request.session.publicKey = data.publicKey;
-  this.res.end("true");
-  return true;
+    this.res.end("404");
 }
 // process.stdout.write(pagesController.signIn);
 
 pagesController.myItems = function () {
+  if(!sessionService.auth(this.req))
+    res.sendStatus(401);
   var current = this;
   this.items = []
   ethereumService.instance.getItem.call(publicKeys[0], function (err, result) {
