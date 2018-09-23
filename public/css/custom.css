@@ -149,3 +149,31 @@ input {
     background: #000;
     color: #fff;
 }
+
+.card-body a {
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.probootstrap-animate {
+    margin: 0;
+}
+
+.product-header {
+    background: url('/img/cooking.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 75%;
+}
+
+.cd-nugget-info a {
+    color: white;
+}
+
+.cd-nugget-info .cd-nugget-info-arrow {
+    fill: white;
+}
+
+.product-header h1 {
+    letter-spacing: 2px;
+}
