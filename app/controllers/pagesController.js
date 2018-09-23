@@ -3,7 +3,7 @@ var txService = require('../services/txDataAsyncService.js')
 var locomotive = require('locomotive')
   , Controller = locomotive.Controller;
 var ethereumService = require('../services/ethereumService.js')
-
+var sessionService = require('../services/sessionService.js')
 
 var pagesController = new Controller();
 var userSession = {};

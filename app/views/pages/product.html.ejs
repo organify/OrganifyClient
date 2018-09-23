@@ -54,16 +54,13 @@
 						<p><b>Location: </b>
 							<%= item.event.location %>
 						</p>
-						<p><b>Description: </b>
+						<p class="clampLine"><b>Description: </b>
 							<%= item.event.description %>
 						</p>
-						<% if(item.event.transfer){ %>
-							<p><b>Owner requests a confirmation of product arrival and transfer of ownership</b></p>
-							<a href="#0" class="cd-timeline__read-more info" id="confirm">Confirm</a>
-							<a href="#0" class="cd-timeline__read-more" id="decline">Decline</a>
-							<%}%>
 
-								<span class="cd-timeline__date"><%= item.event.date %></span>
+						<a href="#0" class="cd-timeline__read-more info" id="confirm">Read more</a>
+
+						<span class="cd-timeline__date"><%= item.event.date %></span>
 					</div>
 					<!-- cd-timeline__content -->
 				</div>
@@ -76,6 +73,7 @@
 	<script src="/js/main.js"></script>
 	<script src="/js/custom-bundle.js"></script>
 	<script src="/js/session.js"></script>
+	<script src="/js/clamp.min.js"></script>
 	<!-- Resource JavaScript -->
 	<script>
 		$(function () {

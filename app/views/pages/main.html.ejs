@@ -299,9 +299,9 @@
   <script>
     $(function () {
       const monthNames = ["January18", "February18", "March18", "April18", "May18", "June18",
-        "July18", "August18", "aug-18", "October18", "November18", "December18"
+        "July18", "August18", "Sep18", "October18", "November18", "December18"
       ];
-      var currentSubscription = monthNames[(new Date()).getMonth()];
+      var currentSubscription = "Sep18"; //monthNames[(new Date()).getMonth()];
       $("#signin").click(function (e) {
         event.preventDefault();
         if (!web3 || !web3.eth)

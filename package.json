@@ -13,6 +13,7 @@
     "ethjs-contract": "^0.2.3",
     "ethjs-query": "^0.3.8",
     "express": "3.x.x",
+    "express-session": "^1.15.6",
     "locomotive": "0.4.x",
     "web3": "^0.19.1",
     "webpack": "^4.17.1"
