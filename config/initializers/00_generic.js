@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function () {
   // Any files in this directory will be `require()`'ed when the application
   // starts, and the exported function will be invoked with a `this` context of
   // the application itself.  Initializers are used to connect to databases and

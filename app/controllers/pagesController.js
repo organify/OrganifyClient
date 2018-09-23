@@ -1,7 +1,6 @@
-
 var txService = require('../services/txDataAsyncService.js')
-var locomotive = require('locomotive')
-  , Controller = locomotive.Controller;
+var locomotive = require('locomotive'),
+  Controller = locomotive.Controller;
 var ethereumService = require('../services/ethereumService.js')
 
 
@@ -24,6 +23,12 @@ pagesController.main = function () {
   //this.txDataList = await getTxData(txIds);
   this.title = "Organify";
   this.allProducts = allProducts;
+  this.render();
+}
+pagesController.frontPage = function () {
+  //let txIds = await bigChainDb.getTxIds(publicKey);
+  //this.txDataList = await getTxData(txIds);
+  this.title = "Front-Page";
   this.render();
 }
 pagesController.admin = function () {
@@ -57,10 +62,10 @@ pagesController.submitItem = function () {
     publicKey: this.request.body.publicKey,
     privateKey: userSession[publicKeys[0]][this.request.body.publicKey]["privateKey"]
   };
-  txService.saveData(item, keyObject).finally(() => 
-  current.res.end("true"));
+  txService.saveData(item, keyObject).finally(() =>
+    current.res.end("true"));
   //var session = this.request.session.publicKey;
-  
+
 }
 pagesController.submitConfirm = function () {
   var requestObj = this.request.body;
@@ -83,14 +88,17 @@ pagesController.submitConfirm = function () {
       keyObject.privateKey = allProducts[i].privateKey;
     }
   }
-  txService.saveData(item, keyObject).finally(() => 
-  current.res.end("true"));
+  txService.saveData(item, keyObject).finally(() =>
+    current.res.end("true"));
 }
+
 pagesController.signIn = function () {
   var data = this.request.body;
   if (!data.publicKey)
     return false;
-  userSession[data.publicKey] = { signin: true };
+  userSession[data.publicKey] = {
+    signin: true
+  };
   if (publicKeys.length == 0)
     publicKeys.push(data.publicKey);
   else
@@ -99,6 +107,8 @@ pagesController.signIn = function () {
   this.res.end("true");
   return true;
 }
+// process.stdout.write(pagesController.signIn);
+
 pagesController.myItems = function () {
   var current = this;
   this.items = []
@@ -107,9 +117,14 @@ pagesController.myItems = function () {
     var itemPublicKeys = result[1].substring(1).split(';');
     var itemPrivateKeys = result[2].substring(1).split(';');
     for (var i = 0; i < productNames.length; i++) {
-      userSession[publicKeys[0]][itemPublicKeys[i]] = { privateKey: itemPrivateKeys[i], name: productNames[i] };
+      userSession[publicKeys[0]][itemPublicKeys[i]] = {
+        privateKey: itemPrivateKeys[i],
+        name: productNames[i]
+      };
       var currentProduct = {
-        name: productNames[i], publicKey: itemPublicKeys[i], owner: publicKeys[0],
+        name: productNames[i],
+        publicKey: itemPublicKeys[i],
+        owner: publicKeys[0],
         privateKey: itemPrivateKeys[i]
       };
       addProduct(currentProduct);
@@ -118,6 +133,7 @@ pagesController.myItems = function () {
     current.render();
   });
 }
+
 function addProduct(product) {
   var modified = false;
   for (var i = 0; i < allProducts.length; i++) {
@@ -134,7 +150,10 @@ function addProduct(product) {
 pagesController.product = function () {
   var publicKey = this.param("publicKey");
   this.title = 'Organify';
-  var resultList = { total: 0, list: [] };
+  var resultList = {
+    total: 0,
+    list: []
+  };
   var txIds = txService.getTxIds(publicKey)
     .then((response) => {
       resultList.total = response.length - 1;

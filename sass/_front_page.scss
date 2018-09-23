@@ -1,0 +1,79 @@
+.navbar-nav {
+    align-items: center;
+}
+
+.form-wrapper {
+    display: none;
+    align-items: center;
+
+    .probootstrap-animate {
+        color: rgba(255, 255, 255, .75);
+        cursor: pointer;
+    }
+
+    #validate {
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+}
+
+.button-hidde {
+    color: rgba(255, 255, 255, .75);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#page-header .container {
+    height: 100%;
+
+    .row {
+        height: 100%;
+    }
+}
+
+#about {
+    .container .row {
+        align-items: center;
+    }
+
+    .rounded-circle {
+        border-radius: 0 !important;
+    }
+}
+
+#aboutus .container .row {
+    justify-content: center;
+}
+
+#solution-heading .container .row {
+    justify-content: center;
+}
+
+.fa-utensils {
+    font-size: 50px;
+}
+
+#solution-heading .bg-danger {
+    background-color: #243648 !important;
+}
+
+.btn-success {
+    max-width: 100%;
+}
+
+#botDiv {
+    width: 320px;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.mb-4 div {
+    text-align: center;
+}
+
+.mb-4 {
+    justify-content: center;
+}

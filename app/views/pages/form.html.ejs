@@ -22,22 +22,25 @@
   <header>
     <div class="cd-nugget-info">
       <a href="/">
-				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<style type="text/css">
-							.cd-nugget-info-arrow{fill:#383838;}
-						</style>
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
-					</svg>
-				</span>
-				Go back to Home page
-			</a>
+        <span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+            <style type="text/css">
+              .cd-nugget-info-arrow {
+                fill: #383838;
+              }
+            </style>
+            <polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
+          </svg>
+        </span>
+        Go back to Home page
+      </a>
       <a href="#" style="padding-left: 30px;" id="signout">
-				Sign out
-			</a>
+        Sign out
+      </a>
       <a href="/myItems" style="padding-left: 30px;">
-				My items
-			</a>
+        My items
+      </a>
     </div>
     <!-- cd-nugget-info -->
     <h1>Farmer name , img and info</h1>
@@ -102,13 +105,13 @@
             <div class="form-group">
               <div class="form-check">
                 <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="transfer">Transfer of ownership</label>
+                  <input class="form-check-input" type="checkbox" id="transfer">Transfer of ownership</label>
               </div>
             </div>
             <div class="form-group" id="transferArea">
               <label class="control-label" for="receipient">Transfer to</label>
-              <input maxlength="100" id="receipient" name="receipient" type="text" required="required" class="form-control" placeholder="Receipient public key"
-              />
+              <input maxlength="100" id="receipient" name="receipient" type="text" required="required" class="form-control"
+                placeholder="Receipient public key" />
             </div>
             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" id="submit">Submit</button>
           </div>
@@ -132,14 +135,26 @@
         else
           $("#transferArea").fadeOut(600);
       });
+<<<<<<< HEAD
+
+      function addSuccessMessage() {
+        var div = document.createElement('div');
+        div.innerHTML =
+          `<div class="infoMsg" id="infoMsg">
+=======
       function addSuccessMessage() {
         var div = document.createElement('div');
         div.innerHTML = `<div class="infoMsg" id="infoMsg">
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
   					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has been submitted. Please wait for confirmation.
 					</div>`;
         document.getElementById('success-message-container').appendChild(div);
       }
+<<<<<<< HEAD
+
+=======
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
       function resetForm() {
         $("#title").val("");
         $("#date").val("");
@@ -154,13 +169,25 @@
         var url = window.location.pathname;
         var id = url.substring(url.lastIndexOf('/') + 1);
         var data = {
-          title: $("#title").val(), date: $("#date").val(),
-          location: $("#location").val(), description: $("#description").val(), receipient: $("#receipient").val()
+          title: $("#title").val(),
+          date: $("#date").val(),
+          location: $("#location").val(),
+          description: $("#description").val(),
+          receipient: $("#receipient").val()
         }
+<<<<<<< HEAD
+        var request = {
+          publicKey: id,
+          data: data
+        };
+=======
         var request = { publicKey: id, data: data };
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 
         if (data.receipient) {
-          smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, { from: web3.eth.accounts[0] })
+          smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, {
+              from: web3.eth.accounts[0]
+            })
             .then(function (txHash) {
               console.log('Transaction sent')
               console.dir(txHash);
@@ -169,12 +196,20 @@
                 addSuccessMessage();
               });
             })
+<<<<<<< HEAD
+        } else {
+          $.post("submitItem", request).done(function (data) {
+            resetForm();
+            addSuccessMessage();
+          });
+=======
         }
         else{
           $.post("submitItem", request).done(function (data) {
                 resetForm();
                 addSuccessMessage();
               });
+>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
         }
       })
     });
