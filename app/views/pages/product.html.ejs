@@ -31,20 +31,12 @@
 				</span>
 				Go back to Home page
 			</a>
-			<<<<<<< HEAD=======<a href="#" style="padding-left: 30px;" id="signout">
+			<a href="#" style="padding-left: 30px;" id="signout">
 				Sign out
-<<<<<<< HEAD
-				</a>
-				<a href="/myItems" style="padding-left: 30px;" id="myItemsPage">
-					My items
-				</a>
-				>>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
-=======
 			</a>
 			<a href="/myItems" style="padding-left: 30px;" id="myItemsPage">
 				My items
 			</a>
->>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 		</div>
 		<!-- cd-nugget-info -->
 		<h1>Pasture to Plate</h1>
@@ -116,23 +108,7 @@
 				var div = document.createElement('div');
 				div.setAttribute('class', 'class alert alert-warning alert-dismissable');
 				div.setAttribute('role', 'alert');
-<<<<<<< HEAD
-				div.setAttribute('id', txHash); <<
-				<< << < HEAD
-				div.innerHTML =
-					`<button aria-hidden="true" class="close" data-dismiss="alert" type="button">&times;</button>
-            <h5>
-                <i class="fa fa-check icon"></i>
-                <p>Tranfer of onwership request is submitted</p>
-            </h5>`;
-				document.getElementById('success-message-container').appendChild(div);
-			}
-
-			function updateSuccessMessage(txHash) {
-				var successMessage = $('#' + txHash);
-				var successMessageText = successMessage.find("h5");
-				successMessage.removeClass('alert-warning'); ===
-				=== =
+				div.setAttribute('id', txHash);
 				div.innerHTML =
 					`<div class="infoMsg" id="infoMsg">
   					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
@@ -143,8 +119,7 @@
 
 			function updateSuccessMessage(txHash, status) {
 				var successMessageText = $("#infoMsg");
-				successMessageText.removeClass('infoMsg'); >>>
-				>>> > d5f717cb50ac8da10892384a14e880e61bc7ef11
+				successMessageText.removeClass('infoMsg');
 
 				if (status == 1) {
 					successMessageText.addClass('successMsg');
@@ -158,27 +133,6 @@
 						`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has failed. Please try again later`
 					);
-=======
-				div.setAttribute('id', txHash);
-				div.innerHTML = `<div class="infoMsg" id="infoMsg">
-  					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has been submitted. Please wait for confirmation.
-					</div>`;
-				document.getElementById('success-message-container').appendChild(div);
-			}
-			function updateSuccessMessage(txHash, status) {
-				var successMessageText = $("#infoMsg");
-				successMessageText.removeClass('infoMsg');
-
-				if (status == 1) {
-					successMessageText.addClass('successMsg');
-					successMessageText.html(`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has been mined and updated successfully. Please reload to ses changes`);
-				} else if (status == 0) {
-					successMessageText.addClass('dangerMsg');
-					successMessageText.html(`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has failed. Please try again later`);
->>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 				}
 			}
 
@@ -200,20 +154,7 @@
 						}, 1000);
 					}
 				});
-<<<<<<< HEAD
-			} <<
-			<< << < HEAD
-
-			function getSuccessMessage(txHash, message, icon) {
-				return `
-              <i class="fa fa-` + icon + ` icon"></i>
-              <p>` + message + `</p>`;
-			} ===
-			=== = >>>
-			>>> > d5f717cb50ac8da10892384a14e880e61bc7ef11
-=======
 			}
->>>>>>> d5f717cb50ac8da10892384a14e880e61bc7ef11
 			$("#confirm").click(function (e) {
 				event.preventDefault();
 				var data = {
