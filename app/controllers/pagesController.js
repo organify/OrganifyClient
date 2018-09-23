@@ -98,8 +98,12 @@ pagesController.signIn = function () {
   var userName = data.userName;
   var password = data.password;
   var loginSuccess = sessionService.login(this.req, userName, password);
-  if(loginSuccess)
+  if(loginSuccess){
+    userSession[publicKeys[0]] = {
+    signin: true
+  };
     this.res.end("200");
+  } 
   else
     this.res.end("404");
 }
