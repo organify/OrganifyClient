@@ -519,43 +519,7 @@
     $(function () {
       $("#validate").click(function (e) {
         event.preventDefault();
-        /*
-        var userName = 'lucas';
-        var password = 'lucas';
-        var userNameBox = document.getElementById('username').value;
-        var passwordBox = document.getElementById('password').value;
-        if (userNameBox === userName && passwordBox === password) {
-          debugger;
-          var url = window.location.pathname;
-          var id = url.substring(url.lastIndexOf('/') + 1);
-          var data = {
-            title: $("#title").val(),
-            date: $("#date").val(),
-            location: $("#location").val(),
-            description: $("#description").val(),
-            receipient: $("#receipient").val()
-          }
-          var request = {
-            publicKey: id,
-            data: data
-          };
-          if (data.receipient) {
-            smartContract.requestTransferItem(web3.eth.accounts[0], $("#receipient").val(), id, {
-                from: web3.eth.accounts[0]
-              })
-              .then(function (txHash) {
-                console.log('Transaction sent')
-                console.dir(txHash)
-              })
-          }
-          */
         $.post("signIn");
-        /*, request).done(function (data) {});*/
-        /*
-      } else {
-          alert('please fix name and password')
-        }
-              */
       })
     });
   </script>
