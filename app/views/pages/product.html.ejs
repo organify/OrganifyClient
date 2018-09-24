@@ -11,36 +11,81 @@
 	<!-- Resource style -->
 	<link rel="stylesheet" href="/css/demo.css">
 	<!-- Demo style -->
-	<link rel="stylesheet" href="/css/custom.css">
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+  <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
+<link rel="stylesheet" href="/css/custom.css">
 </head>
 
 <body>
-	<header class="product-header">
-		<div class="cd-nugget-info">
-			<a href="/">
-				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<style type="text/css">
-							.cd-nugget-info-arrow {
-								fill: #383838;
-							}
-						</style>
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
-					</svg>
-				</span>
-				Go back to Home page
-			</a>
-			<a href="#" style="padding-left: 30px;" id="signout">
-				Sign out
-			</a>
-			<a href="/myItems" style="padding-left: 30px;" id="myItemsPage">
-				My items
-			</a>
-		</div>
-		<!-- cd-nugget-info -->
-		<h1>Pasture to Plate</h1>
-	</header>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
+    <div class="container">
+      <a href="/" class="navbar-brand ">Organify</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/myItems" class="nav-link" id="myItemsPage">My items</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="signout">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SHOWCASE SLIDER -->
+  <section id="showcase" class="mt-5">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" id="top-link">
+        <div class="carousel-item carousel-image-1 active">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Organify</h1>
+              <p class="lead" style="font-size:1.75rem;font-weight:350;">Our goal is to bring transparency your table by giving you access to all the information
+                about your organic food.</p>
+              <input id="getstarted" type="button" value="Ask Us About Your Food" class="btn btn-danger btn-lg">
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-2">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+              <h1 class="display-3">Pasture to Plate</h1>
+              <p class="lead" style="font-size:1.75rem;font-weight:350;">Our cattle are winter fed hay for an average of 60 to 90 days; the remainder of their time is spent grazing residual forage from the previous year, then lush, irrigated pastures and approximately 160,000 hectares of range land, which we lease from the crown. All of our animals are free of any kind of pharmaceuticals like antibiotics, growth promoting implants, parasite controlling chemicals and vaccinations. 
+				  It is clean water and forage, with sea salt being the only supplement</p>
+              <a href="http://www.pasturetoplate.ca/" class="btn btn-primary btn-lg" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+
+      <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- success message -->
 	<div class="container" id='success-message-container' , style="padding-top:30px"></div>
 	<section class="cd-timeline js-cd-timeline">
 		<div class="cd-timeline__container">
@@ -58,14 +103,10 @@
 					<p><b>Location: </b>
 						<%= item.event.location %>
 					</p>
-					<p><b>Description: </b>
+					<p class="clampedLine" data-full-desc="<%= item.event.description %>"><b>Description: </b>
 						<%= item.event.description %>
 					</p>
-					<% if(item.event.transfer){ %>
-					<p><b>Owner requests a confirmation of product arrival and transfer of ownership</b></p>
-					<a href="#0" class="cd-timeline__read-more info" id="confirm">Confirm</a>
-					<a href="#0" class="cd-timeline__read-more" id="decline">Decline</a>
-					<%}%>
+					<a href="#0" class="cd-timeline__read-more info readMore">Read More</a>
 
 					<span class="cd-timeline__date">
 						<%= item.event.date %></span>
@@ -77,10 +118,17 @@
 		</div>
 	</section>
 	<!-- cd-timeline -->
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 	<script src="/js/main.js"></script>
-	<script src="/js/custom-bundle.js"></script>
 	<script src="/js/session.js"></script>
+	<script src="/js/clamp.min.js"></script>
 	<script src="/js/analytics.min.js"></script>
 	<!-- Resource JavaScript -->
 	<script>
@@ -89,7 +137,49 @@
 			var urlItems = url.split('/');
 			var ownerPublicKey = urlItems[urlItems.length - 2];
 			var id = urlItems[urlItems.length - 1];
+			function init(){
+				
+				$('.readMore').click(function (e) {
+					var target = $(e.target);
+					target.css({
+        				'display': 'none',
+    				})
+					var targetData = target.siblings('.clampedLine');
+					targetData.attr('style', null);
+				})
+				/*$('#confirm').click(function (e) {
+				event.preventDefault();
+				var data = {
+					title: "Arrival confirmed",
+					date: getDate(),
+					location: "7Gate academy",
+					description: "Product arrival has been confirmed",
+					receipient: ""
+				}
+				var request = {
+					publicKey: id,
+					data: data
+				};
+				smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, {
+						from: web3.eth.accounts[0]
+					})
+					.then(function (txHash) {
+						console.log('Transaction sent')
+						console.dir(txHash)
+						addSuccessMessage(txHash);
+						waitForReceipt(txHash, function (receipt) {
+							if (!data)
+								return;
+							updateSuccessMessage(txHash, receipt.status);
+						});
+					})
+				$.post("/form/submitConfirm", request)
+					.done(function (data) {
 
+					});
+
+			});*/
+			}
 			function getDate() {
 				var today = new Date();
 				var dd = today.getDate();
@@ -156,38 +246,7 @@
 					}
 				});
 			}
-			$("#confirm").click(function (e) {
-				event.preventDefault();
-				var data = {
-					title: "Arrival confirmed",
-					date: getDate(),
-					location: "7Gate academy",
-					description: "Product arrival has been confirmed",
-					receipient: ""
-				}
-				var request = {
-					publicKey: id,
-					data: data
-				};
-				smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, {
-						from: web3.eth.accounts[0]
-					})
-					.then(function (txHash) {
-						console.log('Transaction sent')
-						console.dir(txHash)
-						addSuccessMessage(txHash);
-						waitForReceipt(txHash, function (receipt) {
-							if (!data)
-								return;
-							updateSuccessMessage(txHash, receipt.status);
-						});
-					})
-				$.post("/form/submitConfirm", request)
-					.done(function (data) {
-
-					});
-
-			})
+			init();
 		})
 	</script>
 </body>
