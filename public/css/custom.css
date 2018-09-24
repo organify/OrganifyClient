@@ -231,3 +231,28 @@ li .form-wrapper div {
 .product-page .carousel-image-9 {
     height: 70vh;
 }
+
+.poweredby {
+    font-size: 0.75rem;
+}
+
+.lead {
+    padding: 15px;
+}
+
+
+@media (min-width: 250px) and (max-width: 768px) {
+    .container .carousel-caption {
+        margin-bottom: 0 !important;
+        bottom: 5vh;
+        display: block !important;
+    }
+}
+
+footer svg {
+    height: 10px;
+}
+
+footer a {
+    color: black;
+}
