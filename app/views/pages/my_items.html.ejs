@@ -27,19 +27,22 @@
   <header>
     <div class="cd-nugget-info">
       <a href="/">
-				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<style type="text/css">
-							.cd-nugget-info-arrow{fill:#383838;}
-						</style>
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
-					</svg>
-				</span>
-				Go back to Home page
-			</a>
+        <span>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+            <style type="text/css">
+              .cd-nugget-info-arrow {
+                fill: #383838;
+              }
+            </style>
+            <polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
+          </svg>
+        </span>
+        Go back to Home page
+      </a>
       <a href="#" style="padding-left: 30px;" id="signout">
-				Sign out
-			</a>
+        Sign out
+      </a>
     </div>
     <!-- cd-nugget-info -->
     <h1>Farmer name , img and info</h1>
@@ -51,11 +54,13 @@
     <div class="row">
       <div class="col-sm-8" style="padding-top: 50px; padding-bottom:50px">
         <h2 class="mt-4">What We Do</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi?
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta
+          quasi?
           Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi,
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in
+          nisi,
           natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-        
+
       </div>
       <div class="col-sm-4" style="padding-top: 50px; padding-bottom:50px">
         <h2 class="mt-4">Contact Us</h2>
@@ -77,23 +82,24 @@
 
     <div class="row">
       <% items.forEach(function(item){ %>
-      <% if(item.name && item.publicKey){ %> 
+      <% if(item.name && item.publicKey){ %>
       <div class="col-sm-4 my-4">
-          <div class="card h-100">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h3 class="card-title">
-                <%= item.name %>
-              </h3>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="/form/<%= item.publicKey %>" class="btn btn-primary">Find Out More!</a>
-            </div>
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+          <div class="card-body">
+            <h3 class="card-title">
+              <%= item.name %>
+            </h3>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
+              neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="/form/<%= item.publicKey %>" class="btn btn-primary">Find Out More!</a>
           </div>
         </div>
-        
-        <% }}) %>
+      </div>
+
+      <% }}) %>
 
 
 
