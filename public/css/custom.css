@@ -60,6 +60,12 @@ input {
     background-size: cover;
 }
 
+.carousel-image-9 {
+    background: url('../img/cooking.jpg');
+    background-size: cover;
+    background-position-y: 70%;
+}
+
 #home-heading {
     position: relative;
     min-height: 200px;
@@ -216,4 +222,12 @@ li .form-wrapper div {
 
 .product-page .display-3 {
     font-size: 2.5rem;
+}
+
+.product-page .carousel-caption {
+    bottom: 10vh;
+}
+
+.product-page .carousel-image-9 {
+    height: 70vh;
 }
