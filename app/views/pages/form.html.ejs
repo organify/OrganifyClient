@@ -152,13 +152,13 @@
       $("#submit").click(function (e) {
         event.preventDefault();
         var url = window.location.pathname;
-        var id = url.substring(url.lastIndexOf('/') + 1);
         var data = {
           title: $("#title").val(), date: $("#date").val(),
-          location: $("#location").val(), description: $("#description").val(), receipient: $("#receipient").val()
+          location: $("#location").val(), 
+          description: $("#description").val(), receipient: $("#receipient").val()
         }
-        var request = { publicKey: id, data: data };
-        $.post("submitItem", request).done(function (data) {
+        var request = { data: data };
+        $.post("/form/submitItem", request).done(function (data) {
             resetForm();
             addSuccessMessage();
         });
