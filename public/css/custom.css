@@ -213,3 +213,7 @@ li .form-wrapper div {
     text-transform: uppercase;
     color: #57a757 !important;
 }
+
+.product-page .display-3 {
+    font-size: 2.5rem;
+}
