@@ -36,6 +36,7 @@
 					// add bounce-in animation
 					self.images[i].classList.add("cd-timeline__img--bounce-in");
 					self.contents[i].classList.add("cd-timeline__content--bounce-in");
+					$clamp(self.contents[i].querySelector('.clampedLine'), { clamp: 1});
 					self.images[i].classList.remove("cd-is-hidden");
 					self.contents[i].classList.remove("cd-is-hidden");
 				}
