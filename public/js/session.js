@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#signout").click(function (e) {
         e.preventDefault();
-        $.post("signOut", function () {
+        $.post("/signOut", function () {
             sessionStorage.setItem("userLogIn", "false");
             window.location.href = '/';
         });
