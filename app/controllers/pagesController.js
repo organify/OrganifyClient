@@ -98,18 +98,26 @@ pagesController.signIn = function () {
   var userName = data.userName;
   var password = data.password;
   var loginSuccess = sessionService.login(this.req, userName, password);
-  if(loginSuccess){
+  if (loginSuccess) {
     userSession[publicKeys[0]] = {
-    signin: true
-  };
+      signin: true
+    };
     this.res.end("200");
-  } 
-  else
+  } else
     this.res.end("404");
 }
 
+pagesController.signOut = function () {
+  var logoutSuccess = sessionService.logout(this.req);
+  if (logoutSuccess) {
+    this.res.end("200");
+  } else
+    this.res.end("404");
+}
+
+
 pagesController.myItems = function () {
-  if(!sessionService.auth(this.req))
+  if (!sessionService.auth(this.req))
     res.sendStatus(401);
 
   var current = this;
