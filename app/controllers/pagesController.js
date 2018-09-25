@@ -49,6 +49,7 @@ pagesController.form = function () {
     return;
   }
   this.title = "Beef";
+  this.allProducts = allProducts;
   this.render();
 }
 

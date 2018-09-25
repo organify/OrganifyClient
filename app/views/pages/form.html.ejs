@@ -6,7 +6,8 @@
     <%= title %>
   </title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="/css/form.css">
   <!-- form style -->
@@ -15,51 +16,78 @@
   <link rel="stylesheet" href="/css/style.css">
   <!-- Resource style -->
   <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/loading-btn.css">
   <!-- Resource style -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/style2.min.css">
 </head>
 
 <body>
-  <header>
-    <div class="cd-nugget-info">
-      <a href="/">
-				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<style type="text/css">
-							.cd-nugget-info-arrow{fill:#383838;}
-						</style>
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 "/>
-					</svg>
-				</span>
-				Go back to Home page
-			</a>
-      <a href="#" style="padding-left: 30px;" id="signout">
-				Sign out
-			</a>
-      <a href="/myItems" style="padding-left: 30px;">
-				My items
-			</a>
-    </div>
-    <!-- cd-nugget-info -->
-    <h1>Farmer name , img and info</h1>
-  </header>
-  <div class="container" id='success-message-container' , style="padding-top:30px"></div>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
+		<div class="container">
+			<a href="/" class="navbar-brand ">Organify</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a href="/" class="nav-link">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/myItems" class="nav-link" id="myItemsPage">My items</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link" id="signout">Log out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- SHOWCASE SLIDER -->
+	<section id="showcase" class="mt-5 product-page">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner" id="top-link">
+				<div class="carousel-item carousel-image-9 active">
+					<div class="container">
+						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
+							<h1 class="display-3">Pasture to Plate</h1>
+							<h1 class="poweredby">Powered by Organify</h1>
+							<p class="lead">Pasture to Plate cattle are winter fed hay for an average of 60 to
+								90 days. All of our animals are free from any kind of pharmaceuticals like antibiotics, growth promoting
+								implants, parasite
+								controlling chemicals and vaccinations.</p>
+							<a href="http://www.pasturetoplate.ca/" target="_blank"><input id="getstarted" type="button" value="Find Out More" class="btn btn-danger btn-lg"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+  <div class="container" id='success-message-container' style="padding-top:30px"></div>
   <div class="container" style="padding-top:30px;padding-bottom:50px;">
     <div class="stepwizard" style="padding-bottom:50px;">
       <div class="stepwizard-row setup-panel">
         <div class="stepwizard-step">
-          <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+          <button href="#step-1" type="button" class="btn btn-success btn-circle">1</button>
           <p>Step 1</p>
         </div>
         <div class="stepwizard-step">
-          <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+          <button href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</button>
           <p>Step 2</p>
         </div>
         <div class="stepwizard-step">
-          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <button href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</button>
           <p>Step 3</p>
         </div>
         <div class="stepwizard-step">
-          <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+          <button href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">4</button>
           <p>Step 4</p>
         </div>
       </div>
@@ -69,13 +97,13 @@
         <div class="row setup-content" id="step-1">
           <div class="col-md-4 col-sm-6 mb-4 well">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="/img/apples.jpg" alt=""></a>
+              <a href="/products/<%= allProducts[0].publicKey %>" target="_blank">
+                <img class="card-img-top" src="/img/beef.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="/products/<%= allProducts[0].publicKey %>" target="_blank"><%= allProducts[0].name %></a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <p class="card-text">This is Organify's first product test case. Test is conducted on 27/09/2018</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -110,7 +138,10 @@
               <input maxlength="100" id="receipient" name="receipient" type="text" required="required" class="form-control" placeholder="Receipient public key"
               />
             </div>
-            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" id="submit">Submit</button>
+            <button class="btn btn-success nextBtn btn-md pull-right ld-ext-right" type="button" id="submit">
+              Submit
+              <div class="ld ld-ring ld-spin"></div>
+              </button>
           </div>
         </div>
       </form>
@@ -118,8 +149,12 @@
   </div>
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
   <script src="/js/custom-bundle.js"></script>
   <script src="/js/session.js"></script>
   <script type="text/javascript">
@@ -134,10 +169,13 @@
       });
       function addSuccessMessage() {
         var div = document.createElement('div');
-        div.innerHTML = `<div class="infoMsg" id="infoMsg">
-  					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has been submitted. Please wait for confirmation.
-					</div>`;
+        div.innerHTML = `<div class="infoMsg" >
+        <div class="alert alert-success" role="alert" id="infoMsg">
+  	        Your update has been submitted successfully.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>`;
         document.getElementById('success-message-container').appendChild(div);
       }
       function resetForm() {
@@ -151,6 +189,7 @@
       }
       $("#submit").click(function (e) {
         event.preventDefault();
+        $(this).addClass("running");
         var url = window.location.pathname;
         var data = {
           title: $("#title").val(), date: $("#date").val(),
@@ -161,6 +200,10 @@
         $.post("/form/submitItem", request).done(function (data) {
             resetForm();
             addSuccessMessage();
+            $("#submit").removeClass("running");
+            $('html, body').animate({
+                    scrollTop: $("#success-message-container").offset().top - 30
+                }, 500);
         });
       })
     });

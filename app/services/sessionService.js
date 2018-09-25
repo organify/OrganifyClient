@@ -1,5 +1,5 @@
-var ourOnlyUser = "barbra";
-var ourPassword = "ourpassword";
+var ourOnlyUser = "barbara";
+var ourPassword = "PastureToPlatePassword";
 
 
 var auth = function(req) {
