@@ -26,7 +26,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="stylesheet" href="/css/style2.min.css">
-
 </head>
 
 <body>
@@ -80,7 +79,7 @@
 	<div class="container" id='success-message-container' , style="padding-top:30px"></div>
 	<section class="cd-timeline js-cd-timeline">
 		<div class="cd-timeline__container">
-			<% txDataList.forEach(function(item){ if(item.event && item.event.title){%>
+			<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
 			<div class="cd-timeline__block js-cd-block">
 				<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
 					<img src="/img/cd-icon-picture.svg" alt="Picture">
@@ -97,7 +96,7 @@
 					<p class="clampedLine"><b>Description: </b>
 						<%= item.event.description %>
 					</p>
-					<a href="#0" class="cd-timeline__read-more info readMore">Read More</a>
+					<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
 
 					<span class="cd-timeline__date">
 						<%= item.event.date %></span>
@@ -135,6 +134,7 @@
 			});
 	</script>
 	<script>
+		mixpanel.track("productPageView");
 		$(function () {
 			var url = window.location.pathname;
 			var urlItems = url.split('/');
@@ -150,6 +150,8 @@
 					})
 					var targetData = target.siblings('.clampedLine');
 					targetData.attr('style', null);
+					var eventName = "readMore_" + target.attr("data-organify-id");
+					mixpanel.track(eventName);
 				})
 				/*$('#confirm').click(function (e) {
 				event.preventDefault();
