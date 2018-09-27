@@ -158,18 +158,20 @@ header h1 {
   margin-top: -12px;
 }
 
-.cd-timeline__img.cd-timeline__img--picture {
-  background: #75ce66;
+.cd-timeline__img.cd-timeline__img--beef {
+  background: #ffeecc;
 }
 
-.cd-timeline__img.cd-timeline__img--movie {
-  background: #c03b44;
+.cd-timeline__img.cd-timeline__img--cow {
+  background: #c6ecc6;
 }
 
-.cd-timeline__img.cd-timeline__img--location {
-  background: #f0ca45;
+.cd-timeline__img.cd-timeline__img--calf {
+  background: #cceeff;
 }
-
+.cd-timeline__img.cd-timeline__img--range {
+  background: #ffffff;
+}
 @media only screen and (min-width: 1170px) {
   .cd-timeline__img {
     width: 60px;
@@ -301,7 +303,8 @@ header h1 {
 .cd-timeline__date {
   float: left;
   padding: .8em 0;
-  opacity: .7;
+  color: darkred;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {

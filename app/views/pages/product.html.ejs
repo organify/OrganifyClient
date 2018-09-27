@@ -31,7 +31,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top p-2">
 		<div class="container">
-			<a href="/" class="navbar-brand ">Organify</a>
+			<a href="/" class="navbar-brand ">Organify.</a>
 			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -60,8 +60,8 @@
 						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
 							<h1 class="display-3">Pasture to Plate</h1>
 							<h1 class="poweredby">Powered by Organify</h1>
-							<p class="lead">Pasture to Plate cattle are winter fed hay for an average of 60 to 90 days. All of our animals are free from any kind
-								of pharmaceuticals like antibiotics, growth promoting implants, parasite controlling chemicals and vaccinations.</p>
+							<p class="lead">Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass off the pasture, hay,
+								winter grazing through the snow or being supplemented with fodder (sprouts).</p>
 							<a href="http://www.pasturetoplate.ca/" target="_blank"><input id="getstarted" type="button" value="Find Out More" class="btn btn-danger btn-lg"></a>
 						</div>
 					</div>
@@ -75,32 +75,47 @@
 		<div class="cd-timeline__container">
 			<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
 				<div class="cd-timeline__block js-cd-block">
-					<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
-						<img src="/img/cd-icon-picture.svg" alt="Picture">
+
+				<% if(index <= 3){ %>
+					<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
+						<img src="/img/meat.svg" alt="Beef">
 					</div>
-					<!-- cd-timeline__img -->
+				<% }else if(index > 3 && index <= 7){ %>
+					<div class="cd-timeline__img cd-timeline__img--cow js-cd-img">
+						<img src="/img/beef1.svg" alt="Cow">
+					</div>
+				<% }else if(index > 7 && index <= 9){ %>
+					<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
+						<img src="/img/cow.svg" alt="Calf">
+					</div>
+				<% }else if(index == 10){ %>
+					<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
+						<img src="/img/farmer.svg" alt="Range">
+					</div>
+				<% } %>
+<!-- cd-timeline__img -->
 
-					<div class="cd-timeline__content js-cd-content">
-						<h2>
-							<%= item.event.title %>
-						</h2>
-						<p><b>Location: </b>
-							<%= item.event.location %>
-						</p>
-						<p class="clampedLine"><b>Description: </b>
-							<%= item.event.description %> <br>
-								<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
-						</p>
-						<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
+<div class="cd-timeline__content js-cd-content">
+	<h2>
+		<%= item.event.title %>
+	</h2>
+	<p><b>Location: </b>
+		<%= item.event.location %>
+	</p>
+	<p class="clampedLine"><b>Description: </b>
+		<%= item.event.description %> <br>
+			<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
+	</p>
+	<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
 
-						<span class="cd-timeline__date">
+	<span class="cd-timeline__date">
 						<%= item.event.date %></span>
-					</div>
-					<!-- cd-timeline__content -->
-				</div>
-				<!-- cd-timeline__block -->
-				<% }}) %>
-		</div>
+</div>
+<!-- cd-timeline__content -->
+</div>
+<!-- cd-timeline__block -->
+<% }}) %>
+	</div>
 	</section>
 	<footer class="footer">
 		<div class="container">
@@ -123,10 +138,10 @@
 	<script src="/js/analytics.min.js"></script>
 	<!-- Resource JavaScript -->
 	<!-- start bot code -->
-	<script src="https://lex-web-ui-codebuilddeploy-1xqlac2mm-webappbucket-1xjk8gpypboc2.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
+	<script src="https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
 	<script>
 		var loaderOpts = {
-			baseUrl: 'https://lex-web-ui-codebuilddeploy-1xqlac2mm-webappbucket-1xjk8gpypboc2.s3.amazonaws.com/'
+			baseUrl: 'https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/'
 		};
 		var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
 		loader.load()
@@ -142,7 +157,7 @@
 			var id = urlItems[urlItems.length - 1];
 
 			function init() {
-				$clamp(document.querySelector('.clampedLine'), { clamp: 1});
+				$clamp(document.querySelector('.clampedLine'), { clamp: 1 });
 				$('.readMore').click(function (e) {
 					var target = $(e.target);
 					target.css({
@@ -262,6 +277,6 @@
 			init();
 		})
 	</script>
-</body>
+	</body>
 
-</html>
+	</html>
