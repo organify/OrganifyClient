@@ -255,6 +255,14 @@ li .form-wrapper div {
         padding: 0;
     }
 
+    .card-body a {
+        font-size: 10px;
+    }
+
+    .col-md-6 a img {
+        width: 80vw;
+    }
+
 }
 
 @media (min-width: 575px) and (max-width: 768px) {

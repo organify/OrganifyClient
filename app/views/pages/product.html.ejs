@@ -26,7 +26,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Open+Sans:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="stylesheet" href="/css/style2.min.css">
-
 </head>
 
 <body>
@@ -38,8 +37,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a href="/" class="nav-link">Home</a>
+					<li class="nav-item">
+						<a href="/" class="nav-link" id="homePage">Home</a>
 					</li>
 					<li class="nav-item">
 						<a href="/myItems" class="nav-link" id="myItemsPage">My items</a>
@@ -53,7 +52,7 @@
 	</nav>
 
 	<!-- SHOWCASE SLIDER -->
-	<section id="showcase" class="mt-5 product-page">
+	<section id="showcase" class="mt-5 product-page" style="margin-top: -6rem!important">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner" id="top-link">
 				<div class="carousel-item carousel-image-9 active">
@@ -61,11 +60,9 @@
 						<div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
 							<h1 class="display-3">Pasture to Plate</h1>
 							<h1 class="poweredby">Powered by Organify</h1>
-							<p class="lead">Pasture to Plate cattle are winter fed hay for an average of 60 to
-								90 days. All of our animals are free from any kind of pharmaceuticals like antibiotics, growth promoting
-								implants, parasite
-								controlling chemicals and vaccinations.</p>
-							<a href="http://www.pasturetoplate.ca/"><input id="getstarted" type="button" value="Find Out More" class="btn btn-danger btn-lg"></a>
+							<p class="lead">Pasture to Plate cattle are winter fed hay for an average of 60 to 90 days. All of our animals are free from any kind
+								of pharmaceuticals like antibiotics, growth promoting implants, parasite controlling chemicals and vaccinations.</p>
+							<a href="http://www.pasturetoplate.ca/" target="_blank"><input id="getstarted" type="button" value="Find Out More" class="btn btn-danger btn-lg"></a>
 						</div>
 					</div>
 				</div>
@@ -73,49 +70,42 @@
 	</section>
 
 	<!-- success message -->
-	<div class="container" id='success-message-container' , style="padding-top:30px"></div>
+	<div class="container" id='success-message-container' style="padding-top:30px"></div>
 	<section class="cd-timeline js-cd-timeline">
 		<div class="cd-timeline__container">
-			<% txDataList.forEach(function(item){ if(item.event && item.event.title){%>
-			<div class="cd-timeline__block js-cd-block">
-				<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
-					<img src="/img/cd-icon-picture.svg" alt="Picture">
-				</div>
-				<!-- cd-timeline__img -->
+			<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
+				<div class="cd-timeline__block js-cd-block">
+					<div class="cd-timeline__img cd-timeline__img--picture js-cd-img">
+						<img src="/img/cd-icon-picture.svg" alt="Picture">
+					</div>
+					<!-- cd-timeline__img -->
 
-				<div class="cd-timeline__content js-cd-content">
-					<h2>
-						<%= item.event.title %>
-					</h2>
-					<p><b>Location: </b>
-						<%= item.event.location %>
-					</p>
-					<p class="clampedLine"><b>Description: </b>
-						<%= item.event.description %>
-					</p>
-					<a href="#0" class="cd-timeline__read-more info readMore">Read More</a>
+					<div class="cd-timeline__content js-cd-content">
+						<h2>
+							<%= item.event.title %>
+						</h2>
+						<p><b>Location: </b>
+							<%= item.event.location %>
+						</p>
+						<p class="clampedLine"><b>Description: </b>
+							<%= item.event.description %> <br>
+								<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
+						</p>
+						<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
 
-					<span class="cd-timeline__date">
+						<span class="cd-timeline__date">
 						<%= item.event.date %></span>
+					</div>
+					<!-- cd-timeline__content -->
 				</div>
-				<!-- cd-timeline__content -->
-			</div>
-			<!-- cd-timeline__block -->
-			<% }}) %>
+				<!-- cd-timeline__block -->
+				<% }}) %>
 		</div>
 	</section>
-	<footer>
-		<h1 class="poweredby">Powered by Organify</h1>
-		<div>
-			<a href="/">
-				<span>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
-						<polygon class="cd-nugget-info-arrow" points="15,7 4.4,7 8.4,3 7,1.6 0.6,8 0.6,8 0.6,8 7,14.4 8.4,13 4.4,9 15,9 " />
-					</svg>
-				</span>
-				back to home page
-			</a>
+	<footer class="footer">
+		<div class="container">
+			<p>Disclaimer: This information is brought to you by Organify.io.
+				<a href="/" class="disclaimer">Click here</a> to know how we use technology to build trust in food industry</p>
 		</div>
 	</footer>
 	<!-- cd-timeline -->
@@ -132,19 +122,19 @@
 	<script src="/js/clamp.min.js"></script>
 	<script src="/js/analytics.min.js"></script>
 	<!-- Resource JavaScript -->
-	<!-- start boot code -->
-	<script src="https://lex-web-ui-codebuilddeploy-oxeaege6g-webappbucket-l80ni788od5h.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
+	<!-- start bot code -->
+	<script src="https://lex-web-ui-codebuilddeploy-1xqlac2mm-webappbucket-1xjk8gpypboc2.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
 	<script>
 		var loaderOpts = {
-			baseUrl: 'https://lex-web-ui-codebuilddeploy-oxeaege6g-webappbucket-l80ni788od5h.s3.amazonaws.com/'
+			baseUrl: 'https://lex-web-ui-codebuilddeploy-1xqlac2mm-webappbucket-1xjk8gpypboc2.s3.amazonaws.com/'
 		};
 		var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
 		loader.load()
-			.catch(function (error) {
-				console.error(error);
-			});
+			.catch(function (error) { console.error(error); });
+
 	</script>
 	<script>
+		mixpanel.track("productPageView");
 		$(function () {
 			var url = window.location.pathname;
 			var urlItems = url.split('/');
@@ -152,7 +142,7 @@
 			var id = urlItems[urlItems.length - 1];
 
 			function init() {
-
+				$clamp(document.querySelector('.clampedLine'), { clamp: 1});
 				$('.readMore').click(function (e) {
 					var target = $(e.target);
 					target.css({
@@ -160,7 +150,15 @@
 					})
 					var targetData = target.siblings('.clampedLine');
 					targetData.attr('style', null);
+					var eventName = "readMore_" + target.attr("data-organify-id");
+					mixpanel.track(eventName);
 				})
+				$(".disclaimer").on("click", function (e) {
+					mixpanel.track("disclaimerEvent");
+				});
+				$(".homePage").on("click", function (e) {
+					mixpanel.track("homePageFromProductPage");
+				});
 				/*$('#confirm').click(function (e) {
 				event.preventDefault();
 				var data = {
