@@ -31,7 +31,7 @@ Error: cannot open input file 'C:\OpenSSL-Win64\lib\libeay32.lib' => download [O
 ```
 node server
 ```
-### Deploy project (aws)
+### Deploy project to aws
 Step 1:
 ```
 install eb-cli
