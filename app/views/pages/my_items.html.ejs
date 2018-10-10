@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Business Frontpage - Start Bootstrap Template</title>
+  <title>My Items</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -45,7 +45,7 @@
       </a>
     </div>
     <!-- cd-nugget-info -->
-    <h1>Farmer name , img and info</h1>
+    <h1>Pasture to Plate Products</h1>
   </header>
 
   <!-- Page Content -->
@@ -53,14 +53,10 @@
 
     <div class="row">
       <div class="col-sm-8" style="padding-top: 50px; padding-bottom:50px">
-        <h2 class="mt-4">What We Do</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta
-          quasi?
-          Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in
-          nisi,
-          natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-
+        <h2 class="mt-4" style="padding-bottom:1.5em">What We Do</h2>
+        <p>Pasture to Plate cattle are 100% grassfed. Depending on the season they are eating fresh grass off the pasture, hay,
+								winter grazing through the snow or being supplemented with fodder (sprouts).</p>
+        
       </div>
       <div class="col-sm-4" style="padding-top: 50px; padding-bottom:50px">
         <h2 class="mt-4">Contact Us</h2>
@@ -85,16 +81,14 @@
       <% if(item.name && item.publicKey){ %>
       <div class="col-sm-4 my-4">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-          <div class="card-body">
+          <img class="card-img-top" src="/img/beef.jpg" alt="">
+          <div class="card-body" style="padding: 0.7em 0 0.7em 0;">
             <h3 class="card-title">
               <%= item.name %>
             </h3>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus
-              neque sequi doloribus.</p>
           </div>
           <div class="card-footer">
-            <a href="/form/<%= item.publicKey %>" class="btn btn-primary">Find Out More!</a>
+            <a href="/form/<%= item.publicKey %>" class="btn btn-primary">Add event</a>
           </div>
         </div>
       </div>

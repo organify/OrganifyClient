@@ -6,7 +6,7 @@ var sessionService = require('../services/sessionService.js')
 
 var pagesController = new Controller();
 var userSession = {};
-var allProducts = [{publicKey: "CMpuCH5Dt6LegLs1wKQ3UWqZeKQQRAEV8Kf9658HLuaT", name: "Beef batch #1"}];
+var allProducts = [];
 var publicKeys = ["0x8929d658b2647f09a318ebd756f49f299f82c7d9"];
 
 
@@ -48,35 +48,29 @@ pagesController.form = function () {
     this.res.send("You don't have permission to access this page, please login", 401);
     return;
   }
-  this.title = "Beef";
-  this.allProducts = allProducts;
+
+  var publicKey = this.param("publicKey");
+
+  if(!publicKey){
+    this.res.send("Invalid request", 403);
+  }
+
+  var item = findItem(publicKey);
+  this.item = item;
   this.render();
 }
 
 pagesController.submitItem = function () {
-  var current = this;
-  var item = {
-    product: {
-      name: this.request.body.name || allProducts[0]["name"],
-      imgUrl: ""
-    },
-    timeStamp: new Date().toLocaleString(),
-    event: this.request.body.data
-  };
-  var keyObject = {
-    publicKey: allProducts[0]["publicKey"],
-    privateKey: allProducts[0]["privateKey"]
-  };
-  txService.saveData(item, keyObject).finally(() =>
-    current.res.end("true"));
-  //var session = this.request.session.publicKey;
+  if (!sessionService.auth(this.req)){
+    this.res.send("You don't have permission to access this page, please login", 401);
+    return;
+  }
 
-}
-pagesController.submitConfirm = function () {
+  var current = this;
   var requestObj = this.request.body;
   var item = {
     product: {
-      name: requestObj.name,
+      name: "",
       imgUrl: ""
     },
     timeStamp: new Date().toLocaleString(),
@@ -95,7 +89,10 @@ pagesController.submitConfirm = function () {
   }
   txService.saveData(item, keyObject).finally(() =>
     current.res.end("true"));
+  //var session = this.request.session.publicKey;
+
 }
+
 
 pagesController.signIn = function () {
   var data = this.req.body;
@@ -106,8 +103,12 @@ pagesController.signIn = function () {
     userSession[publicKeys[0]] = {
       signin: true
     };
-    getItems(this, null);
-    this.res.end("200");
+    var callBack = function(cur){
+      var firstActiveItem = findFirstActiveItem();
+      cur.res.send({status: 200, data: firstActiveItem.publicKey});;
+    }
+    getItems(this, callBack);
+    
   } else
     this.res.end("404");
 }
@@ -126,6 +127,12 @@ pagesController.myItems = function () {
     this.res.send("You don't have permission to access this page, please login", 401);
     return;
   }
+  if(allProducts.length > 0){
+    this.items = allProducts;
+    this.render();
+    return;
+  }
+    
   var current = this;
   var callBack = function(cur){
     cur.render();
@@ -138,6 +145,7 @@ var getItems = function(current, callBack){
     var productNames = result[0].substring(1).split(';');
     var itemPublicKeys = result[1].substring(1).split(';');
     var itemPrivateKeys = result[2].substring(1).split(';');
+    var itemIsActive = result[3].substring(1).split(';');
     for (var i = 0; i < productNames.length; i++) {
       userSession[publicKeys[0]][itemPublicKeys[i]] = {
         privateKey: itemPrivateKeys[i],
@@ -147,7 +155,8 @@ var getItems = function(current, callBack){
         name: productNames[i],
         publicKey: itemPublicKeys[i],
         owner: publicKeys[0],
-        privateKey: itemPrivateKeys[i]
+        privateKey: itemPrivateKeys[i],
+        isActive : itemIsActive[i] == '1'
       };
       addProduct(currentProduct);
       current.items.push(currentProduct);
@@ -157,10 +166,16 @@ var getItems = function(current, callBack){
   });
 }
 function addProduct(product) {
-  var modified = false;
-  allProducts[0] = product;
+  for(var i = 0; i < allProducts.length; i++){
+    if(allProducts[i].publicKey === product.publicKey){
+      allProducts[i] = product;
+      return;
+    }
+  }
+  allProducts.push(product);
 }
 pagesController.product = function () {
+  this.errorOccur = false;
   var publicKey = this.param("publicKey");
   this.title = 'Organify';
   var resultList = {
@@ -182,8 +197,29 @@ pagesController.product = function () {
       }
       return;
     })
+    .catch((error) =>{
+      this.txDataList = [];
+      this.errorOccur = true;
+    })
     .finally(() => {
       this.render();
     });
+}
+
+function findItem(publicKey){
+   for (var i = 0; i < allProducts.length; i++) {
+    if (allProducts[i].publicKey === publicKey) {
+      return allProducts[i];
+    }
+  }
+  return {};
+}
+function findFirstActiveItem(){
+   for (var i = 0; i < allProducts.length; i++) {
+    if (allProducts[i].isActive) {
+      return allProducts[i];
+    }
+  }
+  return {};
 }
 module.exports = pagesController;

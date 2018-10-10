@@ -17,7 +17,7 @@ const conn = new driver.Connection(API_PATH, {
 * @returns {Array} An array containing all unspent transactions for a certain public key.
 */
 const getTxIdsbyPublicKey = function (publicKey) {
-    return conn.listOutputs(publicKey, false).then((response) => {
+    return conn.listOutputs(publicKey).then((response) => {
 
         console.log('getData response is', response);
         return response;

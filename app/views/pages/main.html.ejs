@@ -46,8 +46,11 @@
           <li class="nav-item">
             <a href="#contactus" class="nav-link">Contact</a>
           </li>
-          <li class='button-hidde'>
+          <li class='button-hidde' id='signin'>
             <a class='farmer-login'>farmer login</a>
+          </li>
+           <li class="nav-item" id='signout'>
+            <a href="" class="nav-link">Log out</a>
           </li>
           <li>
             <form class="form-wrapper">
@@ -158,7 +161,7 @@
       <div class="row">
         <div class="col">
           <div class="container p-5">
-            <h1>See more informations about your product</h1>
+            <h1>Products information</h1>
           </div>
         </div>
       </div>
@@ -167,16 +170,18 @@
   <section id="solution-heading" class="p-5">
     <div class="container">
       <div class="row mb-4">
+        <% allProducts.forEach(function(item, index){ %> 
         <div class="col-md-4">
           <div class="card bg-danger text-white text-center">
             <div class="card-body">
               <i class="fas fa-utensils"></i>
-              <h3>Pasture to Plate <br> Organic Meat</h3>
+              <h3><%= item.name %></h3>
               <p>Find more information on the meats from Pasture to Plate!</p>
-              <a href="/products/<%= allProducts[0].publicKey %>" class="btn btn-success">more information</a>
+              <a href="/products/<%= item.publicKey %>" class="btn btn-success">more information</a>
             </div>
           </div>
         </div>
+        <% }) %>
       </div>
     </div>
   </section>
@@ -264,7 +269,7 @@
 
         <div class="col-md-3">
           <a data-toggle="modal" data-target="#farmer11" data-height="56" data-width="562">
-            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="img/nhatPhoto.JPG"
+            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="img/nhatPhoto.PNG"
               alt="Card image cap">
             <br /><br />
             <p class="text-center"><strong>Nhat Nguyen</strong><br />
@@ -302,7 +307,7 @@
 
         <div class="col-md-3">
           <a data-toggle="modal" data-target="#farmer22" data-height="562" data-width="562">
-            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/aliciaPhoto.JPG"
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/aliciaPhoto.PNG"
               alt="Card image cap">
             <br /><br />
             <p class="text-center"><strong>Alicia Nguyen</strong>
@@ -472,10 +477,10 @@
           userName: userNameBox,
           password: passwordBox
         }
-        $.post("signin", data, function (data) {
-          if (data == "200") {
+        $.post("signin", data, function (response) {
+          if (response.status == "200") {
             sessionStorage.setItem("userLogIn", "true");
-            window.location.href = '/form';
+            window.location.href = '/form/' + response.data;
           } else {
             sessionStorage.setItem("userLogIn", "false");
             alert("Fail to signin, please try again later");
