@@ -204,7 +204,7 @@
         var data = {
           title: $("#title").val(), date: $("#date").val(),
           location: $("#location").val(), 
-          description: $("#description").val(), receipient: $("#receipient").val()
+          description: $("#description").val()
         }
         var request = { publicKey: id, data: data };
         $.post("/form/submitItem", request).done(function (data) {

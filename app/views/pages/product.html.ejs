@@ -80,22 +80,22 @@
 			<% }else{ %>
 			<section class="cd-timeline js-cd-timeline">
 				<div class="cd-timeline__container">
-					<% txDataList.forEach(function(item, index){ if(item.event && item.event.title){%>
+					<% txDataList.forEach(function(item, index){ if(item.title){%>
 						<div class="cd-timeline__block js-cd-block">
 
-							<% if(index <= 3){ %>
+							<% if(item.icon == "beef"){ %>
 								<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
 									<img src="/img/meat.svg" alt="Beef">
 								</div>
-								<% }else if(index > 3 && index <= 7){ %>
+								<% }else if(item.icon == "cow"){ %>
 									<div class="cd-timeline__img cd-timeline__img--cow js-cd-img">
 										<img src="/img/beef1.svg" alt="Cow">
 									</div>
-									<% }else if(index > 7 && index <= 9){ %>
+									<% }else if(item.icon == "calf"){ %>
 										<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
 											<img src="/img/cow.svg" alt="Calf">
 										</div>
-										<% }else if(index == 10){ %>
+										<% }else{ %>
 											<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
 												<img src="/img/farmer.svg" alt="Range">
 											</div>
@@ -104,19 +104,19 @@
 
 												<div class="cd-timeline__content js-cd-content">
 													<h2>
-														<%= item.event.title %>
+														<%= item.title %>
 													</h2>
 													<p><b>Location: </b>
-														<%= item.event.location %>
+														<%= item.location %>
 													</p>
 													<p class="clampedLine"><b>Description: </b>
-														<%= item.event.description %> <br>
+														<%= item.description %> <br>
 															<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
 													</p>
-													<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.event.title %>">Read More</a>
+													<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.title %>">Read More</a>
 
 													<span class="cd-timeline__date">
-						<%= item.event.date %></span>
+						<%= item.date %></span>
 												</div>
 												<!-- cd-timeline__content -->
 						</div>

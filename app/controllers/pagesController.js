@@ -1,4 +1,4 @@
-var txService = require('../services/txDataAsyncService.js')
+var txService = require('../services/dynamoDbService.js')
 var locomotive = require('locomotive'),
   Controller = locomotive.Controller;
 var ethereumService = require('../services/ethereumService.js')
@@ -44,14 +44,14 @@ pagesController.subscription = function () {
   this.render();
 }
 pagesController.form = function () {
-  if (!sessionService.auth(this.req)){
+  if (!sessionService.auth(this.req)) {
     this.res.send("You don't have permission to access this page, please login", 401);
     return;
   }
 
   var publicKey = this.param("publicKey");
 
-  if(!publicKey){
+  if (!publicKey) {
     this.res.send("Invalid request", 403);
   }
 
@@ -61,34 +61,32 @@ pagesController.form = function () {
 }
 
 pagesController.submitItem = function () {
-  if (!sessionService.auth(this.req)){
+  if (!sessionService.auth(this.req)) {
     this.res.send("You don't have permission to access this page, please login", 401);
     return;
   }
 
   var current = this;
   var requestObj = this.request.body;
-  var item = {
-    product: {
-      name: "",
-      imgUrl: ""
-    },
-    timeStamp: new Date().toLocaleString(),
-    event: requestObj.data
-  };
   var keyObject = {
     publicKey: "",
     privateKey: ""
   };
   for (var i = 0; i < allProducts.length; i++) {
     if (allProducts[i].publicKey == requestObj.publicKey) {
-      item.product.name = allProducts[i].name;
       keyObject.publicKey = allProducts[i].publicKey;
       keyObject.privateKey = allProducts[i].privateKey;
     }
   }
-  txService.saveData(item, keyObject).finally(() =>
-    current.res.end("true"));
+  var callback = function (err, data) {
+    if (err) {
+      console.error("Unable to submit item. Error JSON:" + err);
+
+    }
+    current.res.end("true");
+  }
+  txService.addEvent(keyObject.publicKey, requestObj.data, callback);
+    
   //var session = this.request.session.publicKey;
 
 }
@@ -103,12 +101,12 @@ pagesController.signIn = function () {
     userSession[publicKeys[0]] = {
       signin: true
     };
-    var callBack = function(cur){
+    var callBack = function (cur) {
       var firstActiveItem = findFirstActiveItem();
-      cur.res.send({status: 200, data: firstActiveItem.publicKey});;
+      cur.res.send({ status: 200, data: firstActiveItem.publicKey });;
     }
     getItems(this, callBack);
-    
+
   } else
     this.res.end("404");
 }
@@ -123,23 +121,23 @@ pagesController.signOut = function () {
 
 
 pagesController.myItems = function () {
-  if (!sessionService.auth(this.req)){
+  if (!sessionService.auth(this.req)) {
     this.res.send("You don't have permission to access this page, please login", 401);
     return;
   }
-  if(allProducts.length > 0){
+  if (allProducts.length > 0) {
     this.items = allProducts;
     this.render();
     return;
   }
-    
+
   var current = this;
-  var callBack = function(cur){
+  var callBack = function (cur) {
     cur.render();
   }
   getItems(current, callBack);
 }
-var getItems = function(current, callBack){
+var getItems = function (current, callBack) {
   current.items = [];
   ethereumService.instance.getItem.call(publicKeys[0], function (err, result) {
     var productNames = result[0].substring(1).split(';');
@@ -156,18 +154,18 @@ var getItems = function(current, callBack){
         publicKey: itemPublicKeys[i],
         owner: publicKeys[0],
         privateKey: itemPrivateKeys[i],
-        isActive : itemIsActive[i] == '1'
+        isActive: itemIsActive[i] == '1'
       };
       addProduct(currentProduct);
       current.items.push(currentProduct);
     }
-    if(callBack)
+    if (callBack)
       callBack(current);
   });
 }
 function addProduct(product) {
-  for(var i = 0; i < allProducts.length; i++){
-    if(allProducts[i].publicKey === product.publicKey){
+  for (var i = 0; i < allProducts.length; i++) {
+    if (allProducts[i].publicKey === product.publicKey) {
       allProducts[i] = product;
       return;
     }
@@ -175,47 +173,40 @@ function addProduct(product) {
   allProducts.push(product);
 }
 pagesController.product = function () {
-  this.errorOccur = false;
-  var publicKey = this.param("publicKey");
-  this.title = 'Organify';
+  var scope = this;
+  scope.errorOccur = false;
+  var publicKey = scope.param("publicKey");
   var resultList = {
     total: 0,
     list: []
   };
-  var txIds = txService.getTxIds(publicKey)
-    .then((response) => {
-      resultList.total = response.length - 1;
-      return txService.getTxData(response, resultList);
-    })
-    .then((response) => {
-      var items = resultList.list;
-      this.txDataList = items;
-      this.name = items[0].product.name;
-      var transfer = items[0].event.receipient;
-      if (transfer && publicKeys[0] == transfer) {
-        items[0].event.transfer = true;
-      }
-      return;
-    })
-    .catch((error) =>{
-      this.txDataList = [];
-      this.errorOccur = true;
-    })
-    .finally(() => {
-      this.render();
-    });
+  var callback = function (err, data) {
+    if (err) {
+      console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+      scope.txDataList = [];
+      scope.errorOccur = true;
+    } else {
+      var items = data.Item;
+      scope.txDataList = items.events;
+      scope.name = items.name;
+      scope.title = items.name
+      //var transfer = items.events[0].receipient;
+    }
+    scope.render();
+  }
+  var txIds = txService.get(publicKey, callback);
 }
 
-function findItem(publicKey){
-   for (var i = 0; i < allProducts.length; i++) {
+function findItem(publicKey) {
+  for (var i = 0; i < allProducts.length; i++) {
     if (allProducts[i].publicKey === publicKey) {
       return allProducts[i];
     }
   }
   return {};
 }
-function findFirstActiveItem(){
-   for (var i = 0; i < allProducts.length; i++) {
+function findFirstActiveItem() {
+  for (var i = 0; i < allProducts.length; i++) {
     if (allProducts[i].isActive) {
       return allProducts[i];
     }

@@ -1,0 +1,129 @@
+[
+    {
+        "TableName": "organifyProduct",
+        "Item": {
+            "productId": "CMpuCH5Dt6LegLs1wKQ3UWqZeKQQRAEV8Kf9658HLuaT",
+            "name": "Beef batch 28/9/18 to 12/10/18",
+            "description": "Pasture to Plate organic beef",
+            "events": [
+                {
+                    "icon": "beef",
+                    "title": "Shipping to Vancouver",
+                    "date": "09/27/2018",
+                    "location": "From Redstone to Vancouver butcher shop on 1420 Commercial Drive",
+                    "description": "The beef was loaded onto our reefer truck and transported to Vancouver where it is unloaded at the butcher shop and moved directly back into dry storage. In the days after arrival, it will be cut up for the display case and parts will be transferred to wet-aging to continue the aging process in a different way."
+                },
+                {
+                    "icon": "beef",                    
+                    "title": "Dry Aging",
+                    "date": "08/31/2018",
+                    "location": "Chilcotin Harvest, Redstone, BC",
+                    "description": "This carcass is dry aged starting the day after harvest, the dry aging process improves the texture and flavour of the meat. This carcass is aged in the dry aging cooler for 25 days prior to shipping."
+                },
+                {
+                    "icon": "cow",
+                    "title": "Harvest",
+                    "date": "08/30/2018",
+                    "location": "Chilcotin Harvest, Redstone, BC",
+                    "description": "The animal was walked into the corrals where it is loaded onto a stock trailer and hauled about 10 km to Chilcotin Harvest. At Chilcotin Harvest it is settled in, it will socialise with the priest cow which is very calming before slaughter. On harvest day the animal is slaughtered, cleaned and put into the cooler for aging. "
+                },
+                {
+                    "icon": "cow",
+                    "title": "Finishing Diet",
+                    "date": "05/01/2018",
+                    "location": "Rafter 25 Ranch in Redstone, BC",
+                    "description": "In the final growing season before harvest, the cattle are kept close to home on the very lush, irrigated pastures. They are grazing in smaller paddocks, being moved continuously to maintain an optimal diet and preserve the integrity of the pasture to keep from over-grazing. The animal is closely watched and will be harvested when it is in optimal condition. The goal of summer fattening is to put on a good fat cover."
+                },
+                {
+                    "icon": "cow",
+                    "title": "Summer Feeding",
+                    "date": "05/01/2016",
+                    "location": "Rafter 25 Ranch in Redstone, BC",
+                    "description": "As soon as snow melts and grass begins to grow the cattle are beginning to eat a combination of leftover standing grass from the previous year together with the new growth. The new grass immediately boosts their growth and their growing season really begins. They will spend most of the summer roaming on the range lands together with the older cattle."
+                },
+                {
+                    "icon": "cow",
+                    "title": "Winter Feeding",
+                    "date": "11/02/2015",
+                    "location": "Rafter 25 Ranch in Redstone, BC",
+                    "description": "During the winter months, the cattle are eating frozen grass remaining in the fields under the snow, they are also having access to hay grown and harvested on our own land and at times they will receive 'fodder' which is made up of sprouted grains grown to the height of about 5 to 8 cm."
+                },
+                {
+                    "icon": "calf",
+                    "title": "Weaning Time",
+                    "date": "11/01/2015",
+                    "location": "Rafter 25 Ranch in Redstone, BC",
+                    "description": "After 6 months with the mother the calf is weaned, at which point it is moved onto a separate pasture from its mother. She will be pregnant again and needing to reserve extra nutrients for her growing calf. The weaned calf will be now fully able to sustain itself by grazing."
+                },
+                {
+                    "icon": "calf",
+                    "title": "Date of Birth",
+                    "date": "05/01/2015",
+                    "location": "Rafter 25 Ranch in Redstone, BC",
+                    "description": "he animal is born in the late spring to ensure the mother has plenty of fresh green grass to eat which will ensure she produces the absolute best quality milk possible for her calf."
+                }
+                
+            ]
+        }
+    },
+    {
+        "TableName": "organifyProduct",
+        "Item": {
+            "productId": "5NYFrojHuuYQZNvoLr82Tks2YkvJ4Hwe2CUSBMsoV3oP",
+            "name": "Beef batch 13/10/18 to 27/10/2018",
+            "description": "Pasture to Plate organic beef",
+            "events": [
+                {
+                    "icon": "beef",
+                    "title": "Shipping to Vancouver",
+                    "date": "10/11/2018",
+                    "location": "Chilcotin Harvest, Redstone BC to Pasture to Plate, Vancovuer",
+                    "description": "Our refrigerated truck makes the 9 hour treck from the ranch to Vancouver every 2nd Thursday to deliver our products to our stores."
+                },
+                {
+                    "icon": "beef",
+                    "title": "Dry Aging",
+                    "date": "10/03/2018",
+                    "location": "Chilcotin Harvest, Redstone BC",
+                    "description": "The half beeves were moved into our dry aging cooler and kept there until they are shipped to Vancouver. "
+                },
+                {
+                    "icon": "cow",
+                    "title": "Harvest",
+                    "date": "10/02/2018",
+                    "location": "Chilcotin Harvest, Redstone BC",
+                    "description": "Harvest day the animals were slaughtered, as always our priest cow was present to keep them calm and out of respect for the animals we only play classical music on harvest days. "
+                },
+                {
+                    "icon": "cow",
+                    "title": "Shipping to Harvest",
+                    "date": "10/01/2018",
+                    "location": "Rafter 25 Ranch to Chilcotin Harvest, Redstone BC",
+                    "description": "On this day the 2 beeves in this lot were loaded into our stock trailer and driven the 10 km to Chilcotin Harvest, our on-ranch, provincially inspected slaughter facility. Here they are overnighted outside in a small pasture."
+                },
+                {
+                    "icon": "cow",
+                    "title": "The fattening months",
+                    "date": "06/01/2018",
+                    "location": "Rafter 25 Ranch, Redstone BC",
+                    "description": "During the final fattening season the animal does not venture out to the large leased rangelands. Instead they stay on the home place on the very lush pastures where they are moved continuously to new pastures to ensure they are getting the very best grazing possible as well as protecting our pastures from the damaging effects of overgrazing that happen when animals are left in one place too long. "
+                },
+                {
+                    "icon": "calf",
+                    "title": "Weaning",
+                    "date": "04/01/2016",
+                    "location": "Rafter 25 Ranch, Redstone BC",
+                    "description": "Our calves are left with their mothers for nearly a year. Although they no longer get huge quantities of milk through the winter months, they do get enough to give them that little boost of nutrients for their immune system. "
+                },
+                {
+                    "icon": "calf",
+                    "title": "Born",
+                    "date": "05/01/2015",
+                    "location": "Rafter 25 Ranch, Redstone BC",
+                    "description": "Spring 2015 is when the beef you bought today was born! A lot goes into the finished product; we are excited to be able to show you a timeline from the very beginning which will help us show you just how great a span of time it takes to get the meat to you! Our calves are born onto green grass, which is amazing for their health and gives them that boost first thing. The quality of the mothers colostrum and milk are also greatly improved by green grass. It is most common in BC for ranchers to have their cattle calving onto the snow, in the very cold winter months, in hopes of yielding heavier calves in fall. Since we care about the well being of the mothers and their young, we prefer to follow natures' way, allowing her to birth onto the fresh nutrient dense pastures which is much less stressful and her recovery is much more speedy."
+                }
+            ]
+        }
+    }
+
+]

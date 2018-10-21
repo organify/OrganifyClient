@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "aws-sdk": "^2.339.0",
     "babel": "^6.23.0",
     "bigchaindb-driver": "^4.1.0",
     "bootable": "^0.2.4",
@@ -16,7 +17,6 @@
     "ethjs-query": "^0.3.8",
     "express": "^3.21.2",
     "express-session": "^1.15.6",
-    "locomotive": "^0.4.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
@@ -27,6 +27,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1",
+    "locomotive": "^0.4.2",
     "web3": "^0.19.1",
     "webpack": "^4.17.1"
   },
