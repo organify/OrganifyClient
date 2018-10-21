@@ -174,6 +174,7 @@ function addProduct(product) {
 }
 pagesController.product = function () {
   var scope = this;
+  scope.title = "Organify";
   scope.errorOccur = false;
   var publicKey = scope.param("publicKey");
   var resultList = {

@@ -2,9 +2,10 @@ var AWS = require("aws-sdk");
 
 AWS.config.update({
     region: "us-west-2",
-    endpoint: "https://dynamodb.us-west-2.amazonaws.com"
+    endpoint: "https://dynamodb.us-west-2.amazonaws.com",
+    accessKeyId : "AKIAJFK3ZYMIJAKJKEGA",
+    secretAccessKey: "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"
 });
-
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 var table = "organifyProduct";
