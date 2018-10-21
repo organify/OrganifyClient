@@ -17,7 +17,6 @@
     "ethjs-query": "^0.3.8",
     "express": "^3.21.2",
     "express-session": "^1.15.6",
-    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
