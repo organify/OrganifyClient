@@ -49,7 +49,7 @@
           <li class='button-hidde' id='signin'>
             <a class='farmer-login'>farmer login</a>
           </li>
-           <li class="nav-item" id='signout'>
+          <li class="nav-item" id='signout'>
             <a href="" class="nav-link">Log out</a>
           </li>
           <li>
@@ -60,7 +60,9 @@
               <div>
                 <input id="password" type="password" name="password" placeholder="password">
               </div>
-              <p class='probootstrap-animate'><a class='btn btn-ghost btn-ghost-white' id="validate">Login</a></p>
+              <p class='probootstrap-animate'>
+                <a class='btn btn-ghost btn-ghost-white' id="validate">Login</a>
+              </p>
             </form>
           </li>
         </ul>
@@ -81,8 +83,8 @@
           <div class="container">
             <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
               <h1 class="display-3">Organify</h1>
-              <p class="lead">We are a trusted platform for supply chain transparency and traceability. 
-                We believe in creating a unique SAS that allows farmer to share product information and focus on things that matter: quality and authenticity.
+              <p class="lead">We are a trusted platform for supply chain transparency and traceability. We believe in creating a unique SAS
+                that allows farmer to share product information and focus on things that matter: quality and authenticity.
               </p>
               <form method="post" action="mailto:founders@organify.io">
                 <input id="getstarted" type="submit" value="Ask Us About Your Food" class="btn btn-danger btn-lg">
@@ -96,9 +98,8 @@
           <div class="container">
             <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
               <h1 class="display-3">Transparency</h1>
-              <p class="lead"> Transparency has, until recently, been a privilege of a
-                few because of the high cost involved in communicating directly with consumers.
-                With Organify, farmers can tell the stories behind their products with little cost.
+              <p class="lead"> Transparency has, until recently, been a privilege of a few because of the high cost involved in communicating
+                directly with consumers. With Organify, farmers can tell the stories behind their products with little cost.
               </p>
               <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
             </div>
@@ -109,9 +110,8 @@
           <div class="container">
             <div class="carousel-caption d-none d-sm-block mb-5 p-3 mb-2 bg-light text-dark rounded opacity">
               <h1 class="display-3">Trustworthy</h1>
-              <p class="lead">The main challenge for organic food
-                consumers is the validity and reliability of food labels. Organify
-                are empowering farmers to tell you directly why they are organic and give you a well informed option.</p>
+              <p class="lead">The main challenge for organic food consumers is the validity and reliability of food labels. Organify are
+                empowering farmers to tell you directly why they are organic and give you a well informed option.</p>
               <a href="#our-farmers" class="btn btn-success btn-lg">Meet Our Partners</a>
             </div>
           </div>
@@ -131,20 +131,105 @@
   <!-- MARKET NEEDS SECTION -->
 
   <section id="about" class="py-3">
-    <div class="container">
+    <div class="container" style="padding: 0.5em 0 3em 0">
+        <div class="row"> 
+          <div class="col"> <h2 class="project-section__title title--line"> 
+            <span class="project-section__title-icon icon--content"></span> <br> 
+          </h2> </div> </div>
+        <div class="row align-center">
+          <div class="column small-12 large-8"> 
+            <div class="project-post post--solution"> 
+              <div class="row align-middle"> 
+                <div class="col-md-5"> 
+                  <h3 class="project-post__title title--solution" style="line-height:100%"><span class="vertical-text">The</span>  Mission </h3> 
+                </div> 
+                <div class="col-md-7"> 
+                  <div class="project-post__content align-left">
+                      Organify is bringing the next level of food transparency to your table. We are working with selected farmers in
+                      Canada to increase their brand trust and showcase the procedure behind their products. Our mission is to create
+                      a system that enables simple, fast and trusted way for the exchange of goods.
+             </div>
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div>
+      
+
+
+      <h4 class="project-post__title title--hiw">How it works</h4>
       <div class="row">
-        <div class="col-md-6">
-
-          <h1>About Organify</h1>
-          <br>
-          <p>Organify is bringing the next level of food transparency to your table. We are working with
-            selected farmers in Canada to increase their brand trust and showcase the procedure behind their 
-            products. Our mission is to create a system that enables simple, fast and trusted way for the exchange of goods.
-          </p>
-
+        <div class="col">
+          <div class="project-hiw-list-item">
+            <div class="project-hiw" idt-test="project/step-0">
+              <div class="project-hiw__wrap-image">
+                <img class="project-hiw__image" src="img/bg-01.jpg">
+                <div class="project-hiw__number"> 1 </div>
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="project-hiw__title" > Farmer updates information </div>
+              <!---->
+              <!---->
+              <p class="project-hiw__content" > Farmer updates information about what is unique to their organic product. </p>
+              <!---->
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <img src="img/bg-01.jpg" alt="" class="img-fluid rounded-circle d-none d-md-block about-img pt-5">
+        <div class="col">
+          <div class="project-hiw-list-item">
+            <div class="project-hiw" idt-test="project/step-0" ng-show="project.steps[$index]">
+              <div class="project-hiw__wrap-image" >
+                <img class="project-hiw__image" src="img/bg-01.jpg">
+                <div class="project-hiw__number"> 2 </div>
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="project-hiw__title" > Farmer updates information </div>
+              <!---->
+              <!---->
+              <p class="project-hiw__content"> Farmer updates information about what is unique to their organic product. </p>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="project-hiw-list-item">
+            <div class="project-hiw" idt-test="project/step-0" ng-show="project.steps[$index]">
+              <div class="project-hiw__wrap-image">
+                <img class="project-hiw__image" src="img/bg-01.jpg">
+                <div class="project-hiw__number"> 3 </div>
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="project-hiw__title"> Farmer updates information </div>
+              <!---->
+              <!---->
+              <p class="project-hiw__content"> Farmer updates information about what is unique to their organic product. </p>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="project-hiw-list-item">
+            <div class="project-hiw" idt-test="project/step-0" ng-show="project.steps[$index]">
+              <div class="project-hiw__wrap-image">
+                <img class="project-hiw__image" src="img/bg-01.jpg">
+                <div class="project-hiw__number"> 4 </div>
+                <!---->
+              </div>
+              <!---->
+              <!---->
+              <div class="project-hiw__title"> Farmer updates information </div>
+              <!---->
+              <!---->
+              <p class="project-hiw__content"> Farmer updates information about what is unique to their organic product. </p>
+              <!---->
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -170,18 +255,20 @@
   <section id="solution-heading" class="p-5">
     <div class="container">
       <div class="row mb-4">
-        <% allProducts.forEach(function(item, index){ %> 
-        <div class="col-md-4">
-          <div class="card bg-danger text-white text-center">
-            <div class="card-body">
-              <i class="fas fa-utensils"></i>
-              <h3><%= item.name %></h3>
-              <p>Find more information on the meats from Pasture to Plate!</p>
-              <a href="/products/<%= item.publicKey %>" class="btn btn-success" target="_blank">more information</a>
+        <% allProducts.forEach(function(item, index){ %>
+          <div class="col-md-4">
+            <div class="card bg-danger text-white text-center">
+              <div class="card-body">
+                <i class="fas fa-utensils"></i>
+                <h3>
+                  <%= item.name %>
+                </h3>
+                <p>Find more information on the meats from Pasture to Plate!</p>
+                <a href="/products/<%= item.publicKey %>" class="btn btn-success" target="_blank">more information</a>
+              </div>
             </div>
           </div>
-        </div>
-        <% }) %>
+          <% }) %>
       </div>
     </div>
   </section>
@@ -207,7 +294,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 m-auto text-center text-dark">
-          <a href="http://www.pasturetoplate.ca/"><img src="img/farmer logo.png" alt="Pasture to Plate"></a>
+          <a href="http://www.pasturetoplate.ca/">
+            <img src="img/farmer logo.png" alt="Pasture to Plate">
+          </a>
         </div>
       </div>
     </div>
@@ -234,10 +323,11 @@
 
         <div class="col-md-3">
           <a data-toggle="modal" data-target="#farmer33" data-height="562" data-width="562">
-            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/lucas.jpg"
-              alt="Card image cap">
-            <br /><br />
-            <p class="text-center "><strong>Lucas Da Cunha</strong>
+            <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/lucas.jpg" alt="Card image cap">
+            <br />
+            <br />
+            <p class="text-center ">
+              <strong>Lucas Da Cunha</strong>
               <br />COO / Co-Founder
               <br />Blockchain Developer / Supply chain Expertise</p>
             <div class="card-body">
@@ -254,10 +344,8 @@
                 <button class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
-                <p>I have a vision of a future where blockchain will guide our supply chain. Big data will control
-                  businesses
-                  interactions based on the information. Wanting to be a part of the future I am currently looking to
-                  build
+                <p>I have a vision of a future where blockchain will guide our supply chain. Big data will control businesses
+                  interactions based on the information. Wanting to be a part of the future I am currently looking to build
                   a career in programming.</p>
               </div>
               <div class="modal-footer">
@@ -269,12 +357,13 @@
 
         <div class="col-md-3">
           <a data-toggle="modal" data-target="#farmer11" data-height="56" data-width="562">
-            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="img/nhatPhoto.PNG"
-              alt="Card image cap">
-            <br /><br />
-            <p class="text-center"><strong>Nhat Nguyen</strong><br />
-              CEO / Co-Founder<br />
-              Product Management / Strategy consultant</p>
+            <img class="card-img-top img-fluid cardpic rounded-circle border border-secondary pic " src="img/nhatPhoto.PNG" alt="Card image cap">
+            <br />
+            <br />
+            <p class="text-center">
+              <strong>Nhat Nguyen</strong>
+              <br /> CEO / Co-Founder
+              <br /> Product Management / Strategy consultant</p>
             <div class="card-body">
             </div>
           </a>
@@ -289,12 +378,10 @@
                 <button class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
-                <p>Experienced Consultant with a demonstrated history of working in the technology products in the
-                  banking industry.
+                <p>Experienced Consultant with a demonstrated history of working in the technology products in the banking industry.
                 </p>
                 <p>
-                  Strong support professional with a Chartered Accountant Program focused in Taxation and Management
-                  from Institute of Chartered
+                  Strong support professional with a Chartered Accountant Program focused in Taxation and Management from Institute of Chartered
                   Accountants in Australia.
                 </p>
               </div>
@@ -309,8 +396,10 @@
           <a data-toggle="modal" data-target="#farmer22" data-height="562" data-width="562">
             <img class="rounded-circle card-img-top img-fluid cardpic border border-secondary pic" height="56" src="img/aliciaPhoto.PNG"
               alt="Card image cap">
-            <br /><br />
-            <p class="text-center"><strong>Alicia Nguyen</strong>
+            <br />
+            <br />
+            <p class="text-center">
+              <strong>Alicia Nguyen</strong>
               <br />CTO / Co-Founder
               <br />Blockchain Developer / .NET Developer</p>
             <div class="card-body">
@@ -327,10 +416,8 @@
                 <button class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
-                <p>Pushing bounderies and solving everyday challenges through new technologies is what I did in the
-                  last 4 years
-                  of software experience. I am passionate about programming and I beleive that software is a true
-                  craftsmanship.
+                <p>Pushing bounderies and solving everyday challenges through new technologies is what I did in the last 4 years
+                  of software experience. I am passionate about programming and I beleive that software is a true craftsmanship.
                 </p>
 
 
@@ -348,7 +435,8 @@
         <div class="col-md-12 center-block text-center mb-1 mt-1">
 
           <a href="https://drive.google.com/file/d/104xqxDjN_FB0_XmzKzixvS3JaJoepfgW/view?usp=sharing" target="_blank">
-            <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block">Read our Whitepaper</button></a>
+            <button id="singlebutton" name="singlebutton" class="btn btn-primary center-block">Read our Whitepaper</button>
+          </a>
         </div>
 
   </section>
@@ -457,7 +545,7 @@
         var theModal = $(this).data("target"),
           videoSRC = $(this).attr("data-video"),
           videoSRCauto = videoSRC +
-          "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+            "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
         $(theModal + ' iframe').attr('src', videoSRCauto);
         $(theModal + ' button.close').click(function () {
           $(theModal + ' iframe').attr('src', videoSRC);
