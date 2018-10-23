@@ -334,7 +334,7 @@ footer a {
     text-align: center;
     text-transform: uppercase;
 }
-@media only screen and (min-width: 640px){
+@media only screen and (min-width: 1023px){
     
     .project-post__title.title--solution {
         line-height: 100%;
@@ -363,8 +363,11 @@ footer a {
         text-transform: uppercase;
         padding-bottom: 1em;
     }
+    .padding-container{
+        padding: 0.5em 6em 3em 6em;
+    }
 }
-@media only screen and (max-width: 639px){
+@media only screen and (max-width: 1022px){
  
     .project-post__title.title--solution {
         line-height: 100%;
@@ -386,6 +389,9 @@ footer a {
     }
     .project-post__content{
         text-align: center !important;
+    }
+    .padding-container{
+        padding: 0.5em 0 3em 0;
     }
     
 }
