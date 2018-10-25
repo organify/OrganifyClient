@@ -79,9 +79,13 @@
     <div class="row">
       <% items.forEach(function(item){ %>
       <% if(item.name && item.publicKey){ %>
-      <div class="col-sm-4 my-4">
+      <div class="col-md-3">
         <div class="card h-100">
-          <img class="card-img-top" src="/img/beef.jpg" alt="">
+           <% if(item.type == "pork"){ %>
+                  <img class="card-img-top" src="/img/porkimage.jpg" alt=""></a>
+                  <%}else{%>
+                  <img class="card-img-top" src="/img/beef.jpg" alt=""></a>
+                  <%}%>
           <div class="card-body" style="padding: 0.7em 0 0.7em 0;">
             <h3 class="card-title">
               <%= item.name %>

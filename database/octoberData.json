@@ -1,0 +1,13 @@
+[
+    {
+        "TableName": "organifyProduct",
+        "Item": {
+            "productId": "2YkvJ4Hwe2CUSBMsoV3oP",
+            "name": "Pork batch 26/9/18 to 09/11/18",
+            "description": "Pasture to Plate organic pork",
+            "events": [],
+            "type": "pork"
+        }
+    }
+
+]

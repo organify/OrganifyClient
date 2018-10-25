@@ -19,7 +19,18 @@ var getItemByProductId = function (id, callBack) {
 
     docClient.get(params, callBack);
 }
+var getAllEvents = function (onScan) {
+    var params = {
+        TableName: table,
+        ProjectionExpression: "productId, #na, #ty",
+        ExpressionAttributeNames: {
+        "#na": "name",
+        "#ty": "type"}
+    }
 
+    console.log("getAllEvent starts noww");
+    docClient.scan(params, onScan);
+}
 var addEvent = function (id, event, callBack) {
     var params = {
         TableName: table,
@@ -27,8 +38,8 @@ var addEvent = function (id, event, callBack) {
             "productId": id
         },
         UpdateExpression: "SET #ri = list_append(:vals, #ri)",
-        ExpressionAttributeNames: {"#ri": "events"},
-        ExpressionAttributeValues: {":vals": [event]},
+        ExpressionAttributeNames: { "#ri": "events" },
+        ExpressionAttributeValues: { ":vals": [event] },
         ReturnValues: "UPDATED_NEW"
     };
 
@@ -37,5 +48,6 @@ var addEvent = function (id, event, callBack) {
 }
 module.exports = {
     get: getItemByProductId,
-    addEvent: addEvent
+    addEvent: addEvent,
+    getAllEvents: getAllEvents
 }

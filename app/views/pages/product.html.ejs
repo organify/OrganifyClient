@@ -74,15 +74,14 @@
 	<% if(errorOccur){ %>
 		<div class="container">
 			<div class="alert alert-danger" role="alert">
-			<h5>This item has been archived, it's no longer available for public view</h5>
+				<h5>This item has been archived, it's no longer available for public view</h5>
+			</div>
 		</div>
-		</div>
-			<% }else{ %>
+		<% }else{ %>
 			<section class="cd-timeline js-cd-timeline">
 				<div class="cd-timeline__container">
 					<% txDataList.forEach(function(item, index){ if(item.title){%>
 						<div class="cd-timeline__block js-cd-block">
-
 							<% if(item.icon == "beef"){ %>
 								<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
 									<img src="/img/meat.svg" alt="Beef">
@@ -95,195 +94,210 @@
 										<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
 											<img src="/img/cow.svg" alt="Calf">
 										</div>
-										<% }else{ %>
-											<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
-												<img src="/img/farmer.svg" alt="Range">
+										<% }else if(item.icon == "pork"){ %>
+											<div class="cd-timeline__img cd-timeline__img--beef js-cd-img">
+												<img src="/img/pork.svg" alt="Beef">
 											</div>
-											<% } %>
-												<!-- cd-timeline__img -->
-
-												<div class="cd-timeline__content js-cd-content">
-													<h2>
-														<%= item.title %>
-													</h2>
-													<p><b>Location: </b>
-														<%= item.location %>
-													</p>
-													<p class="clampedLine"><b>Description: </b>
-														<%= item.description %> <br>
-															<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
-													</p>
-													<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.title %>">Read More</a>
-
-													<span class="cd-timeline__date">
-						<%= item.date %></span>
+											<% }else if(item.icon == "pig"){ %>
+												<div class="cd-timeline__img cd-timeline__img--cow js-cd-img">
+													<img src="/img/pig.svg" alt="Cow">
 												</div>
-												<!-- cd-timeline__content -->
+												<% }else if(item.icon == "piglet"){ %>
+													<div class="cd-timeline__img cd-timeline__img--calf js-cd-img">
+														<img src="/img/piglet.svg" alt="Calf">
+													</div>
+													<% }else{ %>
+														<div class="cd-timeline__img cd-timeline__img--range js-cd-img">
+															<img src="/img/farmer.svg" alt="Range">
+														</div>
+														<% } %>
+															<!-- cd-timeline__img -->
+
+															<div class="cd-timeline__content js-cd-content">
+																<% if(index == 0 && type =="beef"){ %>
+																	<img src="/img/p2pcow0.jpg" alt="cow" style="width:12em;height:12em;margin-right:15px;float: left;">
+																	<% } %>
+																		<h2>
+																			<%= item.title %>
+																		</h2>
+																		<p><b>Location: </b>
+																			<%= item.location %>
+																		</p>
+																		<p class="clampedLine"><b>Description: </b>
+																			<%= item.description %> <br>
+																				<small style="font-style: italic;">Disclaimer: This food tracking system is brought to you by <a href="/" class="disclaimer">Organify.io</a>.</small>
+																		</p>
+																		<a href="#0" class="cd-timeline__read-more info readMore" data-organify-id="<%= item.title %>">Read More</a>
+
+																		<span class="cd-timeline__date">
+															<%= item.date %></span>
+															</div>
+															<!-- cd-timeline__content -->
 						</div>
 						<!-- cd-timeline__block -->
 						<% }}) %>
 				</div>
 			</section>
 			<% } %>
-			<footer class="footer">
-				<div class="container">
-					<p>Disclaimer: This information is brought to you by Organify.io.
-						<a href="/" class="disclaimer">Click here</a> to know how we use technology to build trust in food industry</p>
-				</div>
-			</footer>
-			<!-- cd-timeline -->
-			<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			 crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-			 crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-			 crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+				<footer class="footer">
+					<div class="container">
+						<p>Disclaimer: This information is brought to you by Organify.io.
+							<a href="/" class="disclaimer">Click here</a> to know how we use technology to build trust in food industry</p>
+					</div>
+				</footer>
+				<!-- cd-timeline -->
+				<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				 crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+				 crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+				 crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 
-			<script src="/js/main.js"></script>
-			<script src="/js/session.js"></script>
-			<script src="/js/clamp.min.js"></script>
-			<script src="/js/analytics.min.js"></script>
-			<!-- Resource JavaScript -->
-			<!-- start bot code -->
-			<script src="https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
-			<script>
-				var loaderOpts = {
-					baseUrl: 'https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/'
-				};
-				var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
-				loader.load()
-					.catch(function (error) { console.error(error); });
-			</script>
-			<script>
-				mixpanel.track("productPageView");
-				$(function () {
-					var url = window.location.pathname;
-					var urlItems = url.split('/');
-					var ownerPublicKey = urlItems[urlItems.length - 2];
-					var id = urlItems[urlItems.length - 1];
+				<script src="/js/main.js"></script>
+				<script src="/js/session.js"></script>
+				<script src="/js/clamp.min.js"></script>
+				<script src="/js/analytics.min.js"></script>
+				<!-- Resource JavaScript -->
+				<!-- start bot code -->
+				<script src="https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
+				<script>
+					var loaderOpts = {
+						baseUrl: 'https://lex-web-ui-codebuilddeploy-1k0pscycy-webappbucket-1xrglq0ah1l6t.s3.amazonaws.com/'
+					};
+					var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+					loader.load()
+						.catch(function (error) { console.error(error); });
+				</script>
+				<script>
+					mixpanel.track("productPageView");
+					$(function () {
+						var url = window.location.pathname;
+						var urlItems = url.split('/');
+						var ownerPublicKey = urlItems[urlItems.length - 2];
+						var id = urlItems[urlItems.length - 1];
 
-					function init() {
-						$clamp(document.querySelector('.clampedLine'), { clamp: 1 });
-						$('.readMore').click(function (e) {
-							var target = $(e.target);
-							target.css({
-								'display': 'none',
+						function init() {
+							$clamp(document.querySelector('.clampedLine'), { clamp: 1 });
+							$('.readMore').click(function (e) {
+								var target = $(e.target);
+								target.css({
+									'display': 'none',
+								})
+								var targetData = target.siblings('.clampedLine');
+								targetData.attr('style', null);
+								var eventName = "readMore_" + target.attr("data-organify-id");
+								mixpanel.track(eventName);
 							})
-							var targetData = target.siblings('.clampedLine');
-							targetData.attr('style', null);
-							var eventName = "readMore_" + target.attr("data-organify-id");
-							mixpanel.track(eventName);
-						})
-						$(".disclaimer").on("click", function (e) {
-							mixpanel.track("disclaimerEvent");
-						});
-						$(".homePage").on("click", function (e) {
-							mixpanel.track("homePageFromProductPage");
-						});
-						/*$('#confirm').click(function (e) {
-						event.preventDefault();
-						var data = {
-							title: "Arrival confirmed",
-							date: getDate(),
-							location: "7Gate academy",
-							description: "Product arrival has been confirmed",
-							receipient: ""
-						}
-						var request = {
-							publicKey: id,
-							data: data
-						};
-						smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, {
-								from: web3.eth.accounts[0]
-							})
-							.then(function (txHash) {
-								console.log('Transaction sent')
-								console.dir(txHash)
-								addSuccessMessage(txHash);
-								waitForReceipt(txHash, function (receipt) {
-									if (!data)
-										return;
-									updateSuccessMessage(txHash, receipt.status);
-								});
-							})
-						$.post("/form/submitItem", request)
-							.done(function (data) {
-		
+							$(".disclaimer").on("click", function (e) {
+								mixpanel.track("disclaimerEvent");
 							});
-		
-					});*/
-					}
-
-					function getDate() {
-						var today = new Date();
-						var dd = today.getDate();
-						var mm = today.getMonth() + 1; //January is 0!
-
-						var yyyy = today.getFullYear();
-						if (dd < 10) {
-							dd = '0' + dd;
+							$(".homePage").on("click", function (e) {
+								mixpanel.track("homePageFromProductPage");
+							});
+							/*$('#confirm').click(function (e) {
+							event.preventDefault();
+							var data = {
+								title: "Arrival confirmed",
+								date: getDate(),
+								location: "7Gate academy",
+								description: "Product arrival has been confirmed",
+								receipient: ""
+							}
+							var request = {
+								publicKey: id,
+								data: data
+							};
+							smartContract.confirmTransferItem(ownerPublicKey, web3.eth.accounts[0], id, {
+									from: web3.eth.accounts[0]
+								})
+								.then(function (txHash) {
+									console.log('Transaction sent')
+									console.dir(txHash)
+									addSuccessMessage(txHash);
+									waitForReceipt(txHash, function (receipt) {
+										if (!data)
+											return;
+										updateSuccessMessage(txHash, receipt.status);
+									});
+								})
+							$.post("/form/submitItem", request)
+								.done(function (data) {
+			
+								});
+			
+						});*/
 						}
-						if (mm < 10) {
-							mm = '0' + mm;
-						}
-						return mm + '/' + dd + '/' + yyyy;
-					}
 
-					function addSuccessMessage(txHash) {
-						var div = document.createElement('div');
-						div.setAttribute('class', 'class alert alert-warning alert-dismissable');
-						div.setAttribute('role', 'alert');
-						div.setAttribute('id', txHash);
-						div.innerHTML =
-							`<div class="infoMsg" id="infoMsg">
+						function getDate() {
+							var today = new Date();
+							var dd = today.getDate();
+							var mm = today.getMonth() + 1; //January is 0!
+
+							var yyyy = today.getFullYear();
+							if (dd < 10) {
+								dd = '0' + dd;
+							}
+							if (mm < 10) {
+								mm = '0' + mm;
+							}
+							return mm + '/' + dd + '/' + yyyy;
+						}
+
+						function addSuccessMessage(txHash) {
+							var div = document.createElement('div');
+							div.setAttribute('class', 'class alert alert-warning alert-dismissable');
+							div.setAttribute('role', 'alert');
+							div.setAttribute('id', txHash);
+							div.innerHTML =
+								`<div class="infoMsg" id="infoMsg">
   					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
   					Your request has been submitted. Please wait for confirmation.
 					</div>`;
-						document.getElementById('success-message-container').appendChild(div);
-					}
-
-					function updateSuccessMessage(txHash, status) {
-						var successMessageText = $("#infoMsg");
-						successMessageText.removeClass('infoMsg');
-
-						if (status == 1) {
-							successMessageText.addClass('successMsg');
-							successMessageText.html(
-								`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has been mined and updated successfully. Please reload to ses changes`
-							);
-						} else if (status == 0) {
-							successMessageText.addClass('dangerMsg');
-							successMessageText.html(
-								`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  					Your request has failed. Please try again later`
-							);
+							document.getElementById('success-message-container').appendChild(div);
 						}
-					}
 
-					function waitForReceipt(hash, cb) {
-						web3.eth.getTransactionReceipt(hash, function (err, receipt) {
-							if (err) {
-								return;
+						function updateSuccessMessage(txHash, status) {
+							var successMessageText = $("#infoMsg");
+							successMessageText.removeClass('infoMsg');
+
+							if (status == 1) {
+								successMessageText.addClass('successMsg');
+								successMessageText.html(
+									`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has been mined and updated successfully. Please reload to ses changes`
+								);
+							} else if (status == 0) {
+								successMessageText.addClass('dangerMsg');
+								successMessageText.html(
+									`<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  					Your request has failed. Please try again later`
+								);
 							}
+						}
 
-							if (receipt && receipt.status) {
-								// Transaction went through
-								if (cb) {
-									cb(receipt);
+						function waitForReceipt(hash, cb) {
+							web3.eth.getTransactionReceipt(hash, function (err, receipt) {
+								if (err) {
+									return;
 								}
-							} else {
-								// Try again in 1 second
-								window.setTimeout(function () {
-									waitForReceipt(hash, cb);
-								}, 1000);
-							}
-						});
-					}
-					init();
-				})
-			</script>
+
+								if (receipt && receipt.status) {
+									// Transaction went through
+									if (cb) {
+										cb(receipt);
+									}
+								} else {
+									// Try again in 1 second
+									window.setTimeout(function () {
+										waitForReceipt(hash, cb);
+									}, 1000);
+								}
+							});
+						}
+						init();
+					})
+				</script>
 </body>
 
 </html>

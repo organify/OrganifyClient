@@ -22,8 +22,13 @@ pagesController.main = function () {
   //let txIds = await bigChainDb.getTxIds(publicKey);
   //this.txDataList = await getTxData(txIds);
   this.title = "Organify";
-  this.allProducts = allProducts;
-  this.render();
+  var current = this;
+  function callback() {
+    this.allProducts = allProducts;
+    current.render();
+  }
+  getItemsFromDynamo(this, callback);
+
 }
 pagesController.frontPage = function () {
   //let txIds = await bigChainDb.getTxIds(publicKey);
@@ -86,7 +91,7 @@ pagesController.submitItem = function () {
     current.res.end("true");
   }
   txService.addEvent(keyObject.publicKey, requestObj.data, callback);
-    
+
   //var session = this.request.session.publicKey;
 
 }
@@ -105,7 +110,7 @@ pagesController.signIn = function () {
       var firstActiveItem = findFirstActiveItem();
       cur.res.send({ status: 200, data: firstActiveItem.publicKey });;
     }
-    getItems(this, callBack);
+    getItemsFromDynamo(this, callBack);
 
   } else
     this.res.end("404");
@@ -136,6 +141,37 @@ pagesController.myItems = function () {
     cur.render();
   }
   getItems(current, callBack);
+}
+var getItemsFromDynamo = function (current, callback) {
+  function onscan(err, data) {
+    if (err) {
+      console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+    } else {
+      // print all the movies
+      console.log("Scan succeeded.");
+      data.Items.forEach(function (event) {
+        var currentProduct = {
+          name: event.name,
+          publicKey: event.productId, 
+          type: event.type
+        };
+        addProduct(currentProduct);
+        current.items.push(currentProduct);
+      });
+
+      // continue scanning if we have more movies, because
+      // scan can retrieve a maximum of 1MB of data
+      if (typeof data.LastEvaluatedKey != "undefined") {
+        console.log("Scanning for more...");
+        params.ExclusiveStartKey = data.LastEvaluatedKey;
+        txService.getAllEvents(onscan, callback);
+      }
+      else if (callback)
+        callback(current)
+    }
+  }
+  current.items = [];
+  txService.getAllEvents(onscan);
 }
 var getItems = function (current, callBack) {
   current.items = [];
@@ -190,7 +226,8 @@ pagesController.product = function () {
       var items = data.Item;
       scope.txDataList = items.events;
       scope.name = items.name;
-      scope.title = items.name
+      scope.title = items.name;
+      scope.type = items.type;
       //var transfer = items.events[0].receipient;
     }
     scope.render();
@@ -207,11 +244,6 @@ function findItem(publicKey) {
   return {};
 }
 function findFirstActiveItem() {
-  for (var i = 0; i < allProducts.length; i++) {
-    if (allProducts[i].isActive) {
-      return allProducts[i];
-    }
-  }
-  return {};
+  return allProducts[allProducts.length-1];
 }
 module.exports = pagesController;
