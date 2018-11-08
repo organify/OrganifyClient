@@ -22,7 +22,7 @@ var getItemByProductId = function (id, callBack) {
 var getAllEvents = function (onScan) {
     var params = {
         TableName: table,
-        ProjectionExpression: "productId, #na, #ty",
+        ProjectionExpression: "productId, #na, #ty, itemId",
         ExpressionAttributeNames: {
         "#na": "name",
         "#ty": "type"}

@@ -8,9 +8,9 @@ AWS.config.update({
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
-console.log("Importing movies into DynamoDB. Please wait.");
+console.log("Importing data into DynamoDB. Please wait.");
 
-var allMovies = JSON.parse(fs.readFileSync('octoberData.json', 'utf8'));
+var allMovies = JSON.parse(fs.readFileSync('novemberData.json', 'utf8'));
 allMovies.forEach(function(params) {
 
     docClient.put(params, function(err, data) {

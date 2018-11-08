@@ -1,0 +1,25 @@
+[
+    {
+        "TableName": "organifyProduct",
+        "Item": {
+            "itemId": 5,
+            "productId": "rcR3B4lhND",
+            "name": "Pork batch 09/11/18 to 23/11/18",
+            "description": "Pasture to Plate organic pork",
+            "events": [],
+            "type": "pork"
+        }
+    },
+    {
+        "TableName": "organifyProduct",
+        "Item": {
+            "itemId": 4,
+            "productId": "I7J4lrgGxG",
+            "name": "Beef batch 09/11/18 to 23/11/18",
+            "description": "Pasture to Plate organic beef",
+            "events": [],
+            "type": "beef"
+        }
+    }
+
+]

@@ -24,6 +24,10 @@ pagesController.main = function () {
   this.title = "Organify";
   var current = this;
   function callback() {
+    
+    allProducts.sort(function (a, b) {
+      return a.id - b.id;
+    });
     this.allProducts = allProducts;
     current.render();
   }
@@ -107,6 +111,9 @@ pagesController.signIn = function () {
       signin: true
     };
     var callBack = function (cur) {
+      allProducts.sort(function (a, b) {
+        return a.id - b.id;
+      });
       var firstActiveItem = findFirstActiveItem();
       cur.res.send({ status: 200, data: firstActiveItem.publicKey });;
     }
@@ -153,7 +160,8 @@ var getItemsFromDynamo = function (current, callback) {
         var currentProduct = {
           name: event.name,
           publicKey: event.productId, 
-          type: event.type
+          type: event.type,
+          id: event.itemId
         };
         addProduct(currentProduct);
         current.items.push(currentProduct);
