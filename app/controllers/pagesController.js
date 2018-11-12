@@ -25,9 +25,6 @@ pagesController.main = function () {
   var current = this;
   function callback() {
     
-    allProducts.sort(function (a, b) {
-      return a.id - b.id;
-    });
     this.allProducts = allProducts;
     current.render();
   }
@@ -111,9 +108,6 @@ pagesController.signIn = function () {
       signin: true
     };
     var callBack = function (cur) {
-      allProducts.sort(function (a, b) {
-        return a.id - b.id;
-      });
       var firstActiveItem = findFirstActiveItem();
       cur.res.send({ status: 200, data: firstActiveItem.publicKey });;
     }
@@ -147,7 +141,7 @@ pagesController.myItems = function () {
   var callBack = function (cur) {
     cur.render();
   }
-  getItems(current, callBack);
+  getItemsFromDynamo(current, callBack);
 }
 var getItemsFromDynamo = function (current, callback) {
   function onscan(err, data) {
@@ -174,8 +168,12 @@ var getItemsFromDynamo = function (current, callback) {
         params.ExclusiveStartKey = data.LastEvaluatedKey;
         txService.getAllEvents(onscan, callback);
       }
-      else if (callback)
+      else if (callback){
+        allProducts.sort(function (a, b) {
+          return a.id - b.id;
+        });
         callback(current)
+      }
     }
   }
   current.items = [];
